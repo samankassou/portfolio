@@ -1,3 +1,3 @@
-# First version of my portfolio
+# My portfolio
 
 ## Made with `Next.js`

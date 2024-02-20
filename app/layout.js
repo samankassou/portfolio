@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html data-theme="cupcake" lang="fr">
-      <body className={inter.className}>{children}</body>
+    <html lang="fr">
+      <body className={inter.className + " bg-[#F6F6F7]"}>{children}</body>
     </html>
   );
 }
