@@ -1,18 +1,19 @@
 import Header from "./components/header";
 import Navbar from "./components/navbar";
 import ServiceCard from "./components/serviceCard";
+import AdvertCard from "./components/advertCard";
 
 export default function Home() {
   let sercices = [
     {
       id: 1,
-      icon: "arrow-round-forward",
+      icon: "logo-html5",
       title: "Web Development",
       items: ["Frontend Development", "Backend Development", "CMS Development"],
     },
     {
       id: 2,
-      icon: "arrow-round-forward",
+      icon: "phone-portrait",
       title: "App Development",
       items: [
         "iOS Development",
@@ -22,7 +23,7 @@ export default function Home() {
     },
     {
       id: 3,
-      icon: "arrow-round-forward",
+      icon: "grid",
       title: "UI / UX Design",
       items: [
         "User Research",
@@ -32,13 +33,13 @@ export default function Home() {
     },
     {
       id: 4,
-      icon: "arrow-round-forward",
+      icon: "color-palette",
       title: "Graphics Design",
       items: ["Branding Design", "Social Media Post", "Logo Design"],
     },
     {
       id: 5,
-      icon: "videocam",
+      icon: "film",
       title: "Video Editing",
       items: ["Motion Graphics", "Video Editing", "VFX Editor"],
     },
@@ -50,7 +51,7 @@ export default function Home() {
         <Header />
         {/* Services */}
         <section className="my-10">
-          <h2 className="text-2xl font-bold text-center mb-3 leading-8">
+          <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
             My Services
           </h2>
           <p className="text-center text-sm text-gray-500 leading-6">
@@ -65,6 +66,9 @@ export default function Home() {
                   <ServiceCard service={service} key={service.id} />
                 </li>
               ))}
+            <li>
+              <AdvertCard />
+            </li>
           </ul>
         </section>
       </main>
