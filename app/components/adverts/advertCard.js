@@ -1,6 +1,6 @@
 import AdvertBtn from "./advertBtn";
 
-export default function advertCard() {
+export default function AdvertCard() {
   return (
     <div className="rounded-box bg-indigo-500 shadow-sm p-5 my-5">
       <h3 className="text-xl font-extrabold text-black text-center my-4 leading-8">

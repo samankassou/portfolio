@@ -1,4 +1,4 @@
-export default function advertBtn() {
+export default function AdvertBtn() {
   return (
     <a
       href="#"
