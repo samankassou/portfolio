@@ -9,7 +9,7 @@ export default function HeroSection() {
         A Product Designer and Visual Developer in SF. I specialize in UI/UX
         Design, Responsive Web Design, and Visual Development.
       </p>
-      <p className="text-center pt-4 mt-2">
+      <p className="text-center mt-6">
         <Btn />
       </p>
     </div>

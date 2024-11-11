@@ -1,18 +1,17 @@
-import ServiceCard from "./serviceCard";
-import AdvertCard from "./../adverts/advertCard";
+import EducationItem from "./educationItem";
 
-export default function ServicesList() {
-  let sercices = [
+export default function EducationList() {
+  let education = [
     {
       id: 1,
       icon: "logo-html5",
-      title: "Web Development",
+      school: "University of Toronto",
       items: ["Frontend Development", "Backend Development", "CMS Development"],
     },
     {
       id: 2,
       icon: "phone-portrait",
-      title: "App Development",
+      school: "App Development",
       items: [
         "iOS Development",
         "Android Development",
@@ -22,7 +21,7 @@ export default function ServicesList() {
     {
       id: 3,
       icon: "grid",
-      title: "UI / UX Design",
+      school: "UI / UX Design",
       items: [
         "User Research",
         "Wireframing & Visual Design",
@@ -32,28 +31,28 @@ export default function ServicesList() {
     {
       id: 4,
       icon: "color-palette",
-      title: "Graphics Design",
+      school: "Graphics Design",
       items: ["Branding Design", "Social Media Post", "Logo Design"],
     },
     {
       id: 5,
       icon: "film",
-      title: "Video Editing",
+      school: "Video Editing",
       items: ["Motion Graphics", "Video Editing", "VFX Editor"],
     },
   ];
 
   return (
-    <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {sercices &&
-        sercices.map((service) => (
+    <ul className="grid gap-4 bg-white shadow-sm p-5 rounded-md divide-y">
+      {education &&
+        education.map((educationItem) => (
           <li>
-            <ServiceCard service={service} key={service.id} />
+            <EducationItem
+              educationItem={educationItem}
+              key={educationItem.id}
+            />
           </li>
         ))}
-      <li>
-        <AdvertCard />
-      </li>
     </ul>
   );
 }

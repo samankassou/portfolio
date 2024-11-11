@@ -2,7 +2,7 @@ import AdvertBtn from "./advertBtn";
 
 export default function AdvertCard() {
   return (
-    <div className="rounded-box bg-indigo-500 shadow-sm p-5 my-5">
+    <div className="bg-indigo-500 rounded-lg shadow-sm p-5">
       <h3 className="text-xl font-extrabold text-black text-center my-4 leading-8">
         Advertising
       </h3>
@@ -10,7 +10,7 @@ export default function AdvertCard() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <p className="text-center pt-4">
+      <p className="text-center mt-4">
         <AdvertBtn />
       </p>
     </div>

@@ -1,6 +1,6 @@
 export default function ServiceCard({ service }) {
   return (
-    <div className="rounded-box bg-white shadow-sm p-5 my-5">
+    <div className="bg-white shadow-sm p-5 rounded-md">
       <span className="inline-flex items-center justify-center text-2xl text-black p-2 rounded-md bg-gray-100">
         <ion-icon name={service.icon}></ion-icon>
       </span>
