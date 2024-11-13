@@ -6,20 +6,17 @@ export default function EducationItem({ educationItem }) {
           {educationItem.school}
         </h2>
         <p className="text-black">
-          Student &nbsp;
+          {educationItem.role} &nbsp;
           <span className="text-xs py-1 px-2 bg-indigo-100 text-indigo-700 rounded-md">
-            Jan 2016 - Dec 2021
+            {educationItem.period}
           </span>
         </p>
       </div>
       <div className="col-span-3 md:col-span-2 xl:col-span-3 my-3">
         <h3 className="text-black text-lg font-base leading-6 mb-3">
-          Certificate of training
+          {educationItem.certificate}
         </h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p>{educationItem.description}</p>
       </div>
     </div>
   );
