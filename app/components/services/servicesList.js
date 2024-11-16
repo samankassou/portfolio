@@ -47,11 +47,11 @@ export default function ServicesList() {
     <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {sercices &&
         sercices.map((service) => (
-          <li>
-            <ServiceCard service={service} key={service.id} />
+          <li key={service.id}>
+            <ServiceCard service={service} />
           </li>
         ))}
-      <li>
+      <li key="adverd-card">
         <AdvertCard />
       </li>
     </ul>

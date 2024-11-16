@@ -41,11 +41,8 @@ export default function ExperienceList() {
     <ul className="grid gap-4 bg-white shadow-sm p-5 rounded-md divide-y">
       {experience &&
         experience.map((experienceItem) => (
-          <li>
-            <ExperienceItem
-              experienceItem={experienceItem}
-              key={experienceItem.id}
-            />
+          <li key={experienceItem.id}>
+            <ExperienceItem experienceItem={experienceItem} />
           </li>
         ))}
     </ul>

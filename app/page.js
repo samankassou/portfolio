@@ -11,9 +11,9 @@ export default function Home() {
       <div className="py-6 grid grid-cols-1 max-w-6xl mx-auto">
         <Navbar />
         <HeroSection />
-        <main className="grid grid-cols-1 gap-8 p-6">
+        <main className="p-6">
           {/* Services */}
-          <section>
+          <section className="mt-10 md:mt-12">
             <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
               My Services
             </h2>
@@ -27,7 +27,7 @@ export default function Home() {
           </section>
 
           {/* Education */}
-          <section>
+          <section className="my-24 md:my-28">
             <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
               Education
             </h2>
@@ -41,7 +41,7 @@ export default function Home() {
           </section>
 
           {/* Experience */}
-          <section>
+          <section className="my-24 md:my-28">
             <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
               Experience
             </h2>
@@ -55,7 +55,7 @@ export default function Home() {
           </section>
 
           {/* Portfolio */}
-          <section>
+          <section className="my-24 md:my-28">
             <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
               Portfolio
             </h2>

@@ -2,13 +2,12 @@ import Image from "next/image";
 
 export default function ProjectItem({ project }) {
   return (
-    <div className="rounded">
-      <Image
-        src={project.coverImg}
-        width={200}
-        height={200}
-        alt={project.title}
-      />
-    </div>
+    <Image
+      className="h-auto max-w-full mx-auto rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+      src={project.coverImg}
+      width={400}
+      height={400}
+      alt={project.title}
+    />
   );
 }
