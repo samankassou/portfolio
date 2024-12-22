@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import ProjectsList from "./components/projects/projectsList";
 import ServicesList from "./components/services/servicesList";
 import TestimonialsList from "./components/testimonials/testimonialsList";
+import LatestBlogsList from "./components/latestBlogs/latestBlogsList";
 
 export default function Home() {
   return (
@@ -128,6 +129,21 @@ export default function Home() {
             </p>
             {/* Liste des testimonials */}
             <TestimonialsList />
+          </section>
+
+          {/* Latest blogs */}
+          <section className="my-24 md:my-28">
+            <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
+              Latest blogs
+            </h2>
+            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia consequat duis enim velit mollit. Lorem
+              ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet.
+            </p>
+            {/* Liste des blogs */}
+            <LatestBlogsList />
           </section>
         </main>
       </div>

@@ -8,13 +8,10 @@ export default function ExperienceItem({ experienceItem }) {
         <p className="text-xs py-1 px-2 bg-indigo-100 text-indigo-700 rounded-md inline-block mb-4">
           {experienceItem.period}
         </p>
-        <p className="text-slate-900 font-medium">
-          {experienceItem.role} <br />
-        </p>
       </div>
       <div className="col-span-3 md:col-span-2 xl:col-span-3 mb-3">
-        <h3 className="text-slate-900 text-lg font-base leading-6 mb-3">
-          {experienceItem.certificate}
+        <h3 className="text-slate-900 font-extrabold text-lg font-base leading-6 mb-3">
+          {experienceItem.role}
         </h3>
         <p>{experienceItem.description}</p>
       </div>

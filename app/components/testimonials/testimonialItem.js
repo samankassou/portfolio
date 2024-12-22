@@ -17,7 +17,7 @@ export default function TestimonialItem({ testimonial }) {
         </div>
       </div>
       <p className="p-4 md:p-6 text-slate-500">{testimonial.text}</p>
-      <div class="p-4 md:p-6 text-xs text-yellow-600 flex">
+      <div className="p-4 md:p-6 text-xs text-yellow-600 flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"

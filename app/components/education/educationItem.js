@@ -13,7 +13,7 @@ export default function EducationItem({ educationItem }) {
         </p>
       </div>
       <div className="col-span-3 md:col-span-2 xl:col-span-3 my-3">
-        <h3 className="text-slate-900 text-lg font-base leading-6 mb-3">
+        <h3 className="text-slate-900 font-extrabold text-lg font-base leading-6 mb-3">
           {educationItem.certificate}
         </h3>
         <p>{educationItem.description}</p>
