@@ -44,16 +44,14 @@ export default function ServicesList() {
   ];
 
   return (
-    <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
       {sercices &&
         sercices.map((service) => (
           <li key={service.id}>
             <ServiceCard service={service} />
           </li>
         ))}
-      <li key="adverd-card">
-        <AdvertCard />
-      </li>
+      <AdvertCard key="adverd-card" />
     </ul>
   );
 }

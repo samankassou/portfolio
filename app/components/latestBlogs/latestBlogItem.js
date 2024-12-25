@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function latestBlogItem({ blog }) {
   return (
-    <div className="w-full overflow-hidden rounded-lg bg-white text-sm text-slate-900 shadow-xl shadow-black/5 ring-1 ring-slate-700/10 transition-all hover:shadow-2xl">
+    <div className="w-full overflow-hidden rounded-lg bg-base-100 text-base-content shadow-primary/5 ring-1 ring-primary/10 transition-all hover:shadow-md">
       <div className="relative h-48 w-full">
         <Image
           src={blog.thumbnail}
@@ -14,11 +14,15 @@ export default function latestBlogItem({ blog }) {
         />
       </div>
       <div className="p-4 md:p-6">
-        <h3 className="mb-2 text-xl font-bold text-slate-900">{blog.title}</h3>
-        <p className="mb-4 text-slate-500">{blog.shortDescription}</p>
+        <h3 className="mb-2 text-lg font-semibold text-base-content">
+          {blog.title}
+        </h3>
+        <p className="mb-4 text-secondary text-opacity-60 font-normal">
+          {blog.shortDescription}
+        </p>
         <Link
           href={`/blog/${blog.slug}`}
-          className="inline-flex items-center text-blue-600 hover:text-blue-700"
+          className="inline-flex items-center text-primary hover:text-primary-700"
         >
           Read More
           <svg

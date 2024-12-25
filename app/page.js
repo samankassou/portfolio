@@ -6,6 +6,8 @@ import ProjectsList from "./components/projects/projectsList";
 import ServicesList from "./components/services/servicesList";
 import TestimonialsList from "./components/testimonials/testimonialsList";
 import LatestBlogsList from "./components/latestBlogs/latestBlogsList";
+import ContactContainer from "./components/getInTouch/contactContainer";
+import Footer from "./components/footer/footer";
 
 export default function Home() {
   return (
@@ -13,13 +15,13 @@ export default function Home() {
       <div className="py-6 grid grid-cols-1 max-w-6xl mx-auto">
         <Navbar />
         <HeroSection />
-        <main className="p-6">
+        <main className="grid grid-cols-1 gap-48 md:gap-56 p-6">
           {/* Services */}
-          <section className="mt-10 md:mt-12">
-            <h2 className="text-2xl font-bold text-slate-900 text-center mb-3 leading-8">
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               My Services
             </h2>
-            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -29,11 +31,11 @@ export default function Home() {
           </section>
 
           {/* Education */}
-          <section className="my-24 md:my-28">
-            <h2 className="text-2xl font-bold text-slate-900 text-center mb-3 leading-8">
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Education
             </h2>
-            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -43,11 +45,11 @@ export default function Home() {
           </section>
 
           {/* Experience */}
-          <section className="my-24 md:my-28">
-            <h2 className="text-2xl font-bold text-slate-900 text-center mb-3 leading-8">
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Experience
             </h2>
-            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -57,11 +59,11 @@ export default function Home() {
           </section>
 
           {/* Portfolio */}
-          <section className="my-24 md:my-28">
-            <h2 className="text-2xl font-bold text-slate-900 text-center mb-3 leading-8">
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Portfolio
             </h2>
-            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum. Minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -72,7 +74,7 @@ export default function Home() {
               <ul className="flex flex-col md:flex-row justify-center gap-4">
                 <li>
                   <a
-                    className="hover:text-indigo-500 active:text-indigo-500"
+                    className="hover:text-primary active:text-primary"
                     href="#portfolio-all-categories"
                   >
                     All categories
@@ -80,7 +82,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-indigo-500 active:text-indigo-500"
+                    className="hover:text-primary active:text-primary"
                     href="#portfolio-ui-design"
                   >
                     UI Design
@@ -88,7 +90,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-indigo-500 active:text-indigo-500"
+                    className="hover:text-primary active:text-primary"
                     href="#portfolio-web-templates"
                   >
                     Web Templates
@@ -96,7 +98,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-indigo-500 active:text-indigo-500"
+                    className="hover:text-primary active:text-primary"
                     href="#portfolio-logos"
                   >
                     Logos
@@ -104,7 +106,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-indigo-500 active:text-indigo-500"
+                    className="hover:text-primary active:text-primary"
                     href="#portfolio-branding"
                   >
                     Branding
@@ -117,11 +119,11 @@ export default function Home() {
           </section>
 
           {/* Testimonials */}
-          <section className="my-24 md:my-28">
-            <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Testimonials
             </h2>
-            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -132,11 +134,11 @@ export default function Home() {
           </section>
 
           {/* Latest blogs */}
-          <section className="my-24 md:my-28">
-            <h2 className="text-2xl font-bold text-black text-center mb-3 leading-8">
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Latest blogs
             </h2>
-            <p className="text-center text-sm text-slate-500 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -145,7 +147,23 @@ export default function Home() {
             {/* Liste des blogs */}
             <LatestBlogsList />
           </section>
+
+          {/* Get in touch */}
+          <section>
+            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
+              Get in touch
+            </h2>
+            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia consequat duis enim velit mollit. Lorem
+              ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet.
+            </p>
+            {/* Liste des blogs */}
+            <ContactContainer />
+          </section>
         </main>
+        <Footer />
       </div>
     </>
   );

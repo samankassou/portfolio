@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function TestimonialItem({ testimonial }) {
   return (
-    <div className="w-full rounded-lg bg-white text-sm text-slate-900 shadow-xl shadow-black/5 ring-1 ring-slate-700/10">
-      <div className="flex items-center p-4 md:px-6 pb-0">
+    <div className="w-full grid grid-cols-1 gap-6 rounded-xl bg-base-100 p-6 shadow-black/5 ring-1 ring-slate-700/10">
+      <div className="flex items-center gap-4">
         <Image
           className="size-10 flex-none rounded-full"
           src={testimonial.authorProfilePic}
@@ -11,13 +11,19 @@ export default function TestimonialItem({ testimonial }) {
           height={400}
           alt={testimonial.authorName}
         />
-        <div className="ml-4 flex-auto">
-          <div className="font-medium">{testimonial.authorName}</div>
-          <div className="text-slate-500">{testimonial.authorRole}</div>
+        <div className="flex-auto">
+          <div className="font-medium text-base-content">
+            {testimonial.authorName}
+          </div>
+          <div className="text-secondary text-opacity-60 text-sm">
+            {testimonial.authorRole}
+          </div>
         </div>
       </div>
-      <p className="p-4 md:p-6 text-slate-500">{testimonial.text}</p>
-      <div className="p-4 md:p-6 text-xs text-yellow-600 flex">
+      <p className="font-normal text-base text-secondary text-opacity-60">
+        {testimonial.text}
+      </p>
+      <div className="text-xs text-primary flex gap-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
