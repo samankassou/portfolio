@@ -13,7 +13,14 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={inter.className + " bg-base"}>
         {children}
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
       </body>
     </html>
   );

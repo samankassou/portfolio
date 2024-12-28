@@ -13,9 +13,9 @@ export default function latestBlogItem({ blog }) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <div className="grid grid-cols-1 gap-4 p-4 md:p-6">
-        <div>
-          <h3 className="text-lg font-semibold text-base-content">
+      <div className="grid grid-cols-1 gap-4 p-6">
+        <div className="mb-4">
+          <h3 className="text-lg font-semibold text-base-content mb-2">
             {blog.title}
           </h3>
           <p className="text-secondary text-opacity-60 font-normal">
@@ -24,23 +24,10 @@ export default function latestBlogItem({ blog }) {
         </div>
         <Link
           href={`/blog/${blog.slug}`}
-          className="inline-flex items-center text-sm text-primary font-medium hover:text-primary-700"
+          className="inline-flex items-center text-sm gap-3 text-primary font-medium hover:text-primary-700"
         >
-          Read More
-          <svg
-            className="ml-1 h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+          <span>Read more</span>
+          <ion-icon name="arrow-forward"></ion-icon>
         </Link>
       </div>
     </div>

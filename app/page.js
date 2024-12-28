@@ -135,10 +135,10 @@ export default function Home() {
 
           {/* Latest blogs */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
+            <h2 className="text-2xl font-bold text-base-content text-center mb-4">
               Latest blogs
             </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary text-opacity-60 mb-8">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
