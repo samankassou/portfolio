@@ -6,14 +6,14 @@ export default function TestimonialItem({ testimonial }) {
     <div className="grid grid-cols-1 gap-6 rounded-xl bg-base-100 p-6">
       <div className="flex items-center gap-4">
         <Image
-          className="size-10 flex-none rounded-full"
+          className="size-16 flex-none rounded-full"
           src={testimonial.authorProfilePic}
           width={400}
           height={400}
           alt={testimonial.authorName}
         />
         <div className="flex-auto">
-          <div className="font-medium text-base-content">
+          <div className="text-lg font-semibold text-base-content">
             {testimonial.authorName}
           </div>
           <div className="text-secondary text-opacity-60 text-sm">

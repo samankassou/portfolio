@@ -15,7 +15,7 @@ export default function Home() {
       <div className="py-6 grid grid-cols-1 max-w-6xl mx-auto">
         <Navbar />
         <HeroSection />
-        <main className="grid grid-cols-1 gap-48 md:gap-56 p-6">
+        <main className="grid grid-cols-1 gap-16 md:gap-48 lg:gap-56 p-6">
           {/* Services */}
           <section>
             <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
@@ -120,15 +120,16 @@ export default function Home() {
 
           {/* Testimonials */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
-              Testimonials
-            </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit. Lorem
-              ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet.
-            </p>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-base-content text-center mb-4">
+                Testimonials
+              </h2>
+              <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit. lorem
+                ipsum
+              </p>
+            </div>
             {/* Liste des testimonials */}
             <TestimonialsList />
           </section>
