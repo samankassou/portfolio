@@ -21,7 +21,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               My Services
             </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -35,7 +35,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Education
             </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -49,7 +49,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Experience
             </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -60,21 +60,24 @@ export default function Home() {
 
           {/* Portfolio */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
-              Portfolio
-            </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit. lorem
-              ipsum. Minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet.
-            </p>
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-base-content text-center mb-4 leading-8">
+                Portfolio
+              </h2>
+              <p className="text-center text-sm text-secondary/60 max-w-md mx-auto">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit. lorem
+                ipsum. Minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet.
+              </p>
+            </div>
             {/* Portfolio Nav */}
-            <nav className="mb-10">
-              <ul className="flex flex-col md:flex-row justify-center gap-4">
+            <nav className="mb-8">
+              <ul className="flex flex-col items-center md:flex-row justify-center text-secondary/60 font-medium gap-4">
                 <li>
                   <a
-                    className="hover:text-primary active:text-primary"
+                    id="portfolio-all-categories"
+                    className="hover:text-primary active:text-primary transition-all duration-300"
                     href="#portfolio-all-categories"
                   >
                     All categories
@@ -82,7 +85,8 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-primary active:text-primary"
+                    id="portfolio-ui-design"
+                    className="hover:text-primary active:text-primary transition-all duration-300"
                     href="#portfolio-ui-design"
                   >
                     UI Design
@@ -90,7 +94,8 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-primary active:text-primary"
+                    id="portfolio-web-templates"
+                    className="hover:text-primary active:text-primary transition-all duration-300"
                     href="#portfolio-web-templates"
                   >
                     Web Templates
@@ -98,7 +103,8 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-primary active:text-primary"
+                    id="portfolio-logos"
+                    className="hover:text-primary active:text-primary transition-all duration-300"
                     href="#portfolio-logos"
                   >
                     Logos
@@ -106,7 +112,8 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-primary active:text-primary"
+                    id="portfolio-branding"
+                    className="hover:text-primary active:text-primary transition-all duration-300"
                     href="#portfolio-branding"
                   >
                     Branding
@@ -124,7 +131,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-base-content text-center mb-4">
                 Testimonials
               </h2>
-              <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+              <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
@@ -139,7 +146,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-base-content text-center mb-4">
               Latest blogs
             </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 mb-8">
+            <p className="text-center text-sm text-secondary/60 mb-8">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -154,7 +161,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
               Get in touch
             </h2>
-            <p className="text-center text-sm text-secondary text-opacity-60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do

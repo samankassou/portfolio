@@ -6,7 +6,7 @@ export default function AdvertBtn() {
     >
       <span className="text-primary uppercase text-sm">Order now</span>
       <span className="bg-base-content flex items-center justify-center text-primary">
-        <ion-icon name="arrow-round-forward"></ion-icon>
+        <ion-icon name="arrow-forward"></ion-icon>
       </span>
     </a>
   );

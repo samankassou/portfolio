@@ -1,7 +1,7 @@
 export default function Btn({
   href = "#",
   label = "Let’s Talk",
-  iconName = "arrow-round-forward",
+  iconName = "arrow-forward",
   onClick,
 }) {
   return (
