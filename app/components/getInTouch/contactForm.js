@@ -1,10 +1,10 @@
 export default function ContactForm() {
   return (
-    <form className="bg-white shadow-sm p-5 rounded-md">
-      <h3 className="text-xl font-bold text-left my-4 text-base-content">
+    <form className="bg-white shadow-sm p-6 rounded-xl">
+      <h3 className="text-xl font-bold text-left mb-6 text-base-content">
         Leave a message
       </h3>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
           <label className="block mb-2 text-sm font-normal leading-5 text-base-content">
             Name
@@ -32,14 +32,15 @@ export default function ContactForm() {
             rows="5"
           ></textarea>
         </div>
+        <div>
+          <button
+            type="submit"
+            className="bg-primary text-base-content font-medium leading-6 rounded-lg py-3 px-5"
+          >
+            Send Message
+          </button>
+        </div>
       </div>
-
-      <button
-        type="submit"
-        className="bg-primary p-1 mt-4 text-base-content font-medium leading-6 rounded-lg py-3 px-5"
-      >
-        Send Message
-      </button>
     </form>
   );
 }
