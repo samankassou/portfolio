@@ -1,9 +1,9 @@
 import Image from "next/image";
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center rounded-full bg-base-100 py-3 pr-6 pl-3 mx-4 mb-16">
+    <nav className="mx-4 mb-16 flex items-center justify-between rounded-full bg-base-100 py-3 pl-3 pr-6 xl:hidden">
       <Image
-        className="rounded-full w-10 h-10"
+        className="h-10 w-10 rounded-full"
         src="/img/profile_pic_sm.jpg"
         width="0"
         height="0"
@@ -11,7 +11,7 @@ export default function Navbar() {
         alt="Picture of the author"
       />
       <ul className="flex justify-between gap-6">
-        <li className="text-primary text-2xl">
+        <li className="text-2xl text-primary">
           <ion-icon name="color-fill-outline"></ion-icon>
         </li>
         <li className="text-2xl">

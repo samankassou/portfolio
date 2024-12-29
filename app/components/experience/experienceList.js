@@ -38,7 +38,7 @@ export default function ExperienceList() {
   ];
 
   return (
-    <ul className="grid gap-4 bg-white shadow-sm p-5 rounded-md divide-y">
+    <ul className="grid grid-cols-1 gap-8 divide-y rounded-xl bg-white p-6 shadow-sm md:gap-10 md:p-10">
       {experience &&
         experience.map((experienceItem) => (
           <li key={experienceItem.id}>

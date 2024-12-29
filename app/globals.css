@@ -13,3 +13,9 @@
     -ms-overflow-style: none; /* IE and Edge */
   }
 }
+
+@layer components {
+  .element:not(:first-child) {
+    @apply mt-0;
+  }
+}
