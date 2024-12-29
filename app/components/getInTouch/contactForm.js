@@ -26,6 +26,7 @@ export default function ContactForm() {
           </label>
           <input
             id="email"
+            type="email"
             className="w-full py-3 px-4 bg-base-200 text-base-content text-sm rounded-lg focus:ring-primary focus:border-primary block"
           />
         </div>

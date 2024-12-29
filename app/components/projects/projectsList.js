@@ -53,7 +53,7 @@ export default function ProjectsList() {
   ];
 
   return (
-    <ul className="grid grid-cols-2 gap-3 xl:grid-cols-3">
+    <ul className="grid grid-cols-2 gap-3 md:gap-6 xl:grid-cols-3">
       {projects &&
         projects.map((project) => (
           <li key={project.id}>

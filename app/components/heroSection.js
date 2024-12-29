@@ -3,29 +3,29 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="rounded-xl bg-base-100 overflow-hidden mx-4 mb-16">
-      <div className="grid md:grid-cols-2 items-center">
-        <div className="p-8">
-          <h1 className="text-3xl text-center font-semibold text-base-content mb-4">
+    <div className="mx-4 mb-16 overflow-hidden rounded-xl bg-base-100 md:mb-24">
+      <div className="grid items-center md:grid-cols-2">
+        <div className="p-8 sm:p-10">
+          <h1 className="mb-4 text-center text-3xl font-semibold text-base-content md:text-left">
             I design products that delight and inspire people.
           </h1>
-          <p className="font-normal text-center text-secondary/60 mb-6 max-w-md">
+          <p className="mb-6 max-w-md text-center font-normal text-secondary/60 md:text-left">
             Hi! I'm Foulla, A Product Designer and Visual Developer in SF. I
             specialize in UI/UX Design, Responsive Web Design, and Visual
             Development.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="flex flex-wrap justify-center gap-4 md:justify-start">
             <Btn href="#" variant="primary" label="Let’s Talk"></Btn>
           </div>
         </div>
-        <div className="hidden md:block relative h-[500px]">
+        <div className="relative hidden h-[368px] pt-4 md:block">
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+            src="/img/emerging-hero-real.webp"
             alt="Portrait of a smiling professional"
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
             priority
+            className="object-contain"
+            sizes="(min-width: 1024px) 368px, 100vw"
           />
         </div>
       </div>

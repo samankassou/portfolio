@@ -12,16 +12,16 @@ import Footer from "./components/footer/footer";
 export default function Home() {
   return (
     <>
-      <div className="py-6 grid grid-cols-1 max-w-6xl mx-auto">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 py-5 sm:p-8">
         <Navbar />
         <HeroSection />
-        <main className="grid grid-cols-1 gap-16 md:gap-48 lg:gap-56 p-6">
+        <main className="grid grid-cols-1 gap-16 p-6 md:gap-24 lg:gap-56">
           {/* Services */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
+            <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl">
               My Services
             </h2>
-            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -32,10 +32,10 @@ export default function Home() {
 
           {/* Education */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
+            <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl">
               Education
             </h2>
-            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -46,10 +46,10 @@ export default function Home() {
 
           {/* Experience */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
+            <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl">
               Experience
             </h2>
-            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. lorem
               ipsum
@@ -61,10 +61,10 @@ export default function Home() {
           {/* Portfolio */}
           <section>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-base-content text-center mb-4 leading-8">
+              <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl">
                 Portfolio
               </h2>
-              <p className="text-center text-sm text-secondary/60 max-w-md mx-auto">
+              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum. Minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -72,12 +72,12 @@ export default function Home() {
               </p>
             </div>
             {/* Portfolio Nav */}
-            <nav className="mb-8">
-              <ul className="flex flex-col items-center md:flex-row justify-center text-secondary/60 font-medium gap-4">
+            <nav className="mb-8 md:mb-12">
+              <ul className="flex flex-col items-center justify-center gap-4 font-medium text-secondary/60 md:flex-row md:gap-12">
                 <li>
                   <a
                     id="portfolio-all-categories"
-                    className="hover:text-primary active:text-primary transition-all duration-300"
+                    className="transition-all duration-300 hover:text-primary active:text-primary"
                     href="#portfolio-all-categories"
                   >
                     All categories
@@ -86,7 +86,7 @@ export default function Home() {
                 <li>
                   <a
                     id="portfolio-ui-design"
-                    className="hover:text-primary active:text-primary transition-all duration-300"
+                    className="transition-all duration-300 hover:text-primary active:text-primary"
                     href="#portfolio-ui-design"
                   >
                     UI Design
@@ -95,7 +95,7 @@ export default function Home() {
                 <li>
                   <a
                     id="portfolio-web-templates"
-                    className="hover:text-primary active:text-primary transition-all duration-300"
+                    className="transition-all duration-300 hover:text-primary active:text-primary"
                     href="#portfolio-web-templates"
                   >
                     Web Templates
@@ -104,7 +104,7 @@ export default function Home() {
                 <li>
                   <a
                     id="portfolio-logos"
-                    className="hover:text-primary active:text-primary transition-all duration-300"
+                    className="transition-all duration-300 hover:text-primary active:text-primary"
                     href="#portfolio-logos"
                   >
                     Logos
@@ -113,7 +113,7 @@ export default function Home() {
                 <li>
                   <a
                     id="portfolio-branding"
-                    className="hover:text-primary active:text-primary transition-all duration-300"
+                    className="transition-all duration-300 hover:text-primary active:text-primary"
                     href="#portfolio-branding"
                   >
                     Branding
@@ -128,10 +128,10 @@ export default function Home() {
           {/* Testimonials */}
           <section>
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-base-content text-center mb-4">
+              <h2 className="mb-3 text-center text-2xl font-bold text-base-content md:mb-4 md:text-3xl">
                 Testimonials
               </h2>
-              <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
+              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm text-secondary/60 md:mb-12">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
@@ -143,10 +143,10 @@ export default function Home() {
 
           {/* Latest blogs */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-4">
+            <h2 className="mb-3 text-center text-2xl font-bold text-base-content md:mb-4 md:text-3xl">
               Latest blogs
             </h2>
-            <p className="text-center text-sm text-secondary/60 mb-8">
+            <p className="mx-auto mb-10 max-w-[438px] text-center text-sm text-secondary/60 md:mb-12">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -158,10 +158,10 @@ export default function Home() {
 
           {/* Get in touch */}
           <section>
-            <h2 className="text-2xl font-bold text-base-content text-center mb-3 leading-8">
+            <h2 className="mb-3 text-center text-2xl font-bold text-base-content md:mb-4 md:text-3xl">
               Get in touch
             </h2>
-            <p className="text-center text-sm text-secondary/60 leading-6 mb-10 max-w-md mx-auto">
+            <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
               amet sint. Velit officia consequat duis enim velit mollit. Lorem
               ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
