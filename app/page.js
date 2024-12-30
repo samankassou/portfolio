@@ -14,9 +14,9 @@ import RightSideMenu from "./components/rightSideMenu";
 export default function Home() {
   return (
     <>
-      <div className="mx-auto grid grid-cols-1 py-5 sm:p-8 lg:max-w-3xl xl:max-w-full xl:grid-cols-12 xl:justify-center xl:gap-8">
+      <div className="mx-auto flex py-5 sm:p-8 lg:max-w-3xl xl:max-w-7xl">
         <LeftSideMenu />
-        <div className="col-span-9">
+        <div>
           <Navbar />
           <HeroSection />
           <main className="grid grid-cols-1 gap-16 p-6 md:gap-24 xl:gap-56">

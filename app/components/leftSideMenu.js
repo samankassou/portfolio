@@ -1,6 +1,6 @@
 export default function LeftSideMenu() {
   return (
-    <div className="col-span-2 hidden grid-cols-1 divide-x-2 rounded-xl bg-base-100 p-6 xl:grid">
+    <div className="hidden h-max w-8/12 grid-cols-1 divide-x-2 rounded-xl bg-base-100 p-6 xl:grid">
       <div>
         <div>
           <div className="flex justify-between">
