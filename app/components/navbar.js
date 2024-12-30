@@ -11,10 +11,10 @@ export default function Navbar() {
         alt="Picture of the author"
       />
       <ul className="flex justify-between gap-6">
-        <li className="text-2xl text-primary">
+        <li key="one" className="text-2xl text-primary">
           <ion-icon name="color-fill-outline"></ion-icon>
         </li>
-        <li className="text-2xl">
+        <li key="two" className="text-2xl">
           <ion-icon name="menu"></ion-icon>
         </li>
       </ul>

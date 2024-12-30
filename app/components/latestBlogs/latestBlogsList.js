@@ -30,7 +30,7 @@ export default function latestBlogsList() {
       {blogs &&
         blogs.map((blog) => (
           <li className="min-w-72 snap-center" key={blog.id}>
-            <TestimonialItem blog={blog} />
+            <TestimonialItem key={blog.id} blog={blog} />
           </li>
         ))}
     </ul>

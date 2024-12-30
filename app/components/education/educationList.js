@@ -36,7 +36,10 @@ export default function EducationList() {
       {education &&
         education.map((educationItem) => (
           <li key={educationItem.id}>
-            <EducationItem educationItem={educationItem} />
+            <EducationItem
+              key={educationItem.id}
+              educationItem={educationItem}
+            />
           </li>
         ))}
     </ul>

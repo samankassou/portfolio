@@ -57,7 +57,7 @@ export default function ProjectsList() {
       {projects &&
         projects.map((project) => (
           <li key={project.id}>
-            <ProjectItem project={project} />
+            <ProjectItem key={project.id} project={project} />
           </li>
         ))}
     </ul>

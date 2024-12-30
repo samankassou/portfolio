@@ -78,7 +78,7 @@ export default function Home() {
               {/* Portfolio Nav */}
               <nav className="mb-8 md:mb-12">
                 <ul className="flex flex-col items-center justify-center gap-4 font-medium text-secondary/60 md:flex-row md:gap-12">
-                  <li>
+                  <li key="portfolio-all-categories">
                     <a
                       id="portfolio-all-categories"
                       className="transition-all duration-300 hover:text-primary active:text-primary"
@@ -87,7 +87,7 @@ export default function Home() {
                       All categories
                     </a>
                   </li>
-                  <li>
+                  <li key="portfolio-ui-design">
                     <a
                       id="portfolio-ui-design"
                       className="transition-all duration-300 hover:text-primary active:text-primary"
@@ -96,7 +96,7 @@ export default function Home() {
                       UI Design
                     </a>
                   </li>
-                  <li>
+                  <li key="portfolio-web-templates">
                     <a
                       id="portfolio-web-templates"
                       className="transition-all duration-300 hover:text-primary active:text-primary"
@@ -105,7 +105,7 @@ export default function Home() {
                       Web Templates
                     </a>
                   </li>
-                  <li>
+                  <li key="portfolio-logos">
                     <a
                       id="portfolio-logos"
                       className="transition-all duration-300 hover:text-primary active:text-primary"
@@ -114,7 +114,7 @@ export default function Home() {
                       Logos
                     </a>
                   </li>
-                  <li>
+                  <li key="portfolio-branding">
                     <a
                       id="portfolio-branding"
                       className="transition-all duration-300 hover:text-primary active:text-primary"

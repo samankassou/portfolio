@@ -39,7 +39,7 @@ export default function TestimonialsList() {
             className="min-w-[280px] snap-center md:min-w-[308px]"
             key={testimonial.id}
           >
-            <TestimonialItem testimonial={testimonial} />
+            <TestimonialItem key={testimonial.id} testimonial={testimonial} />
           </li>
         ))}
     </ul>

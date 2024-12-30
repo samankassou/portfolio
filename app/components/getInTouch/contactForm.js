@@ -4,11 +4,11 @@ export default function ContactForm() {
       <h3 className="mb-6 text-left text-xl font-bold text-base-content">
         Leave a message
       </h3>
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        <div className="lg:col-span-1">
+      <div className="grid grid-cols-2 gap-5">
+        <div className="col-span-2 lg:col-span-1">
           <label
             htmlFor="name"
-            className="mb-2 block text-sm font-normal leading-5 text-base-content"
+            className="mb-2 block text-sm font-normal text-base-content"
           >
             Name
           </label>
@@ -17,10 +17,10 @@ export default function ContactForm() {
             className="block w-full rounded-lg bg-base-200 px-4 py-3 text-sm text-base-content focus:border-primary focus:ring-primary"
           />
         </div>
-        <div className="lg:col-span-1">
+        <div className="col-span-2 lg:col-span-1">
           <label
             htmlFor="email"
-            className="block w-full rounded-lg bg-base-200 px-4 py-3 text-sm text-base-content focus:border-primary focus:ring-primary"
+            className="mb-2 block text-sm font-normal text-base-content"
           >
             Email
           </label>

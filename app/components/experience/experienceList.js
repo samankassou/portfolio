@@ -42,7 +42,10 @@ export default function ExperienceList() {
       {experience &&
         experience.map((experienceItem) => (
           <li key={experienceItem.id}>
-            <ExperienceItem experienceItem={experienceItem} />
+            <ExperienceItem
+              key={experienceItem.id}
+              experienceItem={experienceItem}
+            />
           </li>
         ))}
     </ul>
