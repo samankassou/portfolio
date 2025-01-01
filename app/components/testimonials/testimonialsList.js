@@ -32,11 +32,11 @@ export default function TestimonialsList() {
   ];
 
   return (
-    <ul className="scrollbar-hidden snap-x-proximity -m-4 flex gap-4 overflow-x-auto scroll-smooth p-4 xl:grid xl:grid-cols-3">
+    <ul className="scrollbar-hidden snap-x-proximity -m-4 flex gap-4 overflow-x-auto scroll-smooth p-4 xl:gap-6 xl:overflow-x-scroll">
       {testimonials &&
         testimonials.map((testimonial) => (
           <li
-            className="min-w-[280px] snap-center md:min-w-[308px]"
+            className="min-w-[280px] snap-center md:min-w-[308px] xl:min-w-[324px]"
             key={testimonial.id}
           >
             <TestimonialItem key={testimonial.id} testimonial={testimonial} />

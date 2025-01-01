@@ -26,10 +26,10 @@ export default function latestBlogsList() {
   ];
 
   return (
-    <ul className="scrollbar-hidden snap-x-proximity -m-4 flex gap-4 overflow-x-auto scroll-smooth p-4 xl:grid xl:grid-cols-2 2xl:grid-cols-3">
+    <ul className="scrollbar-hidden snap-x-proximity -m-4 flex gap-4 overflow-x-auto scroll-smooth p-4">
       {blogs &&
         blogs.map((blog) => (
-          <li className="min-w-72 snap-center" key={blog.id}>
+          <li className="min-w-72 max-w-xs snap-center" key={blog.id}>
             <TestimonialItem key={blog.id} blog={blog} />
           </li>
         ))}
