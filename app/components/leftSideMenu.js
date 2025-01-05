@@ -1,51 +1,63 @@
 export default function LeftSideMenu() {
   return (
-    <div className="hidden h-max w-8/12 divide-y-2 rounded-xl bg-base-100 p-6 xl:grid xl:grid-cols-1 xl:gap-6">
+    <div className="hidden h-max w-8/12 divide-y-2 rounded-xl bg-base-100 p-6 xl:grid xl:grid-cols-1 xl:gap-6 dark:bg-[#1C1C1C]">
       <div className="grid grid-cols-1 gap-3">
         <div>
           <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content">Country:</p>
-            <p className="text-sm font-normal text-secondary text-opacity-60">
+            <p className="text-sm font-normal text-base-content dark:text-base-100">
+              Country:
+            </p>
+            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
               Cameroon
             </p>
           </div>
         </div>
         <div>
           <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content">City:</p>
-            <p className="text-sm font-normal text-secondary text-opacity-60">
+            <p className="text-sm font-normal text-base-content dark:text-base-100">
+              City:
+            </p>
+            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
               Douala
             </p>
           </div>
         </div>
         <div>
           <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content">Street:</p>
-            <p className="text-sm font-normal text-secondary text-opacity-60">
+            <p className="text-sm font-normal text-base-content dark:text-base-100">
+              Street:
+            </p>
+            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
               Ange Raphaël
             </p>
           </div>
         </div>
         <div>
           <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content">Country:</p>
-            <p className="text-sm font-normal text-secondary text-opacity-60">
+            <p className="text-sm font-normal text-base-content dark:text-base-100">
+              Country:
+            </p>
+            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
               Cameroon
             </p>
           </div>
         </div>
         <div>
           <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content">City:</p>
-            <p className="text-sm font-normal text-secondary text-opacity-60">
+            <p className="text-sm font-normal text-base-content dark:text-base-100">
+              City:
+            </p>
+            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
               Douala
             </p>
           </div>
         </div>
         <div>
           <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content">Street:</p>
-            <p className="text-sm font-normal text-secondary text-opacity-60">
+            <p className="text-sm font-normal text-base-content dark:text-base-100">
+              Street:
+            </p>
+            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
               Ange Raphaël
             </p>
           </div>

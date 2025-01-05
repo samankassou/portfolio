@@ -3,7 +3,7 @@ import TestimonialRating from "./testimonialRating";
 
 export default function TestimonialItem({ testimonial }) {
   return (
-    <div className="grid grid-cols-1 gap-6 rounded-xl bg-base-100 p-6">
+    <div className="grid grid-cols-1 gap-6 rounded-xl bg-base-100 p-6 dark:bg-[#1C1C1C]">
       <div className="flex items-center gap-4">
         <Image
           className="size-16 flex-none rounded-full"
@@ -13,15 +13,15 @@ export default function TestimonialItem({ testimonial }) {
           alt={testimonial.authorName}
         />
         <div className="flex-auto">
-          <div className="text-lg font-semibold text-base-content">
+          <div className="text-lg font-semibold text-base-content dark:text-base-100">
             {testimonial.authorName}
           </div>
-          <div className="text-sm text-secondary/60 text-opacity-60">
+          <div className="text-sm text-secondary/60 text-opacity-60 dark:text-base-400">
             {testimonial.authorRole}
           </div>
         </div>
       </div>
-      <p className="text-base font-normal text-secondary/60">
+      <p className="text-base font-normal text-secondary/60 dark:text-base-400">
         {testimonial.text}
       </p>
       <div className="flex gap-1 text-xs text-primary">

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function latestBlogItem({ blog }) {
   return (
-    <div className="overflow-hidden rounded-lg bg-base-100 text-base-content transition-all hover:shadow-md">
+    <div className="overflow-hidden rounded-lg bg-base-100 text-base-content transition-all hover:shadow-md dark:bg-[#1C1C1C] dark:text-base-100">
       <div className="relative h-52 w-full">
         <Image
           src={blog.thumbnail}
@@ -15,10 +15,10 @@ export default function latestBlogItem({ blog }) {
       </div>
       <div className="grid grid-cols-1 gap-4 p-6">
         <div className="mb-4">
-          <h3 className="mb-2 text-lg font-semibold text-base-content">
+          <h3 className="mb-2 text-lg font-semibold text-base-content dark:text-base-100">
             {blog.title}
           </h3>
-          <p className="font-normal text-secondary text-opacity-60">
+          <p className="font-normal text-secondary text-opacity-60 dark:text-base-400">
             {blog.shortDescription}
           </p>
         </div>

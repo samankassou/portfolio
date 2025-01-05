@@ -3,13 +3,13 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="mx-4 mb-16 overflow-hidden rounded-xl bg-base-100 md:mb-24">
+    <div className="mx-4 mb-16 overflow-hidden rounded-xl bg-base-100 md:mb-24 dark:bg-[#1C1C1C]">
       <div className="grid items-center md:grid-cols-2">
         <div className="p-8 sm:p-10">
-          <h1 className="mb-4 text-center text-3xl font-semibold text-base-content md:text-left">
+          <h1 className="mb-4 text-center text-3xl font-semibold text-base-content md:text-left dark:text-base-100">
             I design products that delight and inspire people.
           </h1>
-          <p className="mb-6 max-w-md text-center font-normal text-secondary/60 md:text-left">
+          <p className="mb-6 max-w-md text-center font-normal text-secondary/60 md:text-left dark:text-base-100 dark:text-base-400">
             Hi! I'm Foulla, A Product Designer and Visual Developer in SF. I
             specialize in UI/UX Design, Responsive Web Design, and Visual
             Development.
