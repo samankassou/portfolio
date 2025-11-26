@@ -1,11 +1,17 @@
-export default function AdvertBtn() {
+export default function AdvertBtn({
+  text = "Order now",
+  href = "#",
+  bgColor = "bg-secondary",
+  textColor = "text-white",
+  hoverBg = "hover:bg-secondary/90",
+}) {
   return (
     <a
-      href="#"
-      className="bg-base-content py-2.5 px-4 rounded-lg inline-flex justify-between items-center gap-2"
+      href={href}
+      className={`inline-flex items-center gap-2 rounded-lg ${bgColor} px-6 py-3 text-sm font-semibold uppercase ${textColor} transition-all ${hoverBg}`}
     >
-      <span className="text-primary uppercase text-sm">Order now</span>
-      <span className="bg-base-content flex items-center justify-center text-primary">
+      <span>{text}</span>
+      <span className="flex items-center justify-center">
         <ion-icon name="arrow-forward"></ion-icon>
       </span>
     </a>
