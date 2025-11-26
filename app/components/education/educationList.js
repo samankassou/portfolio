@@ -32,7 +32,7 @@ export default function EducationList() {
   ];
 
   return (
-    <ul className="grid grid-cols-1 gap-8 divide-y rounded-xl bg-white p-6 shadow-sm md:gap-10 md:p-10 dark:bg-[#1C1C1C]">
+    <ul className="grid grid-cols-1 gap-6 md:gap-8">
       {education &&
         education.map((educationItem) => (
           <li key={educationItem.id}>
