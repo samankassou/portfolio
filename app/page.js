@@ -14,12 +14,12 @@ import RightSideMenu from "./components/rightSideMenu";
 export default function Home() {
   return (
     <>
-      <div className="mx-auto flex py-5 sm:p-8 lg:max-w-3xl xl:max-w-7xl">
+      <div className="mx-auto flex gap-8 px-0 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
         <LeftSideMenu />
-        <div>
+        <div className="flex-1 min-w-0">
           <Navbar />
           <HeroSection />
-          <main className="grid grid-cols-1 gap-16 p-6 md:gap-24 xl:gap-56">
+          <main className="grid grid-cols-1 gap-16 px-4 md:px-6 md:gap-24 xl:gap-56">
             {/* Services */}
             <section>
               <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl dark:text-base-100">
