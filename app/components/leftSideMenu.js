@@ -1,80 +1,67 @@
+import ProfileSection from "./leftSideMenu/profileSection";
+import SocialLinks from "./leftSideMenu/socialLinks";
+import ContactInfo from "./leftSideMenu/contactInfo";
+import MajorSkills from "./leftSideMenu/majorSkills";
+import ExtraSkills from "./leftSideMenu/extraSkills";
+import CVDownloadButton from "./leftSideMenu/cvDownloadButton";
+
 export default function LeftSideMenu() {
+  const profileData = {
+    name: "Foulla",
+    title: "Product Developer",
+    photo: "/img/profile_pic_sm.jpg",
+    badge: true,
+  };
+
+  const socialLinks = [
+    { id: 1, icon: "logo-facebook", url: "#", label: "Facebook" },
+    { id: 2, icon: "logo-twitter", url: "#", label: "Twitter" },
+    { id: 3, icon: "logo-instagram", url: "#", label: "Instagram" },
+    { id: 4, icon: "logo-linkedin", url: "#", label: "LinkedIn" },
+    { id: 5, icon: "logo-youtube", url: "#", label: "YouTube" },
+    { id: 6, icon: "logo-github", url: "#", label: "GitHub" },
+  ];
+
+  const contactInfo = [
+    { id: 1, label: "Email", value: "info@example.com" },
+    { id: 2, label: "Phone", value: "+1 234 567 890" },
+    { id: 3, label: "Residence", value: "Your Country" },
+    { id: 4, label: "City", value: "Your City" },
+    { id: 5, label: "Age", value: "24 Years" },
+    { id: 6, label: "Freelance", value: "Available", highlight: true },
+    { id: 7, label: "Language", value: "French, English" },
+  ];
+
+  const majorSkills = [
+    { id: 1, name: "Html", percentage: 90 },
+    { id: 2, name: "CSS", percentage: 95 },
+    { id: 3, name: "UI Design", percentage: 95 },
+    { id: 4, name: "JavaScript", percentage: 70 },
+    { id: 5, name: "WordPress", percentage: 80 },
+  ];
+
+  const extraSkills = [
+    { id: 1, name: "Bootstrap" },
+    { id: 2, name: "Materialize" },
+    { id: 3, name: "Sass" },
+    { id: 4, name: "Stylus" },
+    { id: 5, name: "Less" },
+    { id: 6, name: "Gulp" },
+    { id: 7, name: "Grunt" },
+    { id: 8, name: "Git Knowledge" },
+    { id: 9, name: "Webpack" },
+  ];
+
   return (
-    <div className="hidden h-max w-8/12 divide-y-2 rounded-xl bg-base-100 p-6 xl:grid xl:grid-cols-1 xl:gap-6 dark:bg-[#1C1C1C]">
-      <div className="grid grid-cols-1 gap-3">
-        <div>
-          <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content dark:text-base-100">
-              Country:
-            </p>
-            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-              Cameroon
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content dark:text-base-100">
-              City:
-            </p>
-            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-              Douala
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content dark:text-base-100">
-              Street:
-            </p>
-            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-              Ange Raphaël
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content dark:text-base-100">
-              Country:
-            </p>
-            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-              Cameroon
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content dark:text-base-100">
-              City:
-            </p>
-            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-              Douala
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="flex justify-between">
-            <p className="text-sm font-normal text-base-content dark:text-base-100">
-              Street:
-            </p>
-            <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-              Ange Raphaël
-            </p>
-          </div>
-        </div>
+    <aside className="hidden w-[280px] xl:block">
+      <div className="sticky top-8 space-y-0 divide-y divide-secondary/10 overflow-hidden rounded-2xl bg-base-100 dark:divide-base-800 dark:bg-[#1C1C1C]">
+        <ProfileSection data={profileData} />
+        <SocialLinks links={socialLinks} />
+        <ContactInfo contacts={contactInfo} />
+        <MajorSkills skills={majorSkills} />
+        <ExtraSkills skills={extraSkills} />
+        <CVDownloadButton />
       </div>
-      <div>
-        <h2>Major Skill</h2>
-      </div>
-      <div>
-        <h2>Extra Skill</h2>
-      </div>
-      <div>
-        {/* button download cv */}
-        <a className="flex items-center justify-between rounded-lg bg-primary px-5 py-3 text-base font-medium text-base-content">
-          Download My CV <ion-icon name="cloud-download-outline"></ion-icon>
-        </a>
-      </div>
-    </div>
+    </aside>
   );
 }
