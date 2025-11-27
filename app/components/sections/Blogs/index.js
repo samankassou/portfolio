@@ -1,29 +1,7 @@
 import BlogItem from "./BlogItem";
+import { blogs } from "@/lib/data/blogs";
 
 export default function Blogs() {
-  let blogs = [
-    {
-      id: 1,
-      title: "Lorem Ipsum is simply dummy text",
-      shortDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      thumbnail: "https://picsum.photos/200/300?random=1",
-    },
-    {
-      id: 2,
-      title: "Lorem Ipsum is simply dummy text",
-      shortDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      thumbnail: "https://picsum.photos/200/300?random=2",
-    },
-    {
-      id: 3,
-      title: "Lorem Ipsum is simply dummy text",
-      shortDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      thumbnail: "https://picsum.photos/200/300?random=3",
-    },
-  ];
 
   return (
     <ul className="scrollbar-hidden snap-x-proximity -m-4 flex gap-4 overflow-x-auto scroll-smooth p-4">

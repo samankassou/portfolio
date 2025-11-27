@@ -19,7 +19,7 @@ export default function HeroSection() {
         </div>
         <div className="relative hidden h-[500px] md:block">
           <Image
-            src="/img/emerging-hero-real.webp"
+            src="/img/hero/emerging-hero-real.webp"
             alt="Professional portrait"
             fill
             priority
