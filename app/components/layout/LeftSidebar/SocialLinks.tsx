@@ -1,6 +1,12 @@
 "use client";
 
-export default function SocialLinks({ links }) {
+import type { SocialLink } from "@/lib/types";
+
+interface SocialLinksProps {
+  links: SocialLink[];
+}
+
+export default function SocialLinks({ links }: SocialLinksProps) {
   return (
     <div className="px-8 py-6">
       <div className="flex items-center justify-center gap-5">

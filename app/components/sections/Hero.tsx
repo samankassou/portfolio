@@ -16,7 +16,7 @@ export default function HeroSection() {
             specialize in UI/UX Design, Responsive Web Design, and Visual
             Development.
           </p>
-          <Btn href="#contact" variant="primary" label="Let's Talk" />
+          <Btn href="#contact" label="Let's Talk" />
         </div>
         <div className="relative hidden h-[500px] md:block">
           <Image

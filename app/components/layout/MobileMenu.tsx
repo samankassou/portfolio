@@ -3,8 +3,20 @@
 import { useEffect } from "react";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 
-export default function MobileMenu({ isOpen, onClose }) {
-  const navItems = [
+interface MobileMenuProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+interface NavItemType {
+  id: string;
+  icon: string;
+  label: string;
+  href: string;
+}
+
+export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const navItems: NavItemType[] = [
     { id: "home", icon: "home", label: "Home", href: "#" },
     { id: "services", icon: "grid", label: "Services", href: "#services" },
     { id: "education", icon: "school", label: "Education", href: "#education" },
@@ -17,7 +29,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
   // Handle ESC key press to close menu
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
         onClose();
       }

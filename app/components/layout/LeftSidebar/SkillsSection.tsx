@@ -1,8 +1,15 @@
+import type { Skill } from "@/lib/types";
+
+interface SkillsSectionProps {
+  majorSkills: Skill[];
+  extraSkills: Skill[];
+}
+
 /**
  * Combined Skills Section component
  * Displays both major skills (with progress bars) and extra skills (as tags)
  */
-export default function SkillsSection({ majorSkills, extraSkills }) {
+export default function SkillsSection({ majorSkills, extraSkills }: SkillsSectionProps) {
   return (
     <>
       {/* Major Skills */}

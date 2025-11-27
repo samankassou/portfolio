@@ -1,4 +1,10 @@
-export default function ContactInfo({ contacts }) {
+import type { ContactInfo as ContactInfoType } from "@/lib/types";
+
+interface ContactInfoProps {
+  contacts: ContactInfoType[];
+}
+
+export default function ContactInfo({ contacts }: ContactInfoProps) {
   return (
     <div className="px-8 py-6">
       <ul className="space-y-4">

@@ -1,6 +1,11 @@
 import Image from "next/image";
+import type { ProfileData } from "@/lib/types";
 
-export default function ProfileSection({ data }) {
+interface ProfileSectionProps {
+  data: ProfileData;
+}
+
+export default function ProfileSection({ data }: ProfileSectionProps) {
   return (
     <div className="p-8 text-center">
       {/* Profile Photo with Badge */}
