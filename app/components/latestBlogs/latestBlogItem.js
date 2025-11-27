@@ -27,7 +27,7 @@ export default function latestBlogItem({ blog }) {
           className="inline-flex items-center gap-3 text-sm font-medium text-primary hover:text-primary-700"
         >
           <span>Read more</span>
-          <ion-icon name="arrow-forward"></ion-icon>
+          <ion-icon name="arrow-forward" suppressHydrationWarning></ion-icon>
         </Link>
       </div>
     </div>

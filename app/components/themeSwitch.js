@@ -43,13 +43,13 @@ export default function ThemeSwitch() {
     <div>
       <button onClick={toggleDarkMode}>
         {theme === "system" ? (
-          <ion-icon name="desktop-outline"></ion-icon>
+          <ion-icon name="desktop-outline" suppressHydrationWarning></ion-icon>
         ) : null}
 
         {theme === "dark" ? (
-          <ion-icon name="color-fill-outline"></ion-icon>
+          <ion-icon name="color-fill-outline" suppressHydrationWarning></ion-icon>
         ) : null}
-        {theme === "light" ? <ion-icon name="sunny"></ion-icon> : null}
+        {theme === "light" ? <ion-icon name="sunny" suppressHydrationWarning></ion-icon> : null}
       </button>
     </div>
   );

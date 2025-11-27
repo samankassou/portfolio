@@ -91,7 +91,7 @@ export default function RightSideMenu() {
           className="mb-6 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80"
           aria-label="Toggle theme"
         >
-          <ion-icon name={getThemeIcon()}></ion-icon>
+          <ion-icon name={getThemeIcon()} suppressHydrationWarning></ion-icon>
         </button>
 
         {/* Navigation Items */}
@@ -114,7 +114,7 @@ export default function RightSideMenu() {
                 }`}
                 aria-label={item.label}
               >
-                <ion-icon name={item.icon}></ion-icon>
+                <ion-icon name={item.icon} suppressHydrationWarning></ion-icon>
               </a>
             </li>
           ))}

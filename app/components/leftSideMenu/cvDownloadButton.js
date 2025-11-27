@@ -8,7 +8,7 @@ export default function CVDownloadButton() {
       >
         <span>Download My CV</span>
         <span className="text-base">
-          <ion-icon name="download-outline"></ion-icon>
+          <ion-icon name="download-outline" suppressHydrationWarning></ion-icon>
         </span>
       </a>
     </div>

@@ -11,21 +11,21 @@ export default function TestimonialRating({ rating }) {
     <div className="flex gap-1">
       {[...Array(fullStars)].map((_, i) => (
         <span key={`full-${i}`} className="text-primary text-lg leading-none">
-          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star" suppressHydrationWarning></ion-icon>
         </span>
       ))}
 
       {/* Half star */}
       {hasHalfStar && (
         <span className="text-primary text-lg leading-none">
-          <ion-icon name="star-half-outline"></ion-icon>
+          <ion-icon name="star-half-outline" suppressHydrationWarning></ion-icon>
         </span>
       )}
 
       {/* Empty stars */}
       {[...Array(emptyStars)].map((_, i) => (
         <span key={`empty-${i}`} className="text-primary text-lg leading-none">
-          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline" suppressHydrationWarning></ion-icon>
         </span>
       ))}
     </div>

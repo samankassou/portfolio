@@ -28,7 +28,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
             >
-              <ion-icon name="menu"></ion-icon>
+              <ion-icon name="menu" suppressHydrationWarning></ion-icon>
             </button>
           </li>
         </ul>

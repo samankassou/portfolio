@@ -13,7 +13,7 @@ export default function SocialLinks({ links }) {
             className="text-xl text-secondary/40 transition-all hover:text-primary dark:text-base-400 dark:hover:text-primary"
             aria-label={link.label}
           >
-            <ion-icon name={link.icon}></ion-icon>
+            <ion-icon name={link.icon} suppressHydrationWarning></ion-icon>
           </a>
         ))}
       </div>

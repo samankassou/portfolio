@@ -12,7 +12,7 @@ export default function AdvertBtn({
     >
       <span>{text}</span>
       <span className="flex items-center justify-center">
-        <ion-icon name="arrow-forward"></ion-icon>
+        <ion-icon name="arrow-forward" suppressHydrationWarning></ion-icon>
       </span>
     </a>
   );
