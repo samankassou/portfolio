@@ -2,6 +2,7 @@ import Navbar from "./components/layout/Navbar";
 import LeftSidebar from "./components/layout/LeftSidebar";
 import RightSidebar from "./components/layout/RightSidebar";
 import Footer from "./components/layout/Footer";
+import { COMMON_CLASSES } from "@/lib/constants/colors";
 import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Education from "./components/sections/Education";
@@ -12,19 +13,26 @@ import Blogs from "./components/sections/Blogs";
 import Contact from "./components/sections/Contact";
 
 export default function Home() {
+  const sectionTitleClass =
+    "mb-3 text-center text-2xl font-bold leading-8 md:mb-4 md:text-3xl " +
+    COMMON_CLASSES.TEXT;
+  const sectionSubtitleClass =
+    "mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 md:mb-12 " +
+    COMMON_CLASSES.TEXT_MUTED;
+
   return (
     <div className="mx-auto flex gap-8 px-0 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
       <LeftSidebar />
       <div className="flex-1 min-w-0">
         <Navbar />
         <Hero />
-          <main className="grid grid-cols-1 gap-16 px-4 md:px-6 md:gap-24 xl:gap-56">
+        <main className="grid grid-cols-1 gap-16 px-4 md:px-6 md:gap-24 xl:gap-56">
             {/* Services */}
             <section>
-              <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+              <h2 className={sectionTitleClass}>
                 My Services
               </h2>
-              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+              <p className={sectionSubtitleClass}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
@@ -35,10 +43,10 @@ export default function Home() {
 
             {/* Education */}
             <section>
-              <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+              <h2 className={sectionTitleClass}>
                 Education
               </h2>
-              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+              <p className={sectionSubtitleClass}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
@@ -49,10 +57,10 @@ export default function Home() {
 
             {/* Experience */}
             <section>
-              <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+              <h2 className={sectionTitleClass}>
                 Experience
               </h2>
-              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+              <p className={sectionSubtitleClass}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. lorem
                 ipsum
@@ -64,10 +72,10 @@ export default function Home() {
             {/* Portfolio */}
             <section>
               <div className="mb-8">
-                <h2 className="mb-3 text-center text-2xl font-bold leading-8 text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+                <h2 className={sectionTitleClass}>
                   Portfolio
                 </h2>
-                <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+                <p className={sectionSubtitleClass}>
                   Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                   amet sint. Velit officia consequat duis enim velit mollit.
                   lorem ipsum. Minim mollit non deserunt ullamco est sit aliqua
@@ -81,10 +89,10 @@ export default function Home() {
             {/* Testimonials */}
             <section>
               <div className="mb-8">
-                <h2 className="mb-3 text-center text-2xl font-bold text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+                <h2 className={sectionTitleClass}>
                   Testimonials
                 </h2>
-                <p className="mx-auto mb-10 max-w-[438px] text-center text-sm text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+                <p className={sectionSubtitleClass}>
                   Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                   amet sint. Velit officia consequat duis enim velit mollit.
                   lorem ipsum
@@ -96,10 +104,10 @@ export default function Home() {
 
             {/* Latest blogs */}
             <section>
-              <h2 className="mb-3 text-center text-2xl font-bold text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+              <h2 className={sectionTitleClass}>
                 Latest blogs
               </h2>
-              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+              <p className={sectionSubtitleClass}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. Lorem
                 ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -111,10 +119,10 @@ export default function Home() {
 
             {/* Get in touch */}
             <section>
-              <h2 className="mb-3 text-center text-2xl font-bold text-base-content md:mb-4 md:text-3xl dark:text-base-100">
+              <h2 className={sectionTitleClass}>
                 Get in touch
               </h2>
-              <p className="mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 text-secondary/60 md:mb-12 dark:text-base-100 dark:text-base-400">
+              <p className={sectionSubtitleClass}>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit. Lorem
                 ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -123,7 +131,7 @@ export default function Home() {
               {/* Contact form and info */}
               <Contact />
             </section>
-          </main>
+        </main>
         <Footer />
       </div>
       <RightSidebar />

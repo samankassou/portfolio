@@ -2,9 +2,14 @@ import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 
 export default function ServiceCard({ service }) {
   return (
-    <div className={cn("flex h-full w-full flex-col rounded-xl border border-white/5 p-6 transition-all hover:shadow-lg sm:p-8 dark:hover:border-white/10", COMMON_CLASSES.CARD_BG)}>
+    <div
+      className={cn(
+        "flex h-full w-full flex-col rounded-xl border border-secondary/10 p-6 transition-all hover:shadow-lg sm:p-8 dark:border-base-800 dark:hover:border-base-700",
+        COMMON_CLASSES.CARD_BG
+      )}
+    >
       <div className="mb-[10px]">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-2xl text-white">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl text-primary dark:bg-white/10 dark:text-white">
           <ion-icon name={service.icon} suppressHydrationWarning></ion-icon>
         </span>
       </div>
