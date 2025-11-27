@@ -24,76 +24,67 @@ export interface Service {
   id: number;
   icon: string;
   title: string;
-  description: string;
-  tags: string[];
+  items: string[];
 }
 
 // Education & Experience
-export interface EducationEntry {
+export interface Education {
   id: number;
-  degree: string;
-  institution: string;
-  period: string;
-  description?: string;
-}
-
-export interface ExperienceEntry {
-  id: number;
-  position: string;
-  company: string;
+  school: string;
+  role: string;
+  certificate: string;
   period: string;
   description: string;
-  technologies?: string[];
+}
+
+export interface Experience {
+  id: number;
+  company: string;
+  role: string;
+  period: string;
+  description: string;
 }
 
 // Projects
 export type ProjectCategory =
   | "All categories"
-  | "Web Design"
-  | "Mobile App"
-  | "Development"
-  | "UI/UX Design";
+  | "UI Design"
+  | "Web Templates"
+  | "Logos"
+  | "Branding";
 
 export interface Project {
   id: number;
   title: string;
+  link: string;
+  coverImg: string;
   category: Exclude<ProjectCategory, "All categories">;
-  image: string;
-  description?: string;
-  technologies?: string[];
-  liveUrl?: string;
-  githubUrl?: string;
 }
 
 // Testimonials
 export interface Testimonial {
   id: number;
-  name: string;
-  position: string;
-  company?: string;
-  photo: string;
-  rating: number;
+  authorName: string;
+  authorProfilePic: string;
+  authorRole: string;
   text: string;
+  rating: number;
 }
 
 // Blog
 export interface Blog {
   id: number;
   title: string;
-  excerpt: string;
-  image: string;
-  date: string;
-  category: string;
-  readTime?: string;
-  slug?: string;
+  shortDescription: string;
+  thumbnail: string;
 }
 
 // Site Configuration
 export interface SocialLink {
   id: number;
-  name: string;
-  url: string;
   icon: string;
+  url: string;
+  label: string;
 }
 
 export interface SiteConfig {
@@ -102,14 +93,18 @@ export interface SiteConfig {
     description: string;
     language: string;
   };
-  socialLinks: SocialLink[];
-  cvDownloadUrl: string;
+  author: {
+    name: string;
+    email: string;
+    skype: string;
+    telegram: string;
+  };
 }
 
 // Navigation
-export interface NavigationItem {
-  id: number;
+export interface NavItem {
+  id: string;
+  icon: string;
   label: string;
   href: string;
-  icon?: string;
 }
