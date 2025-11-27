@@ -2,7 +2,7 @@ import EducationList from "./components/education/educationList";
 import ExperienceList from "./components/experience/experienceList";
 import HeroSection from "./components/heroSection";
 import Navbar from "./components/navbar";
-import ProjectsList from "./components/projects/projectsList";
+import PortfolioContainer from "./components/projects/portfolioContainer";
 import ServicesList from "./components/services/servicesList";
 import TestimonialsList from "./components/testimonials/testimonialsList";
 import LatestBlogsList from "./components/latestBlogs/latestBlogsList";
@@ -75,58 +75,8 @@ export default function Home() {
                   dolor do amet.
                 </p>
               </div>
-              {/* Portfolio Nav */}
-              <nav className="mb-8 md:mb-12">
-                <ul className="flex flex-col items-center justify-center gap-4 font-medium text-secondary/60 md:flex-row md:gap-12 dark:text-base-100 dark:text-base-400">
-                  <li key="portfolio-all-categories">
-                    <a
-                      id="portfolio-all-categories"
-                      className="transition-all duration-300 hover:text-primary active:text-primary"
-                      href="#portfolio-all-categories"
-                    >
-                      All categories
-                    </a>
-                  </li>
-                  <li key="portfolio-ui-design">
-                    <a
-                      id="portfolio-ui-design"
-                      className="transition-all duration-300 hover:text-primary active:text-primary"
-                      href="#portfolio-ui-design"
-                    >
-                      UI Design
-                    </a>
-                  </li>
-                  <li key="portfolio-web-templates">
-                    <a
-                      id="portfolio-web-templates"
-                      className="transition-all duration-300 hover:text-primary active:text-primary"
-                      href="#portfolio-web-templates"
-                    >
-                      Web Templates
-                    </a>
-                  </li>
-                  <li key="portfolio-logos">
-                    <a
-                      id="portfolio-logos"
-                      className="transition-all duration-300 hover:text-primary active:text-primary"
-                      href="#portfolio-logos"
-                    >
-                      Logos
-                    </a>
-                  </li>
-                  <li key="portfolio-branding">
-                    <a
-                      id="portfolio-branding"
-                      className="transition-all duration-300 hover:text-primary active:text-primary"
-                      href="#portfolio-branding"
-                    >
-                      Branding
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              {/* Liste des projets */}
-              <ProjectsList />
+              {/* Portfolio Filter and Projects */}
+              <PortfolioContainer />
             </section>
 
             {/* Testimonials */}
