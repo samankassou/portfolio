@@ -1,24 +1,23 @@
-import EducationList from "./components/education/educationList";
-import ExperienceList from "./components/experience/experienceList";
-import HeroSection from "./components/heroSection";
-import Navbar from "./components/navbar";
-import PortfolioContainer from "./components/projects/portfolioContainer";
-import ServicesList from "./components/services/servicesList";
-import TestimonialsList from "./components/testimonials/testimonialsList";
-import LatestBlogsList from "./components/latestBlogs/latestBlogsList";
-import ContactContainer from "./components/getInTouch/contactContainer";
-import Footer from "./components/footer/footer";
-import LeftSideMenu from "./components/leftSideMenu";
-import RightSideMenu from "./components/rightSideMenu";
+import Navbar from "./components/layout/Navbar";
+import LeftSidebar from "./components/layout/LeftSidebar";
+import RightSidebar from "./components/layout/RightSidebar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/sections/Hero";
+import Services from "./components/sections/Services";
+import Education from "./components/sections/Education";
+import Experience from "./components/sections/Experience";
+import Portfolio from "./components/sections/Portfolio";
+import Testimonials from "./components/sections/Testimonials";
+import Blogs from "./components/sections/Blogs";
+import Contact from "./components/sections/Contact";
 
 export default function Home() {
   return (
-    <>
-      <div className="mx-auto flex gap-8 px-0 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
-        <LeftSideMenu />
-        <div className="flex-1 min-w-0">
-          <Navbar />
-          <HeroSection />
+    <div className="mx-auto flex gap-8 px-0 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
+      <LeftSidebar />
+      <div className="flex-1 min-w-0">
+        <Navbar />
+        <Hero />
           <main className="grid grid-cols-1 gap-16 px-4 md:px-6 md:gap-24 xl:gap-56">
             {/* Services */}
             <section>
@@ -31,7 +30,7 @@ export default function Home() {
                 ipsum
               </p>
               {/* Liste des services */}
-              <ServicesList />
+              <Services />
             </section>
 
             {/* Education */}
@@ -45,7 +44,7 @@ export default function Home() {
                 ipsum
               </p>
               {/* Liste des parcours */}
-              <EducationList />
+              <Education />
             </section>
 
             {/* Experience */}
@@ -59,7 +58,7 @@ export default function Home() {
                 ipsum
               </p>
               {/* Liste des expériences */}
-              <ExperienceList />
+              <Experience />
             </section>
 
             {/* Portfolio */}
@@ -76,7 +75,7 @@ export default function Home() {
                 </p>
               </div>
               {/* Portfolio Filter and Projects */}
-              <PortfolioContainer />
+              <Portfolio />
             </section>
 
             {/* Testimonials */}
@@ -92,7 +91,7 @@ export default function Home() {
                 </p>
               </div>
               {/* Liste des testimonials */}
-              <TestimonialsList />
+              <Testimonials />
             </section>
 
             {/* Latest blogs */}
@@ -107,7 +106,7 @@ export default function Home() {
                 amet.
               </p>
               {/* Liste des blogs */}
-              <LatestBlogsList />
+              <Blogs />
             </section>
 
             {/* Get in touch */}
@@ -121,14 +120,13 @@ export default function Home() {
                 ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet.
               </p>
-              {/* Liste des blogs */}
-              <ContactContainer />
+              {/* Contact form and info */}
+              <Contact />
             </section>
           </main>
-          <Footer />
-        </div>
-        <RightSideMenu />
+        <Footer />
       </div>
-    </>
+      <RightSidebar />
+    </div>
   );
 }
