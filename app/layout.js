@@ -1,16 +1,19 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/app/components/providers/ThemeProvider";
+import { siteConfig } from "@/lib/data/siteConfig";
+import { COMMON_CLASSES } from "@/lib/constants/colors";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio - Samankassou",
-  description: "The portfolio of Samankassou, a full-stack web developper",
+  title: siteConfig.metadata.title,
+  description: siteConfig.metadata.description,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={siteConfig.metadata.language} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -24,8 +27,8 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className + " bg-base dark:bg-[#000000]"}>
-        {children}
+      <body className={`${inter.className} ${COMMON_CLASSES.PAGE_BG}`}>
+        <ThemeProvider>{children}</ThemeProvider>
         <script
           type="module"
           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

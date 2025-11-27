@@ -1,49 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import ThemeToggle from "./ui/ThemeToggle";
+import { mainNavigation } from "@/lib/data/navigation";
+import { COMMON_CLASSES } from "@/lib/constants/colors";
 
 export default function RightSideMenu() {
   const [activeNav, setActiveNav] = useState("home");
-  const [theme, setTheme] = useState("system");
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "system";
-    setTheme(savedTheme);
-  }, []);
+  // Use first 6 items for sidebar navigation
+  const navItems = mainNavigation.slice(0, 6);
 
-  const toggleTheme = () => {
-    let newTheme;
-    if (theme === "system") {
-      newTheme = "dark";
-    } else if (theme === "dark") {
-      newTheme = "light";
-    } else {
-      newTheme = "system";
-    }
-
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (newTheme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    }
-  };
-
-  const getThemeIcon = () => {
-    if (theme === "light") return "sunny-outline";
-    if (theme === "dark") return "moon-outline";
-    return "contrast-outline";
-  };
-
-  const navItems = [
+  // Old navItems (kept commented for reference - different from mainNavigation)
+  /*const navItems = [
     {
       id: "home",
       icon: "home",
@@ -80,19 +49,15 @@ export default function RightSideMenu() {
       label: "Chat",
       href: "#chat",
     },
-  ];
+  ];*/
 
   return (
     <aside className="hidden w-[88px] xl:block">
-      <nav className="sticky top-8 flex flex-col items-center rounded-2xl bg-white py-6 dark:bg-[#1C1C1C]">
+      <nav
+        className={`sticky top-8 flex flex-col items-center rounded-2xl py-6 ${COMMON_CLASSES.CARD_BG}`}
+      >
         {/* Theme Toggle */}
-        <button
-          onClick={toggleTheme}
-          className="mb-6 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80"
-          aria-label="Toggle theme"
-        >
-          <ion-icon name={getThemeIcon()} suppressHydrationWarning></ion-icon>
-        </button>
+        <ThemeToggle className="mb-6 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
 
         {/* Navigation Items */}
         <ul className="flex flex-col items-center gap-6">
