@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 
 export default function MobileMenu({ isOpen, onClose }) {
   const navItems = [
@@ -56,7 +57,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
       {/* Menu Panel */}
       <div
-        className="fixed right-0 top-0 z-50 h-full w-[280px] transform bg-base-100 shadow-2xl transition-transform duration-300 ease-in-out xl:hidden dark:bg-[#1C1C1C]"
+        className={cn("fixed right-0 top-0 z-50 h-full w-[280px] transform shadow-2xl transition-transform duration-300 ease-in-out xl:hidden", COMMON_CLASSES.CARD_BG)}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"

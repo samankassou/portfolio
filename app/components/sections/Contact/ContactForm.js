@@ -1,7 +1,9 @@
+import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
+
 export default function ContactForm() {
   return (
     <form
-      className="rounded-xl bg-white p-6 shadow-sm dark:bg-[#1C1C1C]"
+      className={cn("rounded-xl p-6 shadow-sm", COMMON_CLASSES.CARD_BG)}
       id="contact"
     >
       <h3 className="mb-6 text-left text-xl font-bold text-base-content dark:text-base-100">
@@ -17,7 +19,7 @@ export default function ContactForm() {
           </label>
           <input
             id="name"
-            className="block w-full rounded-lg bg-base-200 px-4 py-3 text-sm text-base-content focus:border-primary focus:ring-primary dark:bg-[#131313] dark:text-base-100"
+            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
           />
         </div>
         <div className="col-span-2 lg:col-span-1">
@@ -30,7 +32,7 @@ export default function ContactForm() {
           <input
             id="email"
             type="email"
-            className="block w-full rounded-lg bg-base-200 px-4 py-3 text-sm text-base-content focus:border-primary focus:ring-primary dark:bg-[#131313] dark:text-base-100"
+            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
           />
         </div>
         <div className="col-span-2">
@@ -42,7 +44,7 @@ export default function ContactForm() {
           </label>
           <input
             id="subject"
-            className="block w-full rounded-lg bg-base-200 px-4 py-3 text-sm text-base-content focus:border-primary focus:ring-primary dark:bg-[#131313] dark:text-base-100"
+            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
           />
         </div>
         <div className="col-span-2">
@@ -54,7 +56,7 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
-            className="block w-full rounded-lg bg-base-200 px-4 py-3 text-sm text-base-content focus:border-primary focus:ring-primary md:h-44 dark:bg-[#131313] dark:text-base-100"
+            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary md:h-44", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
             resize="none"
             rows="5"
           ></textarea>

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import TestimonialRating from "./testimonialRating";
+import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 
 export default function TestimonialItem({ testimonial }) {
   return (
-    <div className="flex h-full flex-col gap-6 rounded-2xl bg-base-100 p-8 dark:bg-[#1C1C1C]">
+    <div className={cn("flex h-full flex-col gap-6 rounded-2xl p-8", COMMON_CLASSES.CARD_BG)}>
       <div className="flex items-center gap-4">
         <Image
           className="size-16 flex-none rounded-full object-cover"

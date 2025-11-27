@@ -1,6 +1,8 @@
+import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
+
 export default function EducationItem({ educationItem }) {
   return (
-    <div className="rounded-xl border-2 border-cyan-400/50 bg-white p-6 shadow-sm md:p-8 dark:border-cyan-400/30 dark:bg-[#1C1C1C]">
+    <div className={cn("rounded-xl border-2 border-cyan-400/50 p-6 shadow-sm md:p-8 dark:border-cyan-400/30", COMMON_CLASSES.CARD_BG)}>
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3 2xl:grid-cols-4">
         <div className="col-span-3 xl:col-span-1">
           <h2 className="mb-2 text-left text-base font-medium text-secondary dark:text-white">

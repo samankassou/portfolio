@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 
 export default function latestBlogItem({ blog }) {
   return (
-    <div className="overflow-hidden rounded-lg bg-base-100 text-base-content transition-all hover:shadow-md dark:bg-[#1C1C1C] dark:text-base-100">
+    <div className={cn("overflow-hidden rounded-lg text-base-content transition-all hover:shadow-md dark:text-base-100", COMMON_CLASSES.CARD_BG)}>
       <div className="relative h-52 w-full">
         <Image
           src={blog.thumbnail}
