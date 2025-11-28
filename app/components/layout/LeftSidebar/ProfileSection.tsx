@@ -14,6 +14,8 @@ export default function ProfileSection({ data }: ProfileSectionProps) {
           src={data.photo}
           alt={data.name}
           fill
+          priority
+          sizes="128px"
           className="rounded-2xl object-cover"
         />
         {data.badge && (

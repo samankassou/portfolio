@@ -17,10 +17,11 @@ export default function Navbar() {
       >
         <Image
           className="h-10 w-10 rounded-full"
-          src="/img/profile/profile_pic_sm.jpeg"
-          width="0"
-          height="0"
-          sizes="100vw"
+          src="/img/profile/profile_pic_sm.webp"
+          width={40}
+          height={40}
+          sizes="40px"
+          priority
           alt="Picture of the author"
         />
         <ul className="flex items-center justify-between gap-6">

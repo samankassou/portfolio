@@ -65,7 +65,7 @@ export default function HeroSection() {
           className="relative hidden h-[500px] md:block"
         >
           <Image
-            src="/img/hero/foulla-picture.png"
+            src="/img/hero/foulla-picture.webp"
             alt="Professional portrait"
             fill
             priority

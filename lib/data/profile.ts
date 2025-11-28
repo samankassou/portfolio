@@ -16,7 +16,7 @@ import type {
 export const profileData: ProfileData = {
   name: "Foulla SAMANKASSOU",
   title: "Software Engineer",
-  photo: "/img/profile/profile_pic_sm.jpeg",
+  photo: "/img/profile/profile_pic_sm.webp",
   badge: true,
 };
 
