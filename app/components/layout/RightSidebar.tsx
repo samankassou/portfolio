@@ -9,27 +9,21 @@ import type { NavItem } from "@/lib/types";
 export default function RightSideMenu() {
   const [activeNav, setActiveNav] = useState("home");
 
-  // Use first 6 items for sidebar navigation
-  const navItems = mainNavigation.slice(0, 6);
+  // Use all navigation items for sidebar navigation
+  const navItems = mainNavigation;
 
   return (
     <aside className="hidden w-[88px] xl:block">
       <nav
-        className={`sticky top-8 flex flex-col items-center rounded-2xl py-6 ${COMMON_CLASSES.CARD_BG}`}
+        className={`sticky top-8 flex min-h-[700px] flex-col items-center rounded-2xl py-8 ${COMMON_CLASSES.CARD_BG}`}
       >
         {/* Theme Toggle */}
-        <ThemeToggle className="mb-6 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
+        <ThemeToggle className="mb-8 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
 
         {/* Navigation Items */}
-        <ul className="flex flex-col items-center gap-6">
+        <ul className="flex flex-1 flex-col items-center justify-center gap-6">
           {navItems.map((item: NavItem, index: number) => (
-            <li key={item.id} className="flex flex-col items-center">
-              {/* Show label only for first item (Home) */}
-              {index === 0 && (
-                <span className="mb-1.5 text-xs font-medium text-secondary dark:text-white">
-                  {item.label}
-                </span>
-              )}
+            <li key={item.id} className="group relative flex flex-col items-center">
               <a
                 href={item.href}
                 onClick={() => setActiveNav(item.id)}
@@ -42,6 +36,10 @@ export default function RightSideMenu() {
               >
                 <ion-icon name={item.icon} suppressHydrationWarning></ion-icon>
               </a>
+              {/* Tooltip */}
+              <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-secondary px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 dark:bg-gray-800">
+                {item.label}
+              </span>
             </li>
           ))}
         </ul>
