@@ -33,7 +33,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
       </head>
-      <body className={`${inter.className} ${COMMON_CLASSES.PAGE_BG}`}>
+      <body className={`${inter.className} ${COMMON_CLASSES.PAGE_BG} overflow-x-hidden`}>
         <ThemeProvider>{children}</ThemeProvider>
         <script
           type="module"

@@ -21,12 +21,12 @@ export default function Home() {
     COMMON_CLASSES.TEXT_MUTED;
 
   return (
-    <div className="mx-auto flex gap-8 px-0 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
+    <div className="mx-auto flex gap-8 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
       <LeftSidebar />
       <div className="flex-1 min-w-0">
         <Navbar />
         <Hero />
-        <main className="grid grid-cols-1 gap-16 px-4 md:px-6 md:gap-24 xl:gap-56">
+        <main className="grid grid-cols-1 gap-16 md:gap-24 xl:gap-56">
             {/* Services */}
             <section>
               <h2 className={sectionTitleClass}>
