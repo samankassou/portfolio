@@ -17,7 +17,7 @@ export const profileData: ProfileData = {
   name: "Foulla SAMANKASSOU",
   title: "Software Engineer",
   photo: "/img/profile/profile_pic_sm.webp",
-  badge: true,
+  badge: false,
 };
 
 /**
@@ -29,7 +29,6 @@ export const contactInfo: ContactInfo[] = [
   { id: 3, label: "Location", value: "Douala, Cameroon" },
   { id: 4, label: "LinkedIn", value: "sam-foulla", highlight: false },
   { id: 5, label: "GitHub", value: "samankassou", highlight: false },
-  { id: 6, label: "Freelance", value: "Available", highlight: true },
 ];
 
 /**
