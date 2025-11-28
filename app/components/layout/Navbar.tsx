@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`mx-4 mb-16 flex items-center justify-between rounded-full py-3 pl-3 pr-6 xl:hidden ${COMMON_CLASSES.CARD_BG}`}
+        className={`mb-16 flex items-center justify-between rounded-full py-3 pl-3 pr-6 xl:hidden ${COMMON_CLASSES.CARD_BG}`}
       >
         <Image
           className="h-10 w-10 rounded-full"
