@@ -14,7 +14,7 @@ export default function ContactInfo({ contacts }: ContactInfoProps) {
               {contact.label}:
             </span>
             <span
-              className={`text-right text-sm font-normal ${
+              className={`break-all text-right text-sm font-normal ${
                 contact.highlight
                   ? "text-accent"
                   : "text-secondary/60 dark:text-base-400"
