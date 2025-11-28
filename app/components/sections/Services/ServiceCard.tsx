@@ -3,6 +3,8 @@
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import type { Service } from "@/lib/types";
 import { motion } from "framer-motion";
+import Icon from "@/lib/components/Icon";
+import type { IconName } from "@/lib/components/Icon";
 
 interface ServiceCardProps {
   service: Service;
@@ -19,7 +21,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
     >
       <div className="mb-[10px]">
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl text-primary dark:bg-white/10 dark:text-white">
-          <ion-icon name={service.icon} suppressHydrationWarning></ion-icon>
+          <Icon name={service.icon as IconName} />
         </span>
       </div>
       <h3 className="mb-[10px] text-lg font-semibold text-base-content sm:text-xl dark:text-white">
@@ -33,7 +35,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
               key={index}
             >
               <span className="mt-0.5 text-xs text-secondary/60 dark:text-white/60">
-                <ion-icon name="arrow-forward" suppressHydrationWarning></ion-icon>
+                <Icon name="arrow-forward" />
               </span>
               <span className="leading-relaxed">{item}</span>
             </li>

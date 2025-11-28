@@ -35,14 +35,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className={`${inter.className} ${COMMON_CLASSES.PAGE_BG} overflow-x-hidden`}>
         <ThemeProvider>{children}</ThemeProvider>
-        <script
-          type="module"
-          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-        ></script>
-        <script
-          noModule
-          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-        ></script>
       </body>
     </html>
   );

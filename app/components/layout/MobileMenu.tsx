@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
+import Icon from "@/lib/components/Icon";
+import type { IconName } from "@/lib/components/Icon";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -84,7 +86,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className="flex h-10 w-10 items-center justify-center rounded-full text-2xl text-secondary/60 transition-colors hover:bg-secondary/5 hover:text-primary dark:text-base-400 dark:hover:bg-white/5 dark:hover:text-primary"
             aria-label="Close menu"
           >
-            <ion-icon name="close" suppressHydrationWarning></ion-icon>
+            <Icon name="close" />
           </button>
         </div>
 
@@ -99,7 +101,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   className="flex items-center gap-4 rounded-lg px-4 py-3 text-base font-medium text-secondary/80 transition-all hover:bg-primary/10 hover:text-primary dark:text-base-300 dark:hover:bg-primary/20 dark:hover:text-primary"
                 >
                   <span className="text-xl">
-                    <ion-icon name={item.icon} suppressHydrationWarning></ion-icon>
+                    <Icon name={item.icon as IconName} />
                   </span>
                   <span>{item.label}</span>
                 </a>

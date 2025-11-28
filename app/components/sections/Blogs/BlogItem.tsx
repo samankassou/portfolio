@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import type { Blog } from "@/lib/types";
+import Icon from "@/lib/components/Icon";
 
 interface BlogItemProps {
   blog: Blog;
@@ -33,7 +34,7 @@ export default function BlogItem({ blog }: BlogItemProps) {
           className="inline-flex items-center gap-3 text-sm font-medium text-primary hover:text-primary-700"
         >
           <span>Read more</span>
-          <ion-icon name="arrow-forward" suppressHydrationWarning></ion-icon>
+          <Icon name="arrow-forward" />
         </Link>
       </div>
     </div>

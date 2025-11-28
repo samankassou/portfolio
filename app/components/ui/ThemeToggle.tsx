@@ -2,6 +2,8 @@
 
 import { useTheme } from "@/app/components/providers/ThemeProvider";
 import { THEME_ICONS } from "@/lib/constants/theme";
+import Icon from "@/lib/components/Icon";
+import type { IconName } from "@/lib/components/Icon";
 
 interface ThemeToggleProps {
   className?: string;
@@ -17,10 +19,9 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
       aria-label="Toggle theme"
       type="button"
     >
-      <ion-icon
-        name={theme ? THEME_ICONS[theme] : THEME_ICONS.system}
-        suppressHydrationWarning
-      ></ion-icon>
+      <Icon
+        name={(theme ? THEME_ICONS[theme] : THEME_ICONS.system) as IconName}
+      />
     </button>
   );
 }

@@ -5,7 +5,9 @@ interface ExperienceItemProps {
   experienceItem: Experience;
 }
 
-export default function ExperienceItem({ experienceItem }: ExperienceItemProps) {
+export default function ExperienceItem({
+  experienceItem,
+}: ExperienceItemProps) {
   return (
     <div className="grid grid-cols-1 gap-6 pt-8 xl:grid-cols-3 2xl:grid-cols-4">
       <div className="col-span-3 mt-2 md:col-span-1">
@@ -14,14 +16,12 @@ export default function ExperienceItem({ experienceItem }: ExperienceItemProps) 
         >
           {experienceItem.company}
         </h2>
-        <p className="inline rounded-md bg-primary/15 px-3 py-1 text-xs font-medium text-primary dark:bg-primary/20 dark:text-primary-100">
+        <p className="inline rounded-md bg-primary/15 px-3 py-1 text-xs font-medium text-primary dark:bg-primary/20">
           {experienceItem.period}
         </p>
       </div>
       <div className="col-span-3 mb-3 md:col-span-2 xl:col-span-3">
-        <h3
-          className={`mb-3 text-lg font-medium ${COMMON_CLASSES.TEXT}`}
-        >
+        <h3 className={`mb-3 text-lg font-medium ${COMMON_CLASSES.TEXT}`}>
           {experienceItem.role}
         </h3>
         <p className={`font-normal ${COMMON_CLASSES.TEXT_MUTED}`}>

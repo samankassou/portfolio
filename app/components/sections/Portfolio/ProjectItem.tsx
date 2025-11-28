@@ -3,6 +3,7 @@
 import Image from "next/image";
 import type { Project } from "@/lib/types";
 import { motion } from "framer-motion";
+import Icon from "@/lib/components/Icon";
 
 interface ProjectItemProps {
   project: Project;
@@ -30,7 +31,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
               transition={{ duration: 0.2 }}
               className="inline-block"
             >
-              <ion-icon name="add-outline" suppressHydrationWarning></ion-icon>
+              <Icon name="add-outline" />
             </motion.span>
           </a>
         </div>

@@ -19,7 +19,11 @@ export default function ContactForm() {
           </label>
           <input
             id="name"
-            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
+            className={cn(
+              "block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary",
+              COMMON_CLASSES.INPUT_BG,
+              COMMON_CLASSES.TEXT,
+            )}
           />
         </div>
         <div className="col-span-2 lg:col-span-1">
@@ -32,7 +36,11 @@ export default function ContactForm() {
           <input
             id="email"
             type="email"
-            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
+            className={cn(
+              "block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary",
+              COMMON_CLASSES.INPUT_BG,
+              COMMON_CLASSES.TEXT,
+            )}
           />
         </div>
         <div className="col-span-2">
@@ -44,7 +52,11 @@ export default function ContactForm() {
           </label>
           <input
             id="subject"
-            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
+            className={cn(
+              "block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary",
+              COMMON_CLASSES.INPUT_BG,
+              COMMON_CLASSES.TEXT,
+            )}
           />
         </div>
         <div className="col-span-2">
@@ -56,14 +68,18 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
-            className={cn("block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary md:h-44", COMMON_CLASSES.INPUT_BG, COMMON_CLASSES.TEXT)}
+            className={cn(
+              "block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary md:h-44",
+              COMMON_CLASSES.INPUT_BG,
+              COMMON_CLASSES.TEXT,
+            )}
             rows={5}
           ></textarea>
         </div>
         <div className="col-span-2">
           <button
             type="submit"
-            className="rounded-lg bg-primary px-5 py-3 font-medium text-white transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-base-100 dark:focus:ring-offset-[#1C1C1C]"
+            className="rounded-lg bg-primary px-5 py-3 font-medium text-base-content transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-base-100 dark:focus:ring-offset-[#1C1C1C]"
           >
             Send Message
           </button>

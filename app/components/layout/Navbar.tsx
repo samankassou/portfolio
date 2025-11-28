@@ -5,6 +5,7 @@ import Image from "next/image";
 import ThemeToggle from "../ui/ThemeToggle";
 import MobileMenu from "./MobileMenu";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
+import Icon from "@/lib/components/Icon";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
             >
-              <ion-icon name="menu" suppressHydrationWarning></ion-icon>
+              <Icon name="menu" />
             </button>
           </li>
         </ul>

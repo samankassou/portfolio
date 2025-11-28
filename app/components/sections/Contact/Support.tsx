@@ -1,11 +1,17 @@
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
+import Icon from "@/lib/components/Icon";
 
 export default function Support() {
   return (
-    <div className={cn("grid grid-cols-1 gap-3 rounded-xl p-6 shadow-sm", COMMON_CLASSES.CARD_BG)}>
+    <div
+      className={cn(
+        "grid grid-cols-1 gap-3 rounded-xl p-6 shadow-sm",
+        COMMON_CLASSES.CARD_BG,
+      )}
+    >
       <div className="mb-4 flex items-center justify-center">
-        <span className="flex justify-center rounded-full bg-primary p-2.5 text-center text-xl text-white">
-          <ion-icon name="tablet-portrait" suppressHydrationWarning></ion-icon>
+        <span className="flex justify-center rounded-full bg-primary p-2.5 text-center text-xl text-base-content">
+          <Icon name="tablet-portrait" />
         </span>
       </div>
       <div>

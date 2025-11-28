@@ -1,3 +1,5 @@
+import Icon from "@/lib/components/Icon";
+
 interface TestimonialRatingProps {
   rating: number;
 }
@@ -15,21 +17,21 @@ export default function TestimonialRating({ rating }: TestimonialRatingProps) {
     <div className="flex gap-1">
       {[...Array(fullStars)].map((_, i) => (
         <span key={`full-${i}`} className="text-primary text-lg leading-none">
-          <ion-icon name="star" suppressHydrationWarning></ion-icon>
+          <Icon name="star" />
         </span>
       ))}
 
       {/* Half star */}
       {hasHalfStar && (
         <span className="text-primary text-lg leading-none">
-          <ion-icon name="star-half-outline" suppressHydrationWarning></ion-icon>
+          <Icon name="star-half-outline" />
         </span>
       )}
 
       {/* Empty stars */}
       {[...Array(emptyStars)].map((_, i) => (
         <span key={`empty-${i}`} className="text-primary text-lg leading-none">
-          <ion-icon name="star-outline" suppressHydrationWarning></ion-icon>
+          <Icon name="star-outline" />
         </span>
       ))}
     </div>

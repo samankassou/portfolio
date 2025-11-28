@@ -31,19 +31,20 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.1 }}
             className={`mb-4 text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl md:text-5xl ${COMMON_CLASSES.TEXT}`}
           >
-            I build intelligent solutions that <span className="text-primary">transform</span>{" "}
-            businesses with data and AI.
+            I build intelligent solutions that{" "}
+            <span className="text-primary">transform</span> businesses with data
+            and AI.
           </motion.h1>
           <motion.p
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.2 }}
-            className={`mb-6 max-w-md text-sm leading-relaxed sm:mb-8 sm:text-base ${COMMON_CLASSES.TEXT_MUTED}`}
+            className="md:text-md mb-6 max-w-md text-sm leading-relaxed text-secondary/60 dark:text-white/60 sm:mb-8"
           >
             Hi! I'm Foulla, a Software Engineer based in Douala, Cameroon. I
-            specialize in Business Intelligence, AI & Automation, Cloud Solutions,
-            and Full-Stack Development.
+            specialize in Business Intelligence, AI & Automation, Cloud
+            Solutions, and Full-Stack Development.
           </motion.p>
           <motion.div
             variants={fadeInUp}
