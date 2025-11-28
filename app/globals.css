@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --wave-opacity-light: 0.6;
+    --wave-color-light: #646471; /* base-700 */
+  }
+
+  .dark {
+    --wave-opacity-dark: 0.3;
+    --wave-color-dark: #ffffff; /* white */
+  }
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .scrollbar-hidden::-webkit-scrollbar {
@@ -11,6 +23,47 @@
   .scrollbar-hidden {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  /* Wave Background Pattern */
+  .hero-wave-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-wave-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: var(--wave-opacity-light);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' preserveAspectRatio='none'><path d='M0,200 Q300,150 600,200 T1200,200 L1200,400 L0,400 Z' fill='%23646471' opacity='0.15'/><path d='M0,250 Q200,220 400,250 T800,250 T1200,250 L1200,400 L0,400 Z' fill='%23646471' opacity='0.1'/><path d='M0,300 Q150,280 300,300 T600,300 T900,300 T1200,300 L1200,400 L0,400 Z' fill='%23646471' opacity='0.08'/></svg>");
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    pointer-events: none;
+    will-change: transform;
+    contain: paint;
+  }
+
+  .dark .hero-wave-bg::before {
+    opacity: var(--wave-opacity-dark);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' preserveAspectRatio='none'><path d='M0,200 Q300,150 600,200 T1200,200 L1200,400 L0,400 Z' fill='%23FFFFFF' opacity='0.15'/><path d='M0,250 Q200,220 400,250 T800,250 T1200,250 L1200,400 L0,400 Z' fill='%23FFFFFF' opacity='0.1'/><path d='M0,300 Q150,280 300,300 T600,300 T900,300 T1200,300 L1200,400 L0,400 Z' fill='%23FFFFFF' opacity='0.08'/></svg>");
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-wave-bg::before {
+      animation: wave-flow 25s ease-in-out infinite;
+    }
+  }
+
+  @keyframes wave-flow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }
 

@@ -20,9 +20,9 @@ export default function HeroSection() {
       initial="hidden"
       animate="visible"
       transition={getTransition(reducedMotion, 0.6)}
-      className={`mb-12 overflow-hidden rounded-2xl ${COMMON_CLASSES.CARD_BG}`}
+      className={`hero-wave-bg mb-12 overflow-hidden rounded-2xl ${COMMON_CLASSES.CARD_BG}`}
     >
-      <div className="grid items-center md:grid-cols-2">
+      <div className="relative z-10 grid items-center md:grid-cols-2">
         <div className="p-6 sm:p-8 md:p-12">
           <motion.h1
             variants={fadeInUp}
@@ -31,7 +31,7 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.1 }}
             className={`mb-4 text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl md:text-5xl ${COMMON_CLASSES.TEXT}`}
           >
-            I build intelligent solutions that{" "}
+            I build solutions that{" "}
             <span className="text-primary">transform</span> businesses with data
             and AI.
           </motion.h1>
@@ -65,11 +65,11 @@ export default function HeroSection() {
           className="relative hidden h-[500px] md:block"
         >
           <Image
-            src="/img/hero/foulla-picture.webp"
+            src="/img/hero/foulla-picture.png"
             alt="Professional portrait"
             fill
             priority
-            className="object-contain object-center"
+            className="object-cover object-top"
             sizes="(min-width: 1024px) 500px, 100vw"
           />
         </motion.div>
