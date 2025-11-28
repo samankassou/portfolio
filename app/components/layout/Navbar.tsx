@@ -16,7 +16,7 @@ export default function Navbar() {
       >
         <Image
           className="h-10 w-10 rounded-full"
-          src="/img/profile/profile_pic_sm.jpg"
+          src="/img/profile/profile_pic_sm.jpeg"
           width="0"
           height="0"
           sizes="100vw"
