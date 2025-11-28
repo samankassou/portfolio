@@ -11,26 +11,34 @@ import type { Experience } from "@/lib/types";
 export const experience: Experience[] = [
   {
     id: 1,
-    company: "Google",
-    role: "Lead Web Developer",
-    period: "Jan 2016 - Dec 2021",
+    company: "Africa Global Logistics",
+    role: "BI/AI Project Manager",
+    period: "April 2025 - Present",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et dolore , consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "Leading AI-powered legal monitoring solution development and managing unstructured data extraction from import manifests using AI. Conducting AI acculturation through organizational webinars, training, and support. Technologies: Azure OpenAI, AI Builder, Copilot, Copilot Studio, Power BI.",
   },
   {
     id: 2,
-    company: "Facebook",
-    role: "Lead Web Developer",
-    period: "Jan 2016 - Dec 2021",
+    company: "Africa Global Logistics",
+    role: "Application Analyst",
+    period: "April 2023 - March 2025",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et dolore , consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "Designed and developed Transportation Management System (TMS) web application. Led migration of on-premises .NET applications to Azure cloud (environment setup, analysis, design, development, deployment). Project lead for QlikView to Power BI report migration. Team leader for corporate rebranding project updating business application documents. Team leader for AS400 MAPPING OPALE to ONYX migration. Technologies: QlikView, Power BI, Talend, PHP, Laravel, Azure, C#, JavaScript, React, .NET, ONYX.",
   },
   {
     id: 3,
-    company: "Microsoft",
-    role: "Lead Web Developer",
-    period: "Jan 2016 - Dec 2021",
+    company: "Bolloré Transports & Logistics",
+    role: "Application Analyst",
+    period: "June 2022 - March 2023",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua tempor incididunt ut labore et dolore , consectetur adipiscing dolor sit amet, consectetur adipiscing elit, sed do eiusmod elit.",
+      "Provided application support including .NET web application maintenance. Participated in AS400 MAPPING OPAL to ONYX migration project on Windows platform. Technologies: C#, PHP, JavaScript, jQuery, .NET, Laravel, ONYX.",
+  },
+  {
+    id: 4,
+    company: "Evat Solar",
+    role: "Web Developer",
+    period: "February 2022 - May 2022",
+    description:
+      "Developed company website with integrated e-commerce platform and built web-based job posting platform. Technologies: WordPress, Laravel, JavaScript, jQuery, PHP, CodeIgniter.",
   },
 ];

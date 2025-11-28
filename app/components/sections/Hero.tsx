@@ -4,7 +4,12 @@ import Btn from "../ui/Button";
 import Image from "next/image";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import { motion } from "framer-motion";
-import { fadeInUp, fadeIn, getTransition, useReducedMotion } from "@/lib/utils/animations";
+import {
+  fadeInUp,
+  fadeIn,
+  getTransition,
+  useReducedMotion,
+} from "@/lib/utils/animations";
 
 export default function HeroSection() {
   const reducedMotion = useReducedMotion();
@@ -26,8 +31,8 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.1 }}
             className={`mb-4 text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl md:text-5xl ${COMMON_CLASSES.TEXT}`}
           >
-            I design products that <span className="text-primary">delight</span>{" "}
-            and inspire people.
+            I build intelligent solutions that <span className="text-primary">transform</span>{" "}
+            businesses with data and AI.
           </motion.h1>
           <motion.p
             variants={fadeInUp}
@@ -36,9 +41,9 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.2 }}
             className={`mb-6 max-w-md text-sm leading-relaxed sm:mb-8 sm:text-base ${COMMON_CLASSES.TEXT_MUTED}`}
           >
-            Hi! I'm Foulla, A Product Designer and Visual Developer in SF. I
-            specialize in UI/UX Design, Responsive Web Design, and Visual
-            Development.
+            Hi! I'm Foulla, a Software Engineer based in Douala, Cameroon. I
+            specialize in Business Intelligence, AI & Automation, Cloud Solutions,
+            and Full-Stack Development.
           </motion.p>
           <motion.div
             variants={fadeInUp}
@@ -59,7 +64,7 @@ export default function HeroSection() {
           className="relative hidden h-[500px] md:block"
         >
           <Image
-            src="/img/hero/emerging-hero-real.webp"
+            src="/img/hero/foulla-picture.png"
             alt="Professional portrait"
             fill
             priority

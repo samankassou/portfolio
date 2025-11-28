@@ -11,29 +11,38 @@ import type { Education } from "@/lib/types";
 export const education: Education[] = [
   {
     id: 1,
-    school: "University of Toronto",
+    school: "ENSP Douala",
     role: "Student",
-    certificate: "Certificate of training",
-    period: "Jan 2016 - Dec 2021",
+    certificate: "Professional Master's in Software Engineering",
+    period: "In Progress - June 2026",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.",
+      "Advanced training in software engineering with specialization in system architecture and project management.",
   },
   {
     id: 2,
-    school: "University of Toronto",
+    school: "IUT Douala",
     role: "Student",
-    certificate: "Certificate of training",
-    period: "Jan 2016 - Dec 2021",
+    certificate: "Technology Bachelor's in Software Engineering",
+    period: "July 2024",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.",
+      "Technical training in software development and IT project management.",
   },
   {
     id: 3,
-    school: "University of Toronto",
+    school: "IUT Ngaoundéré",
     role: "Student",
-    certificate: "Certificate of training",
-    period: "Jan 2016 - Dec 2021",
+    certificate: "DUT in Computer Engineering",
+    period: "October 2020",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet dapibus nibh ut faucibus nunc, egestas id amet porttitor. Pulvinar quisque sed amet, nulla nunc. Eleifend sodales posuere fusce tempus etiam et pellentesque. Molestie risus enim neque eget dui.",
+      "University Diploma of Technology in Computer Engineering - graduated with highest honors (mention très bien avec les félicitations du jury).",
+  },
+  {
+    id: 4,
+    school: "Lycée Ouro Hourso Garoua",
+    role: "High School Student",
+    certificate: "Baccalauréat général série C",
+    period: "August 2017",
+    description:
+      "Scientific Baccalaureate with specialization in mathematics and physical sciences.",
   },
 ];

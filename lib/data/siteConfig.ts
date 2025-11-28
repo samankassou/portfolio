@@ -6,9 +6,9 @@ import type { SiteConfig, SocialLink } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
   metadata: {
-    title: "Portfolio - Samankassou",
-    description: "The portfolio of Samankassou, a full-stack web developer",
-    language: "fr",
+    title: "Portfolio - Foulla SAMANKASSOU",
+    description: "Software Engineer specializing in BI, AI, Cloud Solutions, and Full-Stack Development",
+    language: "en",
   },
   author: {
     name: "Foulla SAMANKASSOU",
@@ -22,10 +22,6 @@ export const siteConfig: SiteConfig = {
  * Social media links
  */
 export const socialLinks: SocialLink[] = [
-  { id: 1, icon: "logo-facebook", url: "#", label: "Facebook" },
-  { id: 2, icon: "logo-twitter", url: "#", label: "Twitter" },
-  { id: 3, icon: "logo-instagram", url: "#", label: "Instagram" },
-  { id: 4, icon: "logo-linkedin", url: "#", label: "LinkedIn" },
-  { id: 5, icon: "logo-youtube", url: "#", label: "YouTube" },
-  { id: 6, icon: "logo-github", url: "#", label: "GitHub" },
+  { id: 1, icon: "logo-linkedin", url: "https://linkedin.com/in/sam-foulla", label: "LinkedIn" },
+  { id: 2, icon: "logo-github", url: "https://github.com/samankassou", label: "GitHub" },
 ];
