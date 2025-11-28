@@ -116,3 +116,26 @@ export interface AnimationConfig {
   exit?: object;
   transition?: object;
 }
+
+// Certifications
+export interface Certification {
+  id: number;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+}
+
+// Languages
+export interface Language {
+  id: number;
+  name: string;
+  proficiency: "Native" | "Fluent" | "Professional" | "Conversational" | "Basic";
+}
+
+// Skill Categories
+export interface SkillCategory {
+  id: number;
+  category: string;
+  skills: Skill[];
+}

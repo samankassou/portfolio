@@ -1,9 +1,11 @@
 import ProfileSection from "./ProfileSection";
 import SocialLinks from "./SocialLinks";
 import ContactInfo from "./ContactInfo";
-import SkillsSection from "./SkillsSection";
+import CategorizedSkillsSection from "./CategorizedSkillsSection";
+import LanguagesSection from "./LanguagesSection";
 import CVDownloadButton from "./CVDownloadButton";
-import { profileData, contactInfo, majorSkills, extraSkills } from "@/lib/data/profile";
+import { profileData, contactInfo, skillCategories } from "@/lib/data/profile";
+import { languages } from "@/lib/data/languages";
 import { socialLinks } from "@/lib/data/siteConfig";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 
@@ -16,7 +18,8 @@ export default function LeftSidebar() {
         <ProfileSection data={profileData} />
         <SocialLinks links={socialLinks} />
         <ContactInfo contacts={contactInfo} />
-        <SkillsSection majorSkills={majorSkills} extraSkills={extraSkills} />
+        <CategorizedSkillsSection skillCategories={skillCategories} />
+        <LanguagesSection languages={languages} />
         <CVDownloadButton />
       </div>
     </aside>

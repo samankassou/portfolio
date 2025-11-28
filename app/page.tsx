@@ -6,6 +6,7 @@ import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Education from "./components/sections/Education";
 import Experience from "./components/sections/Experience";
+import Certifications from "./components/sections/Certifications";
 import Portfolio from "./components/sections/Portfolio";
 import Testimonials from "./components/sections/Testimonials";
 import Blogs from "./components/sections/Blogs";
@@ -24,7 +25,7 @@ export default function Home() {
             <section>
               <SectionHeader
                 title="My Services"
-                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+                subtitle="Specialized expertise in business intelligence, cloud solutions, AI automation, and full-stack development to help transform your business."
               />
               <Services />
             </section>
@@ -33,7 +34,7 @@ export default function Home() {
             <section>
               <SectionHeader
                 title="Education"
-                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+                subtitle="Academic background in software engineering with a focus on system architecture and project management."
               />
               <Education />
             </section>
@@ -42,9 +43,18 @@ export default function Home() {
             <section>
               <SectionHeader
                 title="Experience"
-                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+                subtitle="My professional journey in software engineering, from web development to leading BI and AI projects."
               />
               <Experience />
+            </section>
+
+            {/* Certifications */}
+            <section>
+              <SectionHeader
+                title="Certifications"
+                subtitle="Professional certifications and credentials demonstrating expertise in cloud technologies, business intelligence, and agile methodologies."
+              />
+              <Certifications />
             </section>
 
             {/* Portfolio */}
