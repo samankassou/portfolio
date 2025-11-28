@@ -4,7 +4,7 @@ import { testimonials } from "@/lib/data/testimonials";
 export default function Testimonials() {
 
   return (
-    <ul className="scrollbar-hidden -mx-6 flex gap-6 overflow-x-auto scroll-smooth px-6 pb-2">
+    <ul className="scrollbar-hidden flex gap-6 overflow-x-auto scroll-smooth pb-2">
       {testimonials &&
         testimonials.map((testimonial) => (
           <li
