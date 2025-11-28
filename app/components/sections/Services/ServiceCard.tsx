@@ -1,5 +1,8 @@
+"use client";
+
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import type { Service } from "@/lib/types";
+import { motion } from "framer-motion";
 
 interface ServiceCardProps {
   service: Service;
@@ -7,9 +10,10 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <div
+    <motion.div
+      whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className={cn(
-        "flex h-full w-full flex-col rounded-xl border border-secondary/10 p-6 transition-all hover:shadow-lg sm:p-8 dark:border-base-800 dark:hover:border-base-700",
+        "flex h-full w-full flex-col rounded-xl border border-secondary/10 p-6 transition-shadow hover:shadow-lg sm:p-8 dark:border-base-800 dark:hover:border-base-700",
         COMMON_CLASSES.CARD_BG
       )}
     >
@@ -35,6 +39,6 @@ export default function ServiceCard({ service }: ServiceCardProps) {
             </li>
           ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }

@@ -5,6 +5,7 @@ import ProjectsList from "./ProjectsList";
 import { projectCategories } from "@/lib/data/projects";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { ProjectCategory } from "@/lib/types";
+import { motion } from "framer-motion";
 
 export default function PortfolioContainer() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("All categories");
@@ -18,14 +19,16 @@ export default function PortfolioContainer() {
         >
           {projectCategories.map((category) => (
             <li key={category}>
-              <button
+              <motion.button
                 onClick={() => setSelectedCategory(category)}
-                className={`transition-all duration-300 hover:text-primary ${
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className={`transition-colors duration-300 hover:text-primary ${
                   selectedCategory === category ? "text-primary dark:text-primary" : ""
                 }`}
               >
                 {category}
-              </button>
+              </motion.button>
             </li>
           ))}
         </ul>
