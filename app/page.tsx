@@ -2,7 +2,6 @@ import Navbar from "./components/layout/Navbar";
 import LeftSidebar from "./components/layout/LeftSidebar";
 import RightSidebar from "./components/layout/RightSidebar";
 import Footer from "./components/layout/Footer";
-import { COMMON_CLASSES } from "@/lib/constants/colors";
 import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Education from "./components/sections/Education";
@@ -11,15 +10,9 @@ import Portfolio from "./components/sections/Portfolio";
 import Testimonials from "./components/sections/Testimonials";
 import Blogs from "./components/sections/Blogs";
 import Contact from "./components/sections/Contact";
+import SectionHeader from "./components/ui/SectionHeader";
 
 export default function Home() {
-  const sectionTitleClass =
-    "mb-3 text-center text-2xl font-bold leading-8 md:mb-4 md:text-3xl " +
-    COMMON_CLASSES.TEXT;
-  const sectionSubtitleClass =
-    "mx-auto mb-10 max-w-[438px] text-center text-sm leading-6 md:mb-12 " +
-    COMMON_CLASSES.TEXT_MUTED;
-
   return (
     <div className="mx-auto flex gap-8 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
       <LeftSidebar />
@@ -29,106 +22,64 @@ export default function Home() {
         <main className="grid grid-cols-1 gap-16 md:gap-24 xl:gap-56">
             {/* Services */}
             <section>
-              <h2 className={sectionTitleClass}>
-                My Services
-              </h2>
-              <p className={sectionSubtitleClass}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. lorem
-                ipsum
-              </p>
-              {/* Liste des services */}
+              <SectionHeader
+                title="My Services"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+              />
               <Services />
             </section>
 
             {/* Education */}
             <section>
-              <h2 className={sectionTitleClass}>
-                Education
-              </h2>
-              <p className={sectionSubtitleClass}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. lorem
-                ipsum
-              </p>
-              {/* Liste des parcours */}
+              <SectionHeader
+                title="Education"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+              />
               <Education />
             </section>
 
             {/* Experience */}
             <section>
-              <h2 className={sectionTitleClass}>
-                Experience
-              </h2>
-              <p className={sectionSubtitleClass}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. lorem
-                ipsum
-              </p>
-              {/* Liste des expériences */}
+              <SectionHeader
+                title="Experience"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+              />
               <Experience />
             </section>
 
             {/* Portfolio */}
             <section>
-              <div className="mb-8">
-                <h2 className={sectionTitleClass}>
-                  Portfolio
-                </h2>
-                <p className={sectionSubtitleClass}>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
-                  lorem ipsum. Minim mollit non deserunt ullamco est sit aliqua
-                  dolor do amet.
-                </p>
-              </div>
-              {/* Portfolio Filter and Projects */}
+              <SectionHeader
+                title="Portfolio"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum. Minim mollit non deserunt ullamco est sit aliqua dolor do amet."
+              />
               <Portfolio />
             </section>
 
             {/* Testimonials */}
             <section>
-              <div className="mb-8">
-                <h2 className={sectionTitleClass}>
-                  Testimonials
-                </h2>
-                <p className={sectionSubtitleClass}>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
-                  lorem ipsum
-                </p>
-              </div>
-              {/* Liste des testimonials */}
+              <SectionHeader
+                title="Testimonials"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+              />
               <Testimonials />
             </section>
 
             {/* Latest blogs */}
             <section>
-              <h2 className={sectionTitleClass}>
-                Latest blogs
-              </h2>
-              <p className={sectionSubtitleClass}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. Lorem
-                ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet.
-              </p>
-              {/* Liste des blogs */}
+              <SectionHeader
+                title="Latest blogs"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Lorem ipsum minim mollit non deserunt ullamco est sit aliqua dolor do amet."
+              />
               <Blogs />
             </section>
 
             {/* Get in touch */}
             <section>
-              <h2 className={sectionTitleClass}>
-                Get in touch
-              </h2>
-              <p className={sectionSubtitleClass}>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit. Lorem
-                ipsum minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet.
-              </p>
-              {/* Contact form and info */}
+              <SectionHeader
+                title="Get in touch"
+                subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Lorem ipsum minim mollit non deserunt ullamco est sit aliqua dolor do amet."
+              />
               <Contact />
             </section>
         </main>
