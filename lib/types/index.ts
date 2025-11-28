@@ -108,3 +108,11 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+// Animation types
+export interface AnimationConfig {
+  initial: object;
+  animate: object;
+  exit?: object;
+  transition?: object;
+}
