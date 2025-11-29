@@ -27,20 +27,20 @@ export default function Address() {
       <div>
         <div className="flex justify-between">
           <p className="text-sm font-normal text-base-content dark:text-base-100">
-            Skype:
+            LinkedIn:
           </p>
           <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-            @foullasamankassou
+            @sam-foulla
           </p>
         </div>
       </div>
       <div>
         <div className="flex justify-between">
           <p className="text-sm font-normal text-base-content dark:text-base-100">
-            Telegram:
+            Github:
           </p>
           <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-            @foullasamankassou
+            @samankassou
           </p>
         </div>
       </div>

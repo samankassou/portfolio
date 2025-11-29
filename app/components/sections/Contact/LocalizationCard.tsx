@@ -34,16 +34,6 @@ export default function LocalizationCard() {
           </p>
         </div>
       </div>
-      <div>
-        <div className="flex justify-between">
-          <p className="text-sm font-normal text-base-content dark:text-base-100">
-            Street:
-          </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-            Ange Raphaël
-          </p>
-        </div>
-      </div>
     </div>
   );
 }

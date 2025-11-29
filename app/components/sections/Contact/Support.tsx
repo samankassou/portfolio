@@ -17,16 +17,6 @@ export default function Support() {
       <div>
         <div className="flex justify-between">
           <p className="text-sm font-normal text-base-content dark:text-base-100">
-            Support:
-          </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-            153698745
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className="flex justify-between">
-          <p className="text-sm font-normal text-base-content dark:text-base-100">
             Office:
           </p>
           <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
