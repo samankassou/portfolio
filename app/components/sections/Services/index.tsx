@@ -1,7 +1,7 @@
 "use client";
 
 import ServiceCard from "./ServiceCard";
-import AdvertCard from "./AdvertCard";
+// import AdvertCard from "./AdvertCard"; // Temporarily disabled
 import { services } from "@/lib/data/services";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/lib/hooks/useScrollAnimation";
@@ -24,9 +24,10 @@ export default function Services() {
             <ServiceCard service={service} />
           </motion.li>
         ))}
-      <motion.li variants={scaleIn}>
+      {/* Advertising card temporarily disabled */}
+      {/* <motion.li variants={scaleIn}>
         <AdvertCard />
-      </motion.li>
+      </motion.li> */}
     </motion.ul>
   );
 }
