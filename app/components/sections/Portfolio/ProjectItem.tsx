@@ -25,7 +25,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
           alt={project.title}
         />
         <div className="absolute -bottom-10 flex h-full w-full items-center justify-center bg-primary/60 text-[32px] opacity-0 transition-all duration-300 group-hover:bottom-0 group-hover:opacity-100">
-          <a href="#" target="_blank">
+          <a href={`/portfolio/${project.id}`}>
             <motion.span
               whileHover={{ rotate: 90, scale: 1.1 }}
               transition={{ duration: 0.2 }}
