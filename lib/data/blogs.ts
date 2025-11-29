@@ -1,6 +1,5 @@
 /**
  * Blog posts data
- * Extracted from latestBlogsList.js
  */
 
 import type { Blog } from "@/lib/types";

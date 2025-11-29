@@ -1,6 +1,5 @@
 /**
  * Portfolio projects data
- * Extracted from projectsList.js and portfolioContainer.js
  */
 
 import type { ProjectCategory, Project } from "@/lib/types";

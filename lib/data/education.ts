@@ -1,6 +1,5 @@
 /**
  * Education history data
- * Extracted from educationList.js
  */
 
 import type { Education } from "@/lib/types";
@@ -35,14 +34,5 @@ export const education: Education[] = [
     period: "October 2020",
     description:
       "University Diploma of Technology in Computer Engineering - graduated with highest honors (mention très bien avec les félicitations du jury).",
-  },
-  {
-    id: 4,
-    school: "Lycée Ouro Hourso Garoua",
-    role: "High School Student",
-    certificate: "Baccalauréat général série C",
-    period: "August 2017",
-    description:
-      "Scientific Baccalaureate with specialization in mathematics and physical sciences.",
   },
 ];

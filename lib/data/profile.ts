@@ -1,6 +1,5 @@
 /**
  * Profile and personal information data
- * Extracted from leftSideMenu.js
  */
 
 import type {

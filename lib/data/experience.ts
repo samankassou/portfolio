@@ -1,6 +1,5 @@
 /**
  * Work experience data
- * Extracted from experienceList.js
  */
 
 import type { Experience } from "@/lib/types";

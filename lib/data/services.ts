@@ -1,6 +1,5 @@
 /**
  * Services data
- * Extracted from servicesList.js
  */
 
 import type { Service } from "@/lib/types";
