@@ -20,8 +20,9 @@ export function useScrollAnimation(threshold = 0.2) {
 
   const isInView = useInView(ref, {
     once: true,
-    // Use smaller margin on mobile to prevent sections from staying hidden
-    margin: isMobile ? "-20px" : "-100px",
+    // Remove negative margin on mobile to ensure content appears
+    // Desktop uses -100px for a delayed entrance effect
+    margin: isMobile ? "0px" : "-100px",
     amount: threshold,
   });
 
