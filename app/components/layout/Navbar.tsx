@@ -13,17 +13,19 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`mb-16 flex items-center justify-between rounded-full py-3 pl-3 pr-6 xl:hidden ${COMMON_CLASSES.CARD_BG}`}
+        className={`mb-16 flex items-center justify-between rounded-full py-2 pl-2 pr-6 xl:hidden ${COMMON_CLASSES.CARD_BG}`}
       >
-        <Image
-          className="h-10 w-10 rounded-full"
-          src="/img/profile/profile_pic_sm.webp"
-          width={40}
-          height={40}
-          sizes="40px"
-          priority
-          alt="Picture of the author"
-        />
+        <div className="flex-shrink-0">
+          <Image
+            className="h-10 w-10 rounded-full object-cover sm:h-14 sm:w-14"
+            src="/img/profile/profile_pic_sm.webp"
+            width={64}
+            height={64}
+            sizes="(max-width: 640px) 56px, 64px"
+            priority
+            alt="Picture of the author"
+          />
+        </div>
         <ul className="flex items-center justify-between gap-6">
           <li key="one" className="text-2xl text-primary">
             <ThemeToggle />
