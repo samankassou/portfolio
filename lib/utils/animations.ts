@@ -54,3 +54,12 @@ export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: { opacity: 1, scale: 1 },
 };
+
+// Variant: Pulse animation (for breathing effect)
+export const pulse: Variants = {
+  initial: { scale: 1, opacity: 0.8 },
+  animate: {
+    scale: [1, 1.05, 1],
+    opacity: [0.8, 1, 0.8],
+  },
+};

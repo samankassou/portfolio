@@ -8,6 +8,7 @@ import {
   IoClose,
   IoRibbonOutline,
   IoArrowForward,
+  IoArrowBack,
   IoMail,
   IoMap,
   IoTabletPortrait,
@@ -28,6 +29,7 @@ import {
   IoFolder,
   IoChatbubbles,
   IoNewspaper,
+  IoNewspaperOutline,
   IoBarChart,
   IoCloud,
   IoBulb,
@@ -49,6 +51,7 @@ const iconMap = {
   folder: IoFolder,
   chatbubbles: IoChatbubbles,
   newspaper: IoNewspaper,
+  "newspaper-outline": IoNewspaperOutline,
   mail: IoMail,
 
   // Theme icons
@@ -62,6 +65,7 @@ const iconMap = {
 
   // Action icons
   "arrow-forward": IoArrowForward,
+  "arrow-back": IoArrowBack,
   "add-outline": IoAddOutline,
   "download-outline": IoDownloadOutline,
 
