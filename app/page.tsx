@@ -61,7 +61,7 @@ export default function Home() {
           <section>
             <SectionHeader
               title="Portfolio"
-              subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum. Minim mollit non deserunt ullamco est sit aliqua dolor do amet."
+              subtitle="A showcase of selected projects demonstrating my expertise in web development, business intelligence, and innovative technical solutions."
             />
             <Portfolio />
           </section>
@@ -70,7 +70,7 @@ export default function Home() {
           <section>
             <SectionHeader
               title="Testimonials"
-              subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum"
+              subtitle="What colleagues and collaborators say about working with me on software projects and technical solutions."
             />
             <Testimonials />
           </section>
@@ -79,7 +79,7 @@ export default function Home() {
           <section>
             <SectionHeader
               title="Latest blogs"
-              subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Lorem ipsum minim mollit non deserunt ullamco est sit aliqua dolor do amet."
+              subtitle="Insights and perspectives on software development, cloud technologies, business intelligence, and emerging tech trends."
             />
             <Blogs />
           </section>
@@ -88,7 +88,7 @@ export default function Home() {
           <section>
             <SectionHeader
               title="Get in touch"
-              subtitle="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Lorem ipsum minim mollit non deserunt ullamco est sit aliqua dolor do amet."
+              subtitle="Let's discuss your project needs and explore how we can work together to create innovative solutions for your business."
             />
             <Contact />
           </section>
