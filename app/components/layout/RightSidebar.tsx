@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ThemeToggle from "../ui/ThemeToggle";
+import ChristmasToggle from "../ui/ChristmasToggle";
 import { mainNavigation } from "@/lib/data/navigation";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { NavItem } from "@/lib/types";
@@ -20,7 +21,10 @@ export default function RightSideMenu() {
         className={`sticky top-8 flex min-h-[900px] flex-col items-center rounded-2xl py-8 ${COMMON_CLASSES.CARD_BG}`}
       >
         {/* Theme Toggle */}
-        <ThemeToggle className="mb-8 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
+        <ThemeToggle className="mb-4 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
+
+        {/* Christmas Toggle */}
+        <ChristmasToggle className="mb-8 flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
 
         {/* Navigation Items */}
         <ul className="flex flex-1 flex-col items-center justify-center gap-4">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import ThemeToggle from "../ui/ThemeToggle";
+import ChristmasToggle from "../ui/ChristmasToggle";
 import MobileMenu from "./MobileMenu";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import Icon from "@/lib/components/Icon";
@@ -27,10 +28,13 @@ export default function Navbar() {
           />
         </div>
         <ul className="flex items-center justify-between gap-6">
-          <li key="one" className="text-2xl text-primary">
+          <li key="theme" className="text-2xl text-primary">
             <ThemeToggle />
           </li>
-          <li key="two" className="text-2xl dark:text-primary">
+          <li key="christmas" className="text-2xl text-primary">
+            <ChristmasToggle />
+          </li>
+          <li key="menu" className="text-2xl dark:text-primary">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
