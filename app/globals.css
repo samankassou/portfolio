@@ -6,11 +6,29 @@
   :root {
     --wave-opacity-light: 0.6;
     --wave-color-light: #646471; /* base-700 */
+
+    /* Christmas color variables - Light mode */
+    --christmas-light-1: #C41E3A;
+    --christmas-light-2: #0F8A5F;
+    --christmas-light-3: #FFD700;
+    --christmas-light-4: #1E90FF;
+    --christmas-snow: rgba(200, 220, 255, 0.7);
+    --christmas-glow: rgba(196, 30, 58, 0.3);
+    --christmas-ornament: #C41E3A;
   }
 
   .dark {
     --wave-opacity-dark: 0.3;
     --wave-color-dark: #ffffff; /* white */
+
+    /* Christmas color variables - Dark mode */
+    --christmas-light-1: #FFD700;
+    --christmas-light-2: #FF6B6B;
+    --christmas-light-3: #4ECDC4;
+    --christmas-light-4: #FFA07A;
+    --christmas-snow: rgba(255, 255, 255, 0.9);
+    --christmas-glow: rgba(255, 215, 0, 0.4);
+    --christmas-ornament: #FFD700;
   }
 }
 
@@ -64,6 +82,97 @@
     50% {
       background-position: 100% 50%;
     }
+  }
+
+  /* Christmas Animations */
+  .snowflake {
+    background: var(--christmas-snow);
+    border-radius: 50%;
+    contain: layout style paint;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .snowflake {
+      animation: snowfall linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translateY(-10vh) translateX(0);
+      }
+      25% {
+        transform: translateY(25vh) translateX(5vw);
+      }
+      50% {
+        transform: translateY(50vh) translateX(-5vw);
+      }
+      75% {
+        transform: translateY(75vh) translateX(3vw);
+      }
+      100% {
+        transform: translateY(110vh) translateX(0);
+      }
+    }
+  }
+
+  /* Christmas Lights */
+  .christmas-light {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    contain: layout style paint;
+  }
+
+  .christmas-light[data-color-index="0"] {
+    background: var(--christmas-light-1);
+    box-shadow: 0 0 8px var(--christmas-light-1);
+  }
+
+  .christmas-light[data-color-index="1"] {
+    background: var(--christmas-light-2);
+    box-shadow: 0 0 8px var(--christmas-light-2);
+  }
+
+  .christmas-light[data-color-index="2"] {
+    background: var(--christmas-light-3);
+    box-shadow: 0 0 8px var(--christmas-light-3);
+  }
+
+  .christmas-light[data-color-index="3"] {
+    background: var(--christmas-light-4);
+    box-shadow: 0 0 8px var(--christmas-light-4);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .christmas-light-animated {
+      animation: twinkle 2s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  /* Christmas Ornament */
+  .christmas-ornament .ornament-ball {
+    fill: var(--christmas-ornament);
+    stroke: currentColor;
+    stroke-width: 1;
+    opacity: 0.9;
+  }
+
+  .christmas-ornament .ornament-cap {
+    fill: currentColor;
+    opacity: 0.6;
   }
 }
 

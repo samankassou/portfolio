@@ -35,6 +35,9 @@ import {
   IoBulb,
   IoCodeSlash,
   IoGitBranch,
+  IoSnow,
+  IoSnowOutline,
+  IoGiftOutline,
 } from "react-icons/io5";
 
 /**
@@ -83,6 +86,11 @@ const iconMap = {
   star: IoStar,
   "star-half-outline": IoStarHalf,
   "star-outline": IoStarOutline,
+
+  // Christmas icons
+  snow: IoSnow,
+  "snow-outline": IoSnowOutline,
+  "gift-outline": IoGiftOutline,
 } as const;
 
 export type IconName = keyof typeof iconMap;

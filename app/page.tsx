@@ -12,12 +12,15 @@ import Testimonials from "./components/sections/Testimonials";
 import Blogs from "./components/sections/Blogs";
 import Contact from "./components/sections/Contact";
 import SectionHeader from "./components/ui/SectionHeader";
+import Snowfall from "./components/christmas/Snowfall";
 
 export default function Home() {
   return (
-    <div className="mx-auto flex gap-8 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
-      <LeftSidebar />
-      <div className="min-w-0 flex-1">
+    <>
+      <Snowfall />
+      <div className="mx-auto flex gap-8 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
+        <LeftSidebar />
+        <div className="min-w-0 flex-1">
         <Navbar />
         <Hero />
         <main className="grid grid-cols-1 gap-16 md:gap-24">
@@ -95,7 +98,8 @@ export default function Home() {
         </main>
         <Footer />
       </div>
-      <RightSidebar />
-    </div>
+        <RightSidebar />
+      </div>
+    </>
   );
 }

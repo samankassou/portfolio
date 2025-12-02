@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/components/providers/ThemeProvider";
+import { ChristmasProvider } from "@/app/components/providers/ChristmasProvider";
 import { siteConfig } from "@/lib/data/siteConfig";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { Metadata } from "next";
@@ -29,12 +30,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
               } else {
                 document.documentElement.classList.remove('dark')
               }
+              if (localStorage.getItem('christmas-mode') === 'enabled') {
+                document.documentElement.classList.add('christmas-mode')
+              }
         `,
           }}
         />
       </head>
       <body className={`${inter.className} ${COMMON_CLASSES.PAGE_BG} overflow-x-hidden`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ChristmasProvider>
+            {children}
+          </ChristmasProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
