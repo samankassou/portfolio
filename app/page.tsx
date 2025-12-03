@@ -20,14 +20,14 @@ export default function Home() {
     <>
       <Snowfall />
       <ScrollToTop />
-      <div className="mx-auto flex gap-8 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
+      <div className="mx-auto flex gap-6 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1600px] xl:gap-8">
         <LeftSidebar />
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 xl:mr-[120px]">
         <Navbar />
         <Hero />
         <main className="grid grid-cols-1 gap-16 md:gap-24">
           {/* Services */}
-          <section>
+          <section id="services">
             <SectionHeader
               title="My Services"
               subtitle="Specialized expertise in business intelligence, cloud solutions, AI automation, and full-stack development to help transform your business."
@@ -36,7 +36,7 @@ export default function Home() {
           </section>
 
           {/* Education */}
-          <section>
+          <section id="education">
             <SectionHeader
               title="Education"
               subtitle="Academic background in software engineering with a focus on system architecture and project management."
@@ -45,7 +45,7 @@ export default function Home() {
           </section>
 
           {/* Experience */}
-          <section>
+          <section id="experience">
             <SectionHeader
               title="Experience"
               subtitle="My professional journey in software engineering, from web development to leading BI and AI projects."
@@ -54,7 +54,7 @@ export default function Home() {
           </section>
 
           {/* Certifications */}
-          <section>
+          <section id="certifications">
             <SectionHeader
               title="Certifications"
               subtitle="Professional certifications and credentials demonstrating expertise in cloud technologies, business intelligence, and agile methodologies."
@@ -63,7 +63,7 @@ export default function Home() {
           </section>
 
           {/* Portfolio */}
-          <section>
+          <section id="portfolio">
             <SectionHeader
               title="Portfolio"
               subtitle="A showcase of selected projects demonstrating my expertise in web development, business intelligence, and innovative technical solutions."
@@ -72,7 +72,7 @@ export default function Home() {
           </section>
 
           {/* Testimonials */}
-          <section>
+          <section id="testimonials">
             <SectionHeader
               title="Testimonials"
               subtitle="What colleagues and collaborators say about working with me on software projects and technical solutions."
@@ -81,7 +81,7 @@ export default function Home() {
           </section>
 
           {/* Latest blogs */}
-          <section>
+          <section id="blog">
             <SectionHeader
               title="Latest blogs"
               subtitle="Insights and perspectives on software development, cloud technologies, business intelligence, and emerging tech trends."
@@ -90,7 +90,7 @@ export default function Home() {
           </section>
 
           {/* Get in touch */}
-          <section>
+          <section id="contact">
             <SectionHeader
               title="Get in touch"
               subtitle="Let's discuss your project needs and explore how we can work together to create innovative solutions for your business."
@@ -100,8 +100,8 @@ export default function Home() {
         </main>
         <Footer />
       </div>
-        <RightSidebar />
       </div>
+      <RightSidebar />
     </>
   );
 }

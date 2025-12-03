@@ -4,30 +4,15 @@ import { useEffect } from "react";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import Icon from "@/lib/components/Icon";
 import type { IconName } from "@/lib/components/Icon";
+import { mainNavigation } from "@/lib/data/navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-interface NavItemType {
-  id: string;
-  icon: string;
-  label: string;
-  href: string;
-}
-
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  const navItems: NavItemType[] = [
-    { id: "home", icon: "home", label: "Home", href: "#" },
-    { id: "services", icon: "grid", label: "Services", href: "#services" },
-    { id: "education", icon: "school", label: "Education", href: "#education" },
-    { id: "experience", icon: "briefcase", label: "Experience", href: "#experience" },
-    { id: "portfolio", icon: "folder", label: "Portfolio", href: "#portfolio" },
-    { id: "testimonials", icon: "chatbubbles", label: "Testimonials", href: "#testimonials" },
-    { id: "blog", icon: "newspaper", label: "Blog", href: "#blog" },
-    { id: "contact", icon: "mail", label: "Contact", href: "#contact" },
-  ];
+  const navItems = mainNavigation;
 
   // Handle ESC key press to close menu
   useEffect(() => {

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     --wave-opacity-light: 0.6;
     --wave-color-light: #646471; /* base-700 */
