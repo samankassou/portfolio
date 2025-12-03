@@ -46,15 +46,14 @@ export default function HeroSection() {
             specialize in Business Intelligence, AI & Automation, Cloud
             Solutions, and Full-Stack Development.
           </motion.p>
-          {/* Temporarily disabled */}
-          {/* <motion.div
+          <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.3 }}
           >
             <Btn href="#contact" label="Let's Talk" />
-          </motion.div> */}
+          </motion.div>
         </div>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
