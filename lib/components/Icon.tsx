@@ -10,6 +10,8 @@ import {
   IoArrowForward,
   IoArrowBack,
   IoArrowUp,
+  IoChevronBack,
+  IoChevronForward,
   IoMail,
   IoMap,
   IoTabletPortrait,
@@ -74,6 +76,8 @@ const iconMap = {
   "arrow-forward": IoArrowForward,
   "arrow-back": IoArrowBack,
   "arrow-up": IoArrowUp,
+  "chevron-back": IoChevronBack,
+  "chevron-forward": IoChevronForward,
   "add-outline": IoAddOutline,
   "download-outline": IoDownloadOutline,
 
