@@ -1,16 +1,8 @@
-import BlogItem from "./BlogItem";
-import { blogs } from "@/lib/data/blogs";
+import BlogsList from "./BlogsList";
+import { getAllBlogPosts } from "@/lib/utils/mdx";
 
 export default function Blogs() {
+  const posts = getAllBlogPosts();
 
-  return (
-    <ul className="scrollbar-hidden snap-x-proximity flex gap-4 overflow-x-auto scroll-smooth pb-4">
-      {blogs &&
-        blogs.map((blog) => (
-          <li className="min-w-72 max-w-xs snap-center" key={blog.id}>
-            <BlogItem key={blog.id} blog={blog} />
-          </li>
-        ))}
-    </ul>
-  );
+  return <BlogsList posts={posts} />;
 }

@@ -1,0 +1,143 @@
+---
+title: "10 Tailwind CSS Tips to Speed Up Your Development"
+excerpt: "Master Tailwind CSS with these practical tips and tricks that will make you more productive and your code more maintainable."
+date: "2024-02-10"
+category: "CSS"
+image: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=600&fit=crop"
+tags: ["Tailwind CSS", "CSS", "Web Development"]
+author: "John Doe"
+featured: true
+---
+
+# 10 Tailwind CSS Tips to Speed Up Your Development
+
+Tailwind CSS has revolutionized how we write CSS. Here are 10 tips to help you master Tailwind and build beautiful UIs faster.
+
+## 1. Use @apply for Repeated Patterns
+
+Extract common patterns into custom classes:
+
+```css
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors;
+  }
+}
+```
+
+## 2. Leverage the `cn()` Helper
+
+Combine classes conditionally:
+
+```typescript
+import { cn } from "@/lib/utils"
+
+function Button({ variant, className }) {
+  return (
+    <button
+      className={cn(
+        "px-4 py-2 rounded-lg",
+        variant === "primary" && "bg-blue-500 text-white",
+        variant === "secondary" && "bg-gray-200 text-gray-900",
+        className
+      )}
+    />
+  )
+}
+```
+
+## 3. Custom Color Schemes
+
+Define your color palette in `tailwind.config.js`:
+
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: "#fff7ed",
+          500: "#f97316",
+          900: "#7c2d12",
+        },
+      },
+    },
+  },
+}
+```
+
+## 4. Use Arbitrary Values
+
+Need a specific value? Use square brackets:
+
+```html
+<div class="w-[387px] top-[117px] bg-[#1da1f2]">
+  <!-- Content -->
+</div>
+```
+
+## 5. Responsive Design Made Easy
+
+Mobile-first responsive design:
+
+```html
+<div class="text-sm md:text-base lg:text-lg xl:text-xl">
+  Responsive text
+</div>
+```
+
+## 6. Dark Mode Support
+
+Prefix classes with `dark:`:
+
+```html
+<div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+  Light and dark mode ready!
+</div>
+```
+
+## 7. Group and Peer Modifiers
+
+Control child elements from parents:
+
+```html
+<div class="group hover:bg-blue-500">
+  <p class="group-hover:text-white">Hover the parent!</p>
+</div>
+```
+
+## 8. Transition Utilities
+
+Smooth animations:
+
+```html
+<button class="transform transition hover:scale-105 duration-300">
+  Hover me!
+</button>
+```
+
+## 9. Container Queries
+
+Use `@container` for component-based responsive design:
+
+```html
+<div class="@container">
+  <div class="@lg:grid-cols-3">
+    <!-- Grid adapts to container, not viewport -->
+  </div>
+</div>
+```
+
+## 10. Prettier Plugin
+
+Auto-sort your classes with `prettier-plugin-tailwindcss`:
+
+```bash
+npm install -D prettier prettier-plugin-tailwindcss
+```
+
+## Conclusion
+
+These tips will help you write cleaner, more maintainable Tailwind CSS code. Experiment with them in your projects and watch your productivity soar!
+
+Happy styling! 🎨

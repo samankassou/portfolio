@@ -1,0 +1,112 @@
+---
+title: "TypeScript Best Practices for Modern Development"
+excerpt: "Discover essential TypeScript patterns and best practices to write safer, more maintainable code in your projects."
+date: "2024-02-01"
+category: "TypeScript"
+image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop"
+tags: ["TypeScript", "JavaScript", "Best Practices"]
+author: "John Doe"
+featured: false
+---
+
+# TypeScript Best Practices for Modern Development
+
+TypeScript has become the standard for building robust JavaScript applications. Let's explore some best practices that will help you write better TypeScript code.
+
+## Use Strict Mode
+
+Always enable strict mode in your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
+}
+```
+
+## Prefer Type Inference
+
+Let TypeScript infer types when possible:
+
+```typescript
+// Good - Type inferred
+const message = "Hello, World!"
+const count = 42
+
+// Avoid - Unnecessary type annotation
+const message: string = "Hello, World!"
+```
+
+## Use Utility Types
+
+TypeScript provides powerful utility types:
+
+```typescript
+interface User {
+  id: string
+  name: string
+  email: string
+  age?: number
+}
+
+// Pick only needed properties
+type UserPreview = Pick<User, "id" | "name">
+
+// Make all properties optional
+type PartialUser = Partial<User>
+
+// Make all properties required
+type RequiredUser = Required<User>
+```
+
+## Discriminated Unions
+
+Create type-safe state machines:
+
+```typescript
+type LoadingState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "success"; data: string }
+  | { status: "error"; error: Error }
+
+function handleState(state: LoadingState) {
+  switch (state.status) {
+    case "idle":
+      return "Not started"
+    case "loading":
+      return "Loading..."
+    case "success":
+      return state.data
+    case "error":
+      return state.error.message
+  }
+}
+```
+
+## Avoid `any`
+
+Use `unknown` when you truly don't know the type:
+
+```typescript
+// Bad
+function processData(data: any) {
+  return data.value
+}
+
+// Good
+function processData(data: unknown) {
+  if (typeof data === "object" && data !== null && "value" in data) {
+    return (data as { value: string }).value
+  }
+  return null
+}
+```
+
+## Conclusion
+
+Following these TypeScript best practices will help you write more maintainable and type-safe code. Start implementing them in your projects today!

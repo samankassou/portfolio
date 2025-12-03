@@ -79,6 +79,25 @@ export interface Blog {
   thumbnail: string;
 }
 
+// MDX Blog
+export interface BlogFrontmatter {
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  image: string;
+  tags: string[];
+  author: string;
+  featured: boolean;
+}
+
+export interface BlogPost {
+  slug: string;
+  frontmatter: BlogFrontmatter;
+  content: string;
+  readingTime: string;
+}
+
 // Site Configuration
 export interface SocialLink {
   id: number;

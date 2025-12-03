@@ -9,6 +9,7 @@ import {
   IoRibbonOutline,
   IoArrowForward,
   IoArrowBack,
+  IoArrowUp,
   IoMail,
   IoMap,
   IoTabletPortrait,
@@ -38,6 +39,9 @@ import {
   IoSnow,
   IoSnowOutline,
   IoGiftOutline,
+  IoCalendarOutline,
+  IoTimeOutline,
+  IoPersonOutline,
 } from "react-icons/io5";
 
 /**
@@ -69,6 +73,7 @@ const iconMap = {
   // Action icons
   "arrow-forward": IoArrowForward,
   "arrow-back": IoArrowBack,
+  "arrow-up": IoArrowUp,
   "add-outline": IoAddOutline,
   "download-outline": IoDownloadOutline,
 
@@ -86,6 +91,11 @@ const iconMap = {
   star: IoStar,
   "star-half-outline": IoStarHalf,
   "star-outline": IoStarOutline,
+
+  // Blog/Time icons
+  "calendar-outline": IoCalendarOutline,
+  "time-outline": IoTimeOutline,
+  "person-outline": IoPersonOutline,
 
   // Christmas icons
   snow: IoSnow,
