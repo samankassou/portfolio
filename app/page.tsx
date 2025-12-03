@@ -13,11 +13,13 @@ import Blogs from "./components/sections/Blogs";
 import Contact from "./components/sections/Contact";
 import SectionHeader from "./components/ui/SectionHeader";
 import Snowfall from "./components/christmas/Snowfall";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 export default function Home() {
   return (
     <>
       <Snowfall />
+      <ScrollToTop />
       <div className="mx-auto flex gap-8 overflow-x-hidden px-4 py-5 sm:px-8 lg:max-w-3xl xl:max-w-[1400px]">
         <LeftSidebar />
         <div className="min-w-0 flex-1">
