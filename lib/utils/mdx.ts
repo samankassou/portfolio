@@ -90,6 +90,29 @@ export function getAllBlogPosts(): BlogPost[] {
 }
 
 /**
+ * Get previous and next posts by date (chronological order)
+ * Posts are sorted newest first, so:
+ * - "prev" (older) is at index + 1
+ * - "next" (newer) is at index - 1
+ */
+export function getAdjacentPosts(currentSlug: string): {
+  prev: BlogPost | null;
+  next: BlogPost | null;
+} {
+  const allPosts = getAllBlogPosts();
+  const currentIndex = allPosts.findIndex((post) => post.slug === currentSlug);
+
+  if (currentIndex === -1) {
+    return { prev: null, next: null };
+  }
+
+  return {
+    prev: currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null,
+    next: currentIndex > 0 ? allPosts[currentIndex - 1] : null,
+  };
+}
+
+/**
  * Get featured blog posts
  */
 export function getFeaturedBlogPosts(): BlogPost[] {
