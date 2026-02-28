@@ -7,11 +7,28 @@ import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.metadata.url),
   title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
+  openGraph: {
+    title: siteConfig.metadata.title,
+    description: siteConfig.metadata.description,
+    siteName: siteConfig.metadata.title,
+    type: "website",
+    url: siteConfig.metadata.url,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.metadata.title,
+    description: siteConfig.metadata.description,
+  },
+  icons: {
+    icon: "/img/profile/profile_pic_sm.webp",
+    apple: "/img/profile/profile_pic_sm.webp",
+  },
 };
 
 interface RootLayoutProps {
@@ -37,11 +54,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
       </head>
-      <body className={`${inter.className} ${COMMON_CLASSES.PAGE_BG} overflow-x-hidden`}>
+      <body
+        className={`${inter.variable} font-sans ${COMMON_CLASSES.PAGE_BG} overflow-x-hidden`}
+      >
         <ThemeProvider>
-          <ChristmasProvider>
-            {children}
-          </ChristmasProvider>
+          <ChristmasProvider>{children}</ChristmasProvider>
         </ThemeProvider>
       </body>
     </html>

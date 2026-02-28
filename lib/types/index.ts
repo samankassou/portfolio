@@ -59,6 +59,14 @@ export interface Project {
   link: string;
   coverImg: string;
   category: Exclude<ProjectCategory, "All categories">;
+  description: string;
+  technologies: string[];
+  challenge?: string;
+  solution?: string;
+  results?: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  images?: string[];
 }
 
 // Testimonials
@@ -111,6 +119,7 @@ export interface SiteConfig {
     title: string;
     description: string;
     language: string;
+    url: string;
   };
   author: {
     name: string;
@@ -149,7 +158,12 @@ export interface Certification {
 export interface Language {
   id: number;
   name: string;
-  proficiency: "Native" | "Fluent" | "Professional" | "Conversational" | "Basic";
+  proficiency:
+    | "Native"
+    | "Fluent"
+    | "Professional"
+    | "Conversational"
+    | "Basic";
 }
 
 // Skill Categories
@@ -160,7 +174,7 @@ export interface SkillCategory {
 }
 
 // Christmas
-export type ChristmasMode = 'enabled' | 'disabled';
+export type ChristmasMode = "enabled" | "disabled";
 
 export interface ChristmasContextValue {
   christmasMode: ChristmasMode | null;

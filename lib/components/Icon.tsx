@@ -44,6 +44,7 @@ import {
   IoCalendarOutline,
   IoTimeOutline,
   IoPersonOutline,
+  IoGlobeOutline,
 } from "react-icons/io5";
 
 /**
@@ -100,6 +101,9 @@ const iconMap = {
   "calendar-outline": IoCalendarOutline,
   "time-outline": IoTimeOutline,
   "person-outline": IoPersonOutline,
+
+  // Link icons
+  "globe-outline": IoGlobeOutline,
 
   // Christmas icons
   snow: IoSnow,
