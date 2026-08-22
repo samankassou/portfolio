@@ -10,7 +10,8 @@ export const certifications: Certification[] = [
     title: "Scrum Master Accredited",
     issuer: "SCRUM INSTITUTE™",
     date: "September 2025",
-    credentialId: "https://www.scrum-institute.org/badges/85515812573488",
+    credentialId: "85515812573488",
+    credentialUrl: "https://www.scrum-institute.org/badges/85515812573488",
   },
   {
     id: 2,

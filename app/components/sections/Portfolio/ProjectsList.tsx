@@ -5,13 +5,20 @@ import { projects } from "@/lib/data/projects";
 import type { ProjectCategory } from "@/lib/types";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollAnimation } from "@/lib/hooks/useScrollAnimation";
-import { staggerContainer, scaleIn, useReducedMotion, getTransition } from "@/lib/utils/animations";
+import {
+  staggerContainer,
+  scaleIn,
+  useReducedMotion,
+  getTransition,
+} from "@/lib/utils/animations";
 
 interface ProjectsListProps {
   selectedCategory?: ProjectCategory;
 }
 
-export default function ProjectsList({ selectedCategory = "All categories" }: ProjectsListProps) {
+export default function ProjectsList({
+  selectedCategory = "All categories",
+}: ProjectsListProps) {
   const { ref, isInView } = useScrollAnimation();
   const reducedMotion = useReducedMotion();
 
@@ -42,10 +49,14 @@ export default function ProjectsList({ selectedCategory = "All categories" }: Pr
         animate={isInView ? "visible" : "hidden"}
         exit={{ opacity: 0 }}
         transition={getTransition(reducedMotion, 0.5)}
-        className="grid grid-cols-2 gap-3 md:gap-6 xl:grid-cols-3"
+        className="scrollbar-hidden flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible"
       >
         {filteredProjects.map((project) => (
-          <motion.li key={project.id} variants={scaleIn}>
+          <motion.li
+            key={project.id}
+            variants={scaleIn}
+            className="w-[88%] shrink-0 snap-start md:w-auto"
+          >
             <ProjectItem project={project} />
           </motion.li>
         ))}

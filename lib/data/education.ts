@@ -11,9 +11,9 @@ export const education: Education[] = [
   {
     id: 1,
     school: "ENSP Douala",
-    role: "Student",
+    role: "Graduate studies",
     certificate: "Professional Master's in Software Engineering",
-    period: "In Progress - June 2026",
+    period: "2024 - 2026",
     description:
       "Advanced training in software engineering with specialization in system architecture and project management.",
   },

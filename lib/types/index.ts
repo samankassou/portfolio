@@ -48,19 +48,21 @@ export interface Experience {
 // Projects
 export type ProjectCategory =
   | "All categories"
-  | "UI Design"
-  | "Web Templates"
-  | "Logos"
-  | "Branding";
+  | "BI & Data"
+  | "AI & Automation"
+  | "Cloud & DevOps"
+  | "Web Applications";
 
 export interface Project {
   id: number;
   title: string;
   link: string;
-  coverImg: string;
+  coverImg?: string;
   category: Exclude<ProjectCategory, "All categories">;
   description: string;
   technologies: string[];
+  role?: string;
+  confidentialityNote?: string;
   challenge?: string;
   solution?: string;
   results?: string;
@@ -152,6 +154,7 @@ export interface Certification {
   issuer: string;
   date: string;
   credentialId?: string;
+  credentialUrl?: string;
 }
 
 // Languages
