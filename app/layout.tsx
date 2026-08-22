@@ -47,9 +47,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
               } else {
                 document.documentElement.classList.remove('dark')
               }
-              if (localStorage.getItem('christmas-mode') === 'enabled') {
-                document.documentElement.classList.add('christmas-mode')
-              }
+              const christmasDate = new Date()
+              const christmasMode = christmasDate.getMonth() === 11 || (christmasDate.getMonth() === 0 && christmasDate.getDate() <= 6)
+              document.documentElement.classList.toggle('christmas-mode', christmasMode)
+              localStorage.removeItem('christmas-mode')
         `,
           }}
         />

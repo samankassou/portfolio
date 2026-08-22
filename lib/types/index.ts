@@ -172,18 +172,3 @@ export interface SkillCategory {
   category: string;
   skills: Skill[];
 }
-
-// Christmas
-export type ChristmasMode = "enabled" | "disabled";
-
-export interface ChristmasContextValue {
-  christmasMode: ChristmasMode | null;
-  toggleChristmasMode: () => void;
-}
-
-export interface ChristmasColors {
-  lights: string[];
-  snow: string;
-  ornament: string;
-  glow: string;
-}

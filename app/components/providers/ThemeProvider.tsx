@@ -1,7 +1,18 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { THEME_MODES, THEME_STORAGE_KEY, type ThemeMode } from "@/lib/constants/theme";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
+import {
+  THEME_MODES,
+  THEME_STORAGE_KEY,
+  type ThemeMode,
+} from "@/lib/constants/theme";
 
 interface ThemeContextValue {
   theme: ThemeMode | null;
@@ -9,47 +20,47 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
+const THEME_CHANGE_EVENT = "portfolio-theme-change";
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<ThemeMode | null>(null);
+  const theme = useSyncExternalStore<ThemeMode | null>(
+    subscribeToTheme,
+    getThemeSnapshot,
+    () => null,
+  );
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    if (savedTheme === THEME_MODES.DARK) {
-      setTheme(THEME_MODES.DARK);
-    } else if (savedTheme === THEME_MODES.LIGHT) {
-      setTheme(THEME_MODES.LIGHT);
-    } else {
-      setTheme(THEME_MODES.SYSTEM);
-    }
+  const applySystemTheme = useCallback(() => {
+    document.documentElement.classList.toggle(
+      "dark",
+      window.matchMedia("(prefers-color-scheme: dark)").matches,
+    );
   }, []);
 
-  const applySystemTheme = () => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  useEffect(() => {
+    if (theme !== THEME_MODES.SYSTEM) return;
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", applySystemTheme);
+    return () => mediaQuery.removeEventListener("change", applySystemTheme);
+  }, [applySystemTheme, theme]);
 
   const toggleTheme = () => {
-    if (theme === THEME_MODES.SYSTEM) {
-      setTheme(THEME_MODES.DARK);
+    const currentTheme = theme ?? THEME_MODES.SYSTEM;
+    if (currentTheme === THEME_MODES.SYSTEM) {
       localStorage.setItem(THEME_STORAGE_KEY, THEME_MODES.DARK);
       document.documentElement.classList.add("dark");
-    } else if (theme === THEME_MODES.DARK) {
-      setTheme(THEME_MODES.LIGHT);
+    } else if (currentTheme === THEME_MODES.DARK) {
       localStorage.setItem(THEME_STORAGE_KEY, THEME_MODES.LIGHT);
       document.documentElement.classList.remove("dark");
-    } else if (theme === THEME_MODES.LIGHT) {
-      setTheme(THEME_MODES.SYSTEM);
+    } else {
       localStorage.removeItem(THEME_STORAGE_KEY);
       applySystemTheme();
     }
+    window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
   };
 
   return (
@@ -57,6 +68,26 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       {children}
     </ThemeContext.Provider>
   );
+}
+
+function getThemeSnapshot(): ThemeMode {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  if (savedTheme === THEME_MODES.DARK) {
+    return THEME_MODES.DARK;
+  }
+  if (savedTheme === THEME_MODES.LIGHT) {
+    return THEME_MODES.LIGHT;
+  }
+  return THEME_MODES.SYSTEM;
+}
+
+function subscribeToTheme(onChange: () => void): () => void {
+  window.addEventListener("storage", onChange);
+  window.addEventListener(THEME_CHANGE_EVENT, onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(THEME_CHANGE_EVENT, onChange);
+  };
 }
 
 export function useTheme(): ThemeContextValue {

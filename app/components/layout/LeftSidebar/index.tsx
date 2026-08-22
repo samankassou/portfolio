@@ -3,7 +3,6 @@ import SocialLinks from "./SocialLinks";
 import ContactInfo from "./ContactInfo";
 import CategorizedSkillsSection from "./CategorizedSkillsSection";
 import LanguagesSection from "./LanguagesSection";
-import CVDownloadButton from "./CVDownloadButton";
 import { profileData, contactInfo, skillCategories } from "@/lib/data/profile";
 import { languages } from "@/lib/data/languages";
 import { socialLinks } from "@/lib/data/siteConfig";
@@ -20,7 +19,6 @@ export default function LeftSidebar() {
         <ContactInfo contacts={contactInfo} />
         <CategorizedSkillsSection skillCategories={skillCategories} />
         <LanguagesSection languages={languages} />
-        <CVDownloadButton />
       </div>
     </aside>
   );
