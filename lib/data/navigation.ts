@@ -11,21 +11,25 @@ import type { NavItem } from "@/lib/types";
  */
 export const mainNavigation: NavItem[] = [
   { id: "home", icon: "home", label: "Home", href: "#" },
-  { id: "services", icon: "grid", label: "Services", href: "#services" },
-  { id: "education", icon: "school", label: "Education", href: "#education" },
+  {
+    id: "portfolio",
+    icon: "folder",
+    label: "Case Studies",
+    href: "#portfolio",
+  },
   {
     id: "experience",
     icon: "briefcase",
     label: "Experience",
     href: "#experience",
   },
-  { id: "portfolio", icon: "folder", label: "Portfolio", href: "#portfolio" },
+  { id: "services", icon: "grid", label: "Services", href: "#services" },
   {
     id: "testimonials",
     icon: "chatbubbles",
     label: "Testimonials",
     href: "#testimonials",
   },
-  { id: "blog", icon: "newspaper", label: "Blog", href: "#blog" },
+  { id: "education", icon: "school", label: "Education", href: "#education" },
   { id: "contact", icon: "mail", label: "Contact", href: "#contact" },
 ];

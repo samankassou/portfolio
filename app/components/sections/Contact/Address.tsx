@@ -19,9 +19,12 @@ export default function Address() {
           <p className="text-sm font-normal text-base-content dark:text-base-100">
             Email:
           </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
+          <a
+            href="mailto:samankassoufoulla@gmail.com"
+            className="text-sm font-normal text-secondary text-opacity-60 transition-colors hover:text-primary dark:text-base-400 dark:hover:text-primary"
+          >
             samankassoufoulla@gmail.com
-          </p>
+          </a>
         </div>
       </div>
       <div>
@@ -29,9 +32,14 @@ export default function Address() {
           <p className="text-sm font-normal text-base-content dark:text-base-100">
             LinkedIn:
           </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
+          <a
+            href="https://linkedin.com/in/sam-foulla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-normal text-secondary text-opacity-60 transition-colors hover:text-primary dark:text-base-400 dark:hover:text-primary"
+          >
             @sam-foulla
-          </p>
+          </a>
         </div>
       </div>
       <div>
@@ -39,9 +47,14 @@ export default function Address() {
           <p className="text-sm font-normal text-base-content dark:text-base-100">
             Github:
           </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
+          <a
+            href="https://github.com/samankassou"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-normal text-secondary text-opacity-60 transition-colors hover:text-primary dark:text-base-400 dark:hover:text-primary"
+          >
             @samankassou
-          </p>
+          </a>
         </div>
       </div>
     </div>

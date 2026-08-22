@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
   metadata: {
     title: "Portfolio - Foulla SAMANKASSOU",
     description:
-      "Software Engineer specializing in BI, AI, Cloud Solutions, and Full-Stack Development",
+      "BI/AI Project Manager and Software Engineer specializing in Power BI, Azure OpenAI, cloud migration, and application modernization.",
     language: "en",
     url: "https://samankassou.com",
   },

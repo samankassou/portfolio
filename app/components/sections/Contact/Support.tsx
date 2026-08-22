@@ -17,21 +17,14 @@ export default function Support() {
       <div>
         <div className="flex justify-between">
           <p className="text-sm font-normal text-base-content dark:text-base-100">
-            Office:
+            Phone:
           </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
+          <a
+            href="tel:+237691565877"
+            className="text-sm font-normal text-secondary text-opacity-60 transition-colors hover:text-primary dark:text-base-400 dark:hover:text-primary"
+          >
             +237 691 565 877
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className="flex justify-between">
-          <p className="text-sm font-normal text-base-content dark:text-base-100">
-            Personnal:
-          </p>
-          <p className="text-sm font-normal text-secondary text-opacity-60 dark:text-base-400">
-            +237 691 565 877
-          </p>
+          </a>
         </div>
       </div>
     </div>

@@ -23,21 +23,28 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
       <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         {/* Navbar */}
-        <header className="sticky top-0 z-50 border-b border-secondary/10 bg-base/95 backdrop-blur-sm dark:border-base-800 dark:bg-[#000000]/95">
+        <header className="sticky top-0 z-50 border-b border-secondary/10 bg-base/90 py-3 backdrop-blur-xl dark:border-base-800 dark:bg-black/90">
           <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
-              className={`flex items-center justify-between rounded-full py-3 ${COMMON_CLASSES.CARD_BG} px-4`}
+              className={`flex items-center justify-between rounded-full px-4 py-2 shadow-sm ${COMMON_CLASSES.CARD_BG}`}
             >
               {/* Left: Back + Logo */}
               <div className="flex items-center gap-3">
                 <Link
                   href="/#portfolio"
-                  className="flex items-center gap-2 text-secondary/60 transition-colors hover:text-secondary dark:text-base-400 dark:hover:text-base-100"
+                  className="flex min-h-10 items-center gap-2 rounded-full px-1 text-secondary/60 transition-colors hover:text-primary dark:text-base-400 dark:hover:text-primary"
                   aria-label="Back to portfolio"
                 >
                   <Icon name="arrow-back" className="text-xl" />
+                  <span className="hidden text-sm font-semibold sm:inline">
+                    Case studies
+                  </span>
                 </Link>
-                <Link href="/" className="flex-shrink-0">
+                <span className="hidden h-5 w-px bg-secondary/10 dark:bg-base-700 sm:block" />
+                <Link
+                  href="/"
+                  className="flex flex-shrink-0 items-center gap-3"
+                >
                   <Image
                     className="h-10 w-10 rounded-full object-cover"
                     src="/img/profile/profile_pic_sm.webp"
@@ -45,15 +52,26 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
                     height={40}
                     alt="Profile"
                   />
+                  <span className="hidden text-sm font-semibold text-base-content dark:text-base-100 lg:inline">
+                    Foulla SAMANKASSOU
+                  </span>
                 </Link>
               </div>
 
               {/* Right: Controls */}
               <ul className="flex items-center justify-between gap-4 sm:gap-6">
+                <li className="hidden md:block">
+                  <Link
+                    href="/#contact"
+                    className="text-sm font-semibold text-secondary/70 transition-colors hover:text-primary dark:text-base-300 dark:hover:text-primary"
+                  >
+                    Contact
+                  </Link>
+                </li>
                 <li className="text-2xl text-primary">
                   <ThemeToggle />
                 </li>
-                <li className="text-2xl dark:text-primary">
+                <li className="text-2xl dark:text-primary md:hidden">
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
                     aria-label="Open menu"

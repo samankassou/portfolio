@@ -16,7 +16,7 @@ export default function Services() {
       variants={staggerContainer}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3"
+      className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
     >
       {services &&
         services.map((service) => (

@@ -21,24 +21,24 @@ export const services: Service[] = [
   },
   {
     id: 2,
-    icon: "cloud",
-    title: "Cloud Solutions & Azure Development",
+    icon: "bulb",
+    title: "AI & Automation Solutions",
     items: [
-      "Azure cloud migration",
       "Azure OpenAI integration",
-      "Azure DevOps CI/CD pipelines",
-      "Cloud infrastructure setup",
+      "AI-powered document processing",
+      "Copilot Studio development",
+      "AI Builder implementations",
     ],
   },
   {
     id: 3,
-    icon: "bulb",
-    title: "AI & Automation Solutions",
+    icon: "cloud",
+    title: "Cloud & Application Modernization",
     items: [
-      "AI-powered document processing",
-      "Copilot Studio development",
-      "AI Builder implementations",
-      "Intelligent automation workflows",
+      "Azure cloud migration",
+      "Legacy system modernization",
+      "Azure DevOps CI/CD pipelines",
+      ".NET application evolution",
     ],
   },
   {
@@ -50,17 +50,6 @@ export const services: Service[] = [
       "React & VueJS frontends",
       ".NET Core applications",
       "E-commerce platforms",
-    ],
-  },
-  {
-    id: 5,
-    icon: "git-branch",
-    title: "DevOps & Application Modernization",
-    items: [
-      "Legacy system migration (AS400 to Windows)",
-      "Application rebranding & maintenance",
-      "CI/CD pipeline implementation",
-      "Version control & deployment automation",
     ],
   },
 ];

@@ -39,9 +39,19 @@ export default function CertificationItem({
 
       {/* Optional Credential ID */}
       {certification.credentialId && (
-        <p className={`mt-3 text-xs ${COMMON_CLASSES.TEXT_MUTED}`}>
-          ID: {certification.credentialId}
-        </p>
+        <div className={`mt-3 text-xs ${COMMON_CLASSES.TEXT_MUTED}`}>
+          <span>Credential ID: {certification.credentialId}</span>
+          {certification.credentialUrl && (
+            <a
+              href={certification.credentialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              Verify credential
+            </a>
+          )}
+        </div>
       )}
     </div>
   );
