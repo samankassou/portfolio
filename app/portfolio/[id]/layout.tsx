@@ -7,7 +7,6 @@ import Footer from "@/app/components/layout/Footer";
 import MobileMenu from "@/app/components/layout/MobileMenu";
 import ScrollToTop from "@/app/components/ui/ScrollToTop";
 import ThemeToggle from "@/app/components/ui/ThemeToggle";
-import ChristmasToggle from "@/app/components/ui/ChristmasToggle";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import Icon from "@/lib/components/Icon";
 import type { ReactNode } from "react";
@@ -53,9 +52,6 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
               <ul className="flex items-center justify-between gap-4 sm:gap-6">
                 <li className="text-2xl text-primary">
                   <ThemeToggle />
-                </li>
-                <li className="text-2xl text-primary">
-                  <ChristmasToggle />
                 </li>
                 <li className="text-2xl dark:text-primary">
                   <button

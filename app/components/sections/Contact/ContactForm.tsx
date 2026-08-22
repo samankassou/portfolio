@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 
 export default function ContactForm() {
@@ -9,8 +9,11 @@ export default function ContactForm() {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -27,25 +30,45 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const data: unknown = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to send message");
+        const message =
+          data &&
+          typeof data === "object" &&
+          "error" in data &&
+          typeof data.error === "string"
+            ? data.error
+            : "Failed to send message";
+        throw new Error(message);
       }
 
       setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        website: "",
+      });
 
       // Reset success message after 5 seconds
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       setStatus("error");
-      setErrorMessage(error instanceof Error ? error.message : "An error occurred");
+      setErrorMessage(
+        error instanceof Error ? error.message : "An error occurred",
+      );
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((current) => ({
+      ...current,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   return (
@@ -54,6 +77,17 @@ export default function ContactForm() {
       className={cn("rounded-xl p-6 shadow-sm", COMMON_CLASSES.CARD_BG)}
       id="contact"
     >
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <h3 className="mb-6 text-left text-xl font-bold text-base-content dark:text-base-100">
         Leave a message
       </h3>
@@ -67,6 +101,9 @@ export default function ContactForm() {
           </label>
           <input
             id="name"
+            name="name"
+            autoComplete="name"
+            maxLength={100}
             value={formData.name}
             onChange={handleChange}
             required
@@ -86,7 +123,10 @@ export default function ContactForm() {
           </label>
           <input
             id="email"
+            name="email"
             type="email"
+            autoComplete="email"
+            maxLength={254}
             value={formData.email}
             onChange={handleChange}
             required
@@ -106,6 +146,8 @@ export default function ContactForm() {
           </label>
           <input
             id="subject"
+            name="subject"
+            maxLength={150}
             value={formData.subject}
             onChange={handleChange}
             required
@@ -125,6 +167,8 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
+            name="message"
+            maxLength={5000}
             value={formData.message}
             onChange={handleChange}
             required
@@ -147,14 +191,20 @@ export default function ContactForm() {
 
           {/* Success Message */}
           {status === "success" && (
-            <div className="mt-4 rounded-lg bg-accent/10 p-4 text-accent">
-              ✓ Message sent successfully! I'll get back to you soon.
+            <div
+              className="mt-4 rounded-lg bg-accent/10 p-4 text-accent"
+              role="status"
+            >
+              ✓ Message sent successfully! I&apos;ll get back to you soon.
             </div>
           )}
 
           {/* Error Message */}
           {status === "error" && (
-            <div className="mt-4 rounded-lg bg-red-500/10 p-4 text-red-500">
+            <div
+              className="mt-4 rounded-lg bg-red-500/10 p-4 text-red-500"
+              role="alert"
+            >
               ✗ {errorMessage || "Failed to send message. Please try again."}
             </div>
           )}

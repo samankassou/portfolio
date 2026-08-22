@@ -42,8 +42,8 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.2 }}
             className="md:text-md mb-6 max-w-md text-sm leading-relaxed text-secondary/60 dark:text-white/60 sm:mb-8"
           >
-            Hi! I'm Foulla, a Software Engineer based in Douala, Cameroon. I
-            specialize in Business Intelligence, AI & Automation, Cloud
+            Hi! I&apos;m Foulla, a Software Engineer based in Douala, Cameroon.
+            I specialize in Business Intelligence, AI & Automation, Cloud
             Solutions, and Full-Stack Development.
           </motion.p>
           <motion.div

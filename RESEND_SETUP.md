@@ -31,20 +31,18 @@ RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxx
 CONTACT_EMAIL=your-actual-email@example.com
 ```
 
-### Step 3: Update the "From" Email (Optional)
+### Step 3: Configure the "From" Email
 
-By default, the form uses Resend's test email: `onboarding@resend.dev`
-
-**For production**, you should verify your own domain:
+For production, verify your own domain:
 
 1. In Resend dashboard, go to **Domains**
 2. Click **Add Domain**
 3. Add your domain (e.g., `yourdomain.com`)
 4. Follow DNS verification steps
-5. Update the API route at `app/api/contact/route.ts` line 24:
+5. Set the sender in `.env.local`:
 
-```typescript
-from: "Portfolio Contact <contact@yourdomain.com>", // Your verified domain
+```env
+RESEND_FROM_EMAIL="Portfolio Contact <contact@yourdomain.com>"
 ```
 
 ### Step 4: Test the Form
@@ -70,8 +68,9 @@ from: "Portfolio Contact <contact@yourdomain.com>", // Your verified domain
 ## 🔒 Security Notes
 
 - API key is stored in `.env.local` (not committed to git)
-- Server-side validation prevents invalid submissions
-- Rate limiting can be added for production use
+- Server-side validation rejects malformed and oversized submissions
+- User content is escaped before being inserted into email HTML
+- A honeypot and a best-effort in-memory rate limit reduce automated spam
 
 ## 🎨 Form Features
 
@@ -113,6 +112,6 @@ Before deploying:
 1. ✓ Add environment variables to your hosting platform (Vercel/Netlify)
 2. ✓ Verify your domain in Resend
 3. ✓ Update the "from" email in the API route
-4. Consider adding rate limiting (optional)
+4. For multi-instance deployments, replace the in-memory rate limit with a shared store
 
 Enjoy your functional contact form! 🎉

@@ -7,7 +7,6 @@ import Footer from "@/app/components/layout/Footer";
 import MobileMenu from "@/app/components/layout/MobileMenu";
 import ScrollToTop from "@/app/components/ui/ScrollToTop";
 import ThemeToggle from "@/app/components/ui/ThemeToggle";
-import ChristmasToggle from "@/app/components/ui/ChristmasToggle";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import Icon from "@/lib/components/Icon";
 import type { ReactNode } from "react";
@@ -22,16 +21,18 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
   return (
     <>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
+      <div className="flex min-h-screen flex-col">
         {/* Navbar */}
-        <header className="sticky top-0 z-50 bg-base/95 dark:bg-[#000000]/95 backdrop-blur-sm border-b border-secondary/10 dark:border-base-800">
-          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className={`flex items-center justify-between py-3 rounded-full ${COMMON_CLASSES.CARD_BG} px-4`}>
+        <header className="sticky top-0 z-50 border-b border-secondary/10 bg-base/95 backdrop-blur-sm dark:border-base-800 dark:bg-[#000000]/95">
+          <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div
+              className={`flex items-center justify-between rounded-full py-3 ${COMMON_CLASSES.CARD_BG} px-4`}
+            >
               {/* Left: Back + Logo */}
               <div className="flex items-center gap-3">
                 <Link
                   href="/"
-                  className="flex items-center gap-2 text-secondary/60 hover:text-secondary dark:text-base-400 dark:hover:text-base-100 transition-colors"
+                  className="flex items-center gap-2 text-secondary/60 transition-colors hover:text-secondary dark:text-base-400 dark:hover:text-base-100"
                   aria-label="Back to home"
                 >
                   <Icon name="arrow-back" className="text-xl" />
@@ -52,9 +53,6 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
                 <li className="text-2xl text-primary">
                   <ThemeToggle />
                 </li>
-                <li className="text-2xl text-primary">
-                  <ChristmasToggle />
-                </li>
                 <li className="text-2xl dark:text-primary">
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
@@ -69,12 +67,10 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 pb-12">
-          {children}
-        </main>
+        <main className="flex-1 pb-12">{children}</main>
 
         {/* Footer */}
-        <div className="px-4 sm:px-6 lg:px-8 pb-6">
+        <div className="px-4 pb-6 sm:px-6 lg:px-8">
           <Footer />
         </div>
 

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import ThemeToggle from "../ui/ThemeToggle";
-import ChristmasToggle from "../ui/ChristmasToggle";
 import { mainNavigation } from "@/lib/data/navigation";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { NavItem } from "@/lib/types";
@@ -57,24 +56,16 @@ export default function RightSideMenu() {
         className={`fixed right-[max(2rem,calc((100vw-1600px)/2))] top-8 flex h-[calc(100vh-4rem)] w-[88px] flex-col items-center rounded-2xl py-8 ${COMMON_CLASSES.CARD_BG}`}
       >
         {/* Theme Toggle */}
-        <div className="group relative mb-4 flex flex-col items-center">
+        <div className="group relative mb-8 flex flex-col items-center">
           <ThemeToggle className="flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
           <span className="pointer-events-none absolute bottom-full mb-3 whitespace-nowrap rounded-lg bg-secondary px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 dark:bg-gray-800">
             Toggle Theme
           </span>
         </div>
 
-        {/* Christmas Toggle */}
-        <div className="group relative mb-8 flex flex-col items-center">
-          <ChristmasToggle className="flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
-          <span className="pointer-events-none absolute bottom-full mb-3 whitespace-nowrap rounded-lg bg-secondary px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 dark:bg-gray-800">
-            Toggle Celebration
-          </span>
-        </div>
-
         {/* Navigation Items */}
         <ul className="flex flex-1 flex-col items-center justify-center gap-4">
-          {navItems.map((item: NavItem, index: number) => (
+          {navItems.map((item: NavItem) => (
             <li
               key={item.id}
               className="group relative flex flex-col items-center"

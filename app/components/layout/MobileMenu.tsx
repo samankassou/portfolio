@@ -96,21 +96,6 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </li>
             ))}
           </ul>
-
-          {/* CV Download */}
-          <div className="mt-4 border-t border-secondary/10 px-4 pt-4 dark:border-base-800">
-            <a
-              href="/files/cv.pdf"
-              download
-              onClick={handleLinkClick}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-base-content transition-all hover:bg-primary-600 dark:hover:bg-primary-600"
-            >
-              <span>Download My CV</span>
-              <span className="text-xl text-base-content">
-                <Icon name="download-outline" />
-              </span>
-            </a>
-          </div>
         </nav>
       </div>
     </>
