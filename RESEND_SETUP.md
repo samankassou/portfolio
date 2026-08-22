@@ -1,117 +1,88 @@
-# Resend Contact Form Setup Guide
+# Contact form and Resend setup
 
-## ✅ What's Already Done
+The contact form sends enquiries through the server-side route at `app/api/contact/route.ts`. The browser never receives the Resend API key.
 
-- ✓ Resend package installed
-- ✓ API route created at `/app/api/contact/route.ts`
-- ✓ Contact form updated with state management
-- ✓ Loading, success, and error states implemented
-- ✓ Form validation added
-- ✓ Environment files created
+## Included in the project
 
-## 🚀 What You Need to Do
+- Client- and server-side validation.
+- Loading, success, and error feedback.
+- HTML email with the visitor's address set as `Reply-To`.
+- Escaping of user content before email rendering.
+- Honeypot field for basic bot filtering.
+- Best-effort in-memory rate limit: five requests per 15 minutes for one client identifier.
 
-### Step 1: Get Your Resend API Key
+## 1. Create a Resend API key
 
-1. Go to [https://resend.com/signup](https://resend.com/signup)
-2. Sign up for a free account
-3. Navigate to **API Keys** in the dashboard
-4. Click **Create API Key**
-5. Copy your API key
+1. Create an account at [resend.com](https://resend.com/).
+2. Open **API Keys** in the Resend dashboard.
+3. Create and copy a server-side API key.
 
-### Step 2: Configure Environment Variables
+## 2. Configure the environment
 
-Open `.env.local` and update it with your values:
+Copy the example file, then fill in the values:
+
+```bash
+cp .env.example .env.local
+```
 
 ```env
-# Resend API Configuration
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxx
-
-# Your email address where contact form submissions will be sent
-CONTACT_EMAIL=your-actual-email@example.com
+CONTACT_EMAIL=your-email@example.com
+RESEND_FROM_EMAIL="Portfolio Contact <portfolio@yourdomain.com>"
 ```
 
-### Step 3: Configure the "From" Email
+| Variable            | Purpose                                                  |
+| ------------------- | -------------------------------------------------------- |
+| `RESEND_API_KEY`    | Secret key used by the server route to send the message. |
+| `CONTACT_EMAIL`     | Inbox that receives portfolio enquiries.                 |
+| `RESEND_FROM_EMAIL` | Sender identity authorized by Resend.                    |
 
-For production, verify your own domain:
+Do not commit `.env.local` or expose `RESEND_API_KEY` in a variable prefixed with `NEXT_PUBLIC_`.
 
-1. In Resend dashboard, go to **Domains**
-2. Click **Add Domain**
-3. Add your domain (e.g., `yourdomain.com`)
-4. Follow DNS verification steps
-5. Set the sender in `.env.local`:
+## 3. Verify the sending domain
 
-```env
-RESEND_FROM_EMAIL="Portfolio Contact <contact@yourdomain.com>"
+For production, add the sending domain in **Resend → Domains**, publish the requested DNS records, and wait for verification. `RESEND_FROM_EMAIL` must use an address on that verified domain.
+
+For current quotas, sender restrictions, and pricing, refer to the [Resend documentation](https://resend.com/docs) and [pricing page](https://resend.com/pricing), as these limits may change.
+
+## 4. Test locally
+
+```bash
+npm run dev
 ```
 
-### Step 4: Test the Form
+Open [http://localhost:3000](http://localhost:3000), go to the contact section, and submit the form. Then check:
 
-1. Start the development server:
+- the success or error message in the form;
+- the inbox configured in `CONTACT_EMAIL`;
+- the Resend delivery logs;
+- the development terminal if the request fails.
 
-   ```bash
-   npm run dev
-   ```
+Restart the development server after changing `.env.local`.
 
-2. Navigate to the contact section
-3. Fill out and submit the form
-4. Check your email inbox (the email specified in `CONTACT_EMAIL`)
+## Production checklist
 
-## 📧 Email Features
+- Add all three variables to the hosting platform.
+- Verify the production sending domain and sender address.
+- Send a real message from the deployed site and test `Reply-To`.
+- Confirm that secrets are absent from browser bundles and repository history.
+- Replace the in-memory rate limiter with a shared store for multi-instance or higher-volume deployments.
+- Add monitoring if contact delivery is business-critical.
 
-- **Reply-To**: Automatically set to the sender's email for easy replies
-- **HTML Formatting**: Messages are formatted with proper HTML
-- **Validation**: Email validation on both client and server
-- **Error Handling**: Clear error messages for users
-- **Success Feedback**: Confirmation message after successful submission
+## Troubleshooting
 
-## 🔒 Security Notes
+### The form reports a configuration error
 
-- API key is stored in `.env.local` (not committed to git)
-- Server-side validation rejects malformed and oversized submissions
-- User content is escaped before being inserted into email HTML
-- A honeypot and a best-effort in-memory rate limit reduce automated spam
+Check that all three variables are defined in the environment used by the server, then restart or redeploy the application.
 
-## 🎨 Form Features
+### Resend rejects the sender
 
-- Real-time form state management
-- Loading spinner during submission
-- Success message (auto-dismisses after 5 seconds)
-- Error message display
-- Form reset after successful submission
-- All fields required with HTML5 validation
+Confirm that the domain is verified and that `RESEND_FROM_EMAIL` exactly matches an authorized sender identity.
 
-## 📝 Free Tier Limits
+### The request succeeds but no message arrives
 
-Resend free tier includes:
+Check the Resend logs, spam folder, `CONTACT_EMAIL`, and the recipient status in Resend.
 
-- **100 emails per day**
-- **3,000 emails per month**
-- Perfect for portfolio contact forms!
+### Requests are rate-limited unexpectedly
 
-## 🐛 Troubleshooting
-
-**Form not sending?**
-
-- Check if `.env.local` has correct values
-- Restart dev server after changing environment variables
-- Check browser console for errors
-- Check server console/terminal for API errors
-
-**Not receiving emails?**
-
-- Verify `CONTACT_EMAIL` in `.env.local`
-- Check spam/junk folder
-- Verify Resend API key is valid
-- Check Resend dashboard logs
-
-## 🚀 Ready for Production
-
-Before deploying:
-
-1. ✓ Add environment variables to your hosting platform (Vercel/Netlify)
-2. ✓ Verify your domain in Resend
-3. ✓ Update the "from" email in the API route
-4. For multi-instance deployments, replace the in-memory rate limit with a shared store
-
-Enjoy your functional contact form! 🎉
+The included limiter is intentionally small and stored in application memory. It resets when the process restarts and is not synchronized between server instances. Use a shared store before relying on it as a production abuse-control layer.

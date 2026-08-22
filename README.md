@@ -1,475 +1,258 @@
-# Portfolio Website
+# Foulla SAMANKASSOU — Portfolio
 
-> A modern, professional portfolio website built with Next.js 15, TypeScript, and Tailwind CSS
+Professional portfolio for a BI/AI Project Manager and Software Engineer specializing in Power BI, Azure OpenAI, cloud migration, automation, and application modernization.
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-**Live Demo:** [https://www.samankassou.com/](https://www.samankassou.com/)
+**Live website:** [https://www.samankassou.com/](https://www.samankassou.com/)
 
----
+## Preview
 
-## Table of Contents
+![Portfolio homepage in light mode](./screenshots/desktop.png)
 
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Customization](#customization)
-- [Development Commands](#development-commands)
-- [Deployment](#deployment)
-- [Architecture](#architecture)
-- [Screenshots](#screenshots)
-- [License](#license)
+<table>
+  <tr>
+    <td width="64%">
+      <img src="./screenshots/dark-mode.png" alt="Portfolio homepage in dark mode" />
+    </td>
+    <td width="36%" align="center">
+      <img src="./screenshots/mobile.png" alt="Portfolio mobile layout" width="280" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Dark mode</strong></td>
+    <td align="center"><strong>Mobile layout</strong></td>
+  </tr>
+</table>
 
----
+### Case study experience
 
-## Features
+![Transportation Management System case study](./screenshots/case-study.png)
 
-### Portfolio Sections
+## What the portfolio includes
 
-- **Hero Section** - Eye-catching introduction with animated wave background
-- **Services** - Showcase of professional services with icons and descriptions
-- **Education** - Academic background and qualifications
-- **Experience** - Professional work history and achievements
-- **Certifications** - Professional credentials (Microsoft Azure, SCRUM, ITIL)
-- **Portfolio** - Project showcase with category filtering
-- **Testimonials** - Client feedback with star ratings
-- **Blog** - Latest blog posts and articles
-- **Contact** - Contact form and information
+- A focused BI, AI, Azure, and software-engineering positioning.
+- Five anonymized case studies based on real professional experience.
+- Category filtering for BI & Data, AI & Automation, Cloud & DevOps, and Web Applications.
+- Dedicated case-study pages with a conceptual solution flow, role, stack, challenge, approach, outcome, and confidentiality notice.
+- Professional experience, services, certifications, testimonials, education, and contact sections.
+- Responsive desktop, tablet, and mobile layouts.
+- Persistent light, dark, and system theme support.
+- Accessible navigation, semantic HTML, keyboard focus states, and reduced-motion support.
+- SEO metadata, sitemap, robots configuration, Open Graph image, and Person structured data.
+- MDX blog routes available at `/blog`, kept separate from the primary homepage journey.
+- Contact form delivery through Resend, with validation, a honeypot, and basic rate limiting.
 
-### Technical Features
+## Technology stack
 
-- **🎨 Dark Mode** - Three-state theme system (System/Dark/Light) with localStorage persistence
-- **📱 Responsive Design** - Mobile-first approach with three-column desktop layout
-- **⚡ Performance Optimized** - Next.js Image optimization, WebP/AVIF support
-- **🎭 Smooth Animations** - Framer Motion for polished interactions
-- **♿ Accessible** - Reduced motion support, semantic HTML
-- **🎯 Type-Safe** - Full TypeScript implementation with centralized type definitions
-- **🎨 Custom Theme** - Tailwind CSS with custom color system and dark mode
-- **📊 Categorized Skills** - Advanced skill organization system (6 major categories)
-- **🔍 Project Filtering** - Interactive portfolio filtering by category
+| Area      | Technologies                          |
+| --------- | ------------------------------------- |
+| Framework | Next.js 16.3, React 19, App Router    |
+| Language  | TypeScript 5.9                        |
+| Styling   | Tailwind CSS 3.4                      |
+| Motion    | Framer Motion 12                      |
+| Icons     | React Icons                           |
+| Content   | Typed TypeScript data files and MDX   |
+| Email     | Resend                                |
+| Quality   | ESLint, Prettier, TypeScript compiler |
 
----
+## Getting started
 
-## Tech Stack
+### Requirements
 
-### Core Framework
-
-- **[Next.js 15.1.6](https://nextjs.org/)** - React framework with App Router
-- **[React 19](https://react.dev/)** - UI library
-- **[TypeScript 5.9](https://www.typescriptlang.org/)** - Type safety and developer experience
-
-### Styling & UI
-
-- **[Tailwind CSS 3.4](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[Framer Motion 12](https://www.framer.com/motion/)** - Animation library
-- **[next-themes 0.4](https://github.com/pacocoursey/next-themes)** - Theme management
-- **[React Icons 5.5](https://react-icons.github.io/react-icons/)** - Icon library
-
-### Development Tools
-
-- **[Prettier](https://prettier.io/)** - Code formatting with Tailwind class sorting
-- **[ESLint](https://eslint.org/)** - Code linting
-- **TypeScript Compiler** - Type checking
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- **Node.js** 18.x or higher
-- **npm** or **yarn**
+- Node.js 20 or later
+- npm
 
 ### Installation
 
-1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd portfolio
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-   ```
+Open [http://localhost:3000](http://localhost:3000).
 
-2. **Install dependencies**
+The portfolio can run without Resend credentials, but the contact form requires the variables described below.
 
-   ```bash
-   npm install
-   ```
+## Environment variables
 
-3. **Run development server**
+Create `.env.local` from `.env.example`:
 
-   ```bash
-   npm run dev
-   ```
+```env
+RESEND_API_KEY=
+CONTACT_EMAIL=
+RESEND_FROM_EMAIL="Portfolio Contact <portfolio@samankassou.com>"
+```
 
-4. **Open your browser**
-   ```
-   http://localhost:3000
-   ```
+| Variable            | Purpose                                            |
+| ------------------- | -------------------------------------------------- |
+| `RESEND_API_KEY`    | Server-side API key used to send contact messages. |
+| `CONTACT_EMAIL`     | Inbox that receives portfolio enquiries.           |
+| `RESEND_FROM_EMAIL` | Verified sender identity configured in Resend.     |
 
-### Build for Production
+Never commit `.env.local` or a real API key. See [RESEND_SETUP.md](./RESEND_SETUP.md) for the complete setup and production checklist.
+
+## Available commands
 
 ```bash
-# Create optimized production build
-npm run build
-
-# Start production server
-npm start
+npm run dev         # Start the development server
+npm run build       # Create a production build
+npm start           # Start the production server
+npm run lint        # Run ESLint with zero warnings allowed
+npm run type-check  # Validate TypeScript without emitting files
 ```
 
----
+Format changed files with:
 
-## Project Structure
-
+```bash
+npx prettier --write <files>
 ```
+
+## Project structure
+
+```text
 portfolio/
-├── app/                      # Next.js App Router
-│   ├── layout.tsx           # Root layout with theme provider
-│   ├── page.tsx             # Main homepage (all sections)
-│   ├── globals.css          # Global styles and Tailwind imports
-│   └── components/
-│       ├── layout/          # Layout components (Navbar, Sidebars, Footer)
-│       ├── sections/        # Section components (Hero, Services, etc.)
-│       ├── ui/              # Reusable UI components (Button, ThemeToggle)
-│       └── providers/       # React Context providers (ThemeProvider)
-│
-├── lib/                      # Shared libraries and utilities
-│   ├── types/               # TypeScript type definitions
-│   │   └── index.ts         # Centralized interfaces
-│   ├── data/                # Content data layer (edit to customize)
-│   │   ├── siteConfig.ts    # Site metadata and social links
-│   │   ├── profile.ts       # Profile data, contact info, skills
-│   │   ├── services.ts      # Services data
-│   │   ├── education.ts     # Education history
-│   │   ├── experience.ts    # Work experience
-│   │   ├── certifications.ts # Professional certifications
-│   │   ├── projects.ts      # Portfolio projects + categories
-│   │   ├── testimonials.ts  # Testimonials data
-│   │   └── blogs.ts         # Blog posts
-│   ├── constants/           # Shared constants
-│   │   ├── theme.ts         # Theme mode constants
-│   │   └── colors.ts        # Color class constants (COMMON_CLASSES)
-│   └── utils/               # Utility functions (future use)
-│
-├── public/                   # Static assets
-│   └── img/                 # Images organized by type
-│       ├── profile/         # Profile images
-│       ├── hero/            # Hero section images
-│       ├── projects/        # Project images
-│       └── blog/            # Blog images
-│
-└── Configuration files
-    ├── tailwind.config.js   # Tailwind CSS configuration
-    ├── next.config.mjs      # Next.js configuration
-    ├── tsconfig.json        # TypeScript configuration
-    └── package.json         # Dependencies and scripts
+├── app/
+│   ├── api/contact/            # Contact form API route
+│   ├── blog/                   # Blog index and MDX post routes
+│   ├── components/
+│   │   ├── layout/             # Navigation, sidebars, footer
+│   │   ├── providers/          # Theme and seasonal providers
+│   │   ├── sections/           # Homepage sections
+│   │   └── ui/                 # Reusable UI primitives
+│   ├── portfolio/[id]/         # Dynamic case-study pages
+│   ├── layout.tsx              # Metadata, schema, providers
+│   ├── opengraph-image.tsx     # Generated social preview
+│   ├── page.tsx                # Homepage composition
+│   ├── robots.ts               # Search-engine rules
+│   └── sitemap.ts              # Generated sitemap
+├── content/blog/               # MDX articles
+├── lib/
+│   ├── components/             # Shared icon component
+│   ├── constants/              # Theme and color constants
+│   ├── data/                   # Typed portfolio content
+│   ├── hooks/                  # Scroll animation hook
+│   ├── types/                  # Shared TypeScript interfaces
+│   └── utils/                  # Animation and MDX utilities
+├── public/img/                 # Profile and hero assets
+├── screenshots/                # README screenshots
+├── BLOG_SETUP.md               # Blog authoring guide
+├── RESEND_SETUP.md             # Contact form setup guide
+└── package.json
 ```
 
-### Architecture Pattern
+## Content architecture
 
-This portfolio follows a **three-layer architecture**:
+The application separates content from presentation:
 
-1. **Type Layer** (`lib/types/`) - Centralized TypeScript interfaces
-2. **Data Layer** (`lib/data/`) - All content in typed TypeScript files
-3. **Component Layer** (`app/components/`) - Presentational components
+1. `lib/types/index.ts` defines the content contracts.
+2. `lib/data/*.ts` stores typed portfolio content.
+3. Components render the data without embedding professional claims in the UI layer.
 
-**Benefits:**
+This makes most content changes possible without editing layout components.
 
-- Clear separation of concerns
-- Easy content updates without touching code
-- Type safety across the entire application
-- Reusable, maintainable components
+### Main content files
 
----
+| File                         | Content                                           |
+| ---------------------------- | ------------------------------------------------- |
+| `lib/data/siteConfig.ts`     | Metadata, author identity, social links           |
+| `lib/data/profile.ts`        | Profile, skills, and contact information          |
+| `lib/data/projects.ts`       | Case studies, categories, roles, and technologies |
+| `lib/data/experience.ts`     | Professional experience                           |
+| `lib/data/services.ts`       | Service offering                                  |
+| `lib/data/certifications.ts` | Certifications and verification links             |
+| `lib/data/testimonials.ts`   | Testimonials                                      |
+| `lib/data/education.ts`      | Education                                         |
+| `content/blog/*.mdx`         | Blog articles                                     |
 
-## Customization
+## Adding or editing a case study
 
-### Update Personal Information
-
-All content is centralized in the `lib/data/` directory. Edit these TypeScript files to customize:
-
-**Profile & Contact:**
+Case studies live in `lib/data/projects.ts` and follow the `Project` interface from `lib/types/index.ts`.
 
 ```typescript
-// lib/data/profile.ts
-export const profile = {
-  name: "Your Name",
-  title: "Your Title",
-  email: "your.email@example.com",
-  // ... more fields
-};
-```
-
-**Services:**
-
-```typescript
-// lib/data/services.ts
-export const services: Service[] = [
-  {
-    icon: "analytics",
-    title: "Your Service",
-    description: "Service description",
-  },
-  // ... add more services
-];
-```
-
-**Projects:**
-
-```typescript
-// lib/data/projects.ts
-export const projects: Project[] = [
-  {
-    title: "Project Name",
-    category: "Web Templates",
-    image: "/img/projects/project.jpg",
-    link: "https://...",
-  },
-  // ... add more projects
-];
-```
-
-**Other Data Files:**
-
-- `lib/data/education.ts` - Education history
-- `lib/data/experience.ts` - Work experience
-- `lib/data/certifications.ts` - Professional certifications
-- `lib/data/testimonials.ts` - Client testimonials
-- `lib/data/blogs.ts` - Blog posts
-
-### Change Colors
-
-Edit the Tailwind color system in `tailwind.config.js`:
-
-```javascript
-theme: {
-  extend: {
-    colors: {
-      primary: {
-        DEFAULT: '#F78F42',  // Orange - your brand color
-        // ... other shades
-      },
-      accent: {
-        DEFAULT: '#3CC288',  // Green - highlights
-        // ... other shades
-      },
-    }
-  }
+{
+  id: 6,
+  title: "Project title",
+  link: "Short project type",
+  category: "AI & Automation",
+  description: "Concise overview of the business need.",
+  technologies: ["Azure OpenAI", "Power Platform"],
+  role: "Project role",
+  confidentialityNote: "Anonymized case study — details are confidential.",
+  challenge: "The situation or constraint.",
+  solution: "The approach and responsibilities.",
+  results: "A factual outcome without unsupported metrics.",
 }
 ```
 
-### Modify Styling
+Supported categories are:
 
-The project uses **reusable CSS constants** for consistent styling:
+- `BI & Data`
+- `AI & Automation`
+- `Cloud & DevOps`
+- `Web Applications`
 
-```typescript
-import { COMMON_CLASSES } from "@/lib/constants/colors";
+Every case-study page automatically adapts its icon and conceptual solution flow to the selected category. Keep confidential details anonymized and avoid adding metrics that cannot be verified.
 
-// Use predefined classes for cards, backgrounds, text, etc.
-<div className={COMMON_CLASSES.CARD_BG}>
-  {/* Card content */}
-</div>
-```
+## Blog authoring
 
-**Available Constants:**
+Blog posts are stored as MDX files in `content/blog/`. Each file requires frontmatter for the title, excerpt, date, category, image, tags, author, and featured status.
 
-- `COMMON_CLASSES.CARD_BG` - Card backgrounds
-- `COMMON_CLASSES.PAGE_BG` - Page backgrounds
-- `COMMON_CLASSES.INPUT_BG` - Input backgrounds
-- `COMMON_CLASSES.TEXT` - Text colors
-- `COMMON_CLASSES.TEXT_MUTED` - Muted text
-- `COMMON_CLASSES.DIVIDER` - Divider colors
+See [BLOG_SETUP.md](./BLOG_SETUP.md) for the authoring format and supported features.
 
----
+## Contact form
 
-## Development Commands
+The form posts to `app/api/contact/route.ts`. The server route validates and limits input, rejects the honeypot field, escapes user content, and sends the resulting email through Resend.
 
-```bash
-# Start development server (http://localhost:3000)
-npm run dev
+For production:
 
-# Build for production
-npm run build
+1. Verify the sending domain in Resend.
+2. Configure the three environment variables on the hosting platform.
+3. Replace the in-memory rate limiter with a shared store when deploying across multiple instances at scale.
 
-# Start production server
-npm start
+## SEO and social sharing
 
-# Lint code
-npm run lint
+The portfolio includes:
 
-# Type check without emitting files
-npm run type-check
+- Page-level metadata for the homepage, blog posts, and case studies.
+- A generated 1200 × 630 Open Graph image.
+- Canonical homepage metadata.
+- `Person` JSON-LD structured data.
+- Generated `/sitemap.xml` and `/robots.txt` routes.
 
-# Format code with Prettier
-npx prettier --write .
-```
-
----
+Update the production URL and author metadata in `lib/data/siteConfig.ts` if the domain changes.
 
 ## Deployment
 
-### Deploy to Vercel (Recommended)
-
-This portfolio is optimized for [Vercel](https://vercel.com/) deployment:
-
-1. **Push to Git repository** (GitHub, GitLab, or Bitbucket)
-2. **Import project** in Vercel dashboard
-3. **Deploy** - Vercel auto-detects Next.js and configures build settings
-
-**Zero configuration needed!** Vercel handles:
-
-- Automatic builds on git push
-- Image optimization
-- Edge caching
-- SSL certificates
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/portfolio)
-
-### Other Deployment Options
-
-**Netlify:**
-
-```bash
-npm run build
-# Deploy the .next folder
-```
-
-**Docker:**
-
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-RUN npm run build
-CMD ["npm", "start"]
-```
-
-**Traditional Node Hosting:**
+The project is compatible with Vercel and any Node.js host that supports Next.js.
 
 ```bash
 npm run build
 npm start
-# Runs on port 3000
 ```
 
----
+Before deploying, verify:
 
-## Architecture
+- `npm run type-check`
+- `npm run lint`
+- `npm run build`
+- Resend environment variables
+- Domain verification and canonical URL
+- Case-study wording and confidentiality requirements
 
-### Dark Mode Implementation
+## Additional documentation
 
-Custom **three-state theme system** using React Context:
+- [Contact form and Resend setup](./RESEND_SETUP.md)
+- [MDX blog authoring](./BLOG_SETUP.md)
 
-1. **System** (default) - Follows OS preference
-2. **Dark** - Forced dark mode
-3. **Light** - Forced light mode
+## Author
 
-**Features:**
-
-- Stored in `localStorage` with key `"theme"`
-- Inline script in `layout.tsx` prevents flash of unstyled content
-- Theme toggle component cycles through all three states
-- Fully typed with TypeScript
-
-### Component Organization
-
-Components follow a **List/Item pattern**:
-
-- `index.tsx` - Imports data from `lib/data/` and maps over items
-- `*Item.tsx` or `*Card.tsx` - Presentational component with typed props
-
-**Example:**
-
-```
-sections/Services/
-├── index.tsx        # Maps over services data
-└── ServiceCard.tsx  # Displays individual service
-```
-
-### Performance Optimizations
-
-- **Image Optimization** - Next.js Image component with WebP/AVIF
-- **Code Splitting** - Automatic with Next.js App Router
-- **Reduced Motion** - Respects user preferences for accessibility
-- **Efficient Animations** - Framer Motion with GPU acceleration
-
-### Type Safety
-
-- **Centralized Types** - All interfaces in `lib/types/index.ts`
-- **Data Layer Typing** - All data files properly typed
-- **Component Props** - Fully typed with TypeScript interfaces
-- **Path Aliases** - `@/*` resolves to root directory for clean imports
-
----
-
-## Screenshots
-
-### Desktop View
-
-![Desktop Screenshot](./screenshots/desktop.png)
-_Full three-column layout with left sidebar, main content, and right sidebar_
-
-### Mobile View
-
-![Mobile Screenshot](./screenshots/mobile.png)
-_Responsive mobile design with slide-out navigation_
-
-### Dark Mode
-
-![Dark Mode Screenshot](./screenshots/dark-mode.png)
-_Custom dark theme with optimized colors for readability_
-
-> **Note:** Add screenshots to a `screenshots/` folder in the root directory to display them in the README.
-
----
-
-## License
-
-This project is licensed under the **MIT License** - see below for details:
-
-```
-MIT License
-
-Copyright (c) 2025 Saman Kassou
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
-## Contact
-
-**Live Demo:** [https://www.samankassou.com/](https://www.samankassou.com/)
-
-**Author:** Samankassou
-
-For inquiries or collaboration opportunities, please visit the live site and use the contact form.
-
----
-
-<div align="center">
-  <p>Built with ❤️ using Next.js, TypeScript, and Tailwind CSS</p>
-  <p>⭐ Star this repo if you find it helpful!</p>
-</div>
+**Foulla SAMANKASSOU**<br>
+BI/AI Project Manager · Software Engineer<br>
+[LinkedIn](https://linkedin.com/in/sam-foulla) · [GitHub](https://github.com/samankassou) · [Portfolio](https://www.samankassou.com/)

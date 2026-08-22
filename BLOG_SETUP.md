@@ -1,295 +1,127 @@
-# MDX Blog Setup
+# MDX blog authoring guide
 
-This document explains the MDX-based blog system that has been implemented in your portfolio.
+The portfolio includes an optional, repository-backed blog. Articles live in `content/blog/` and are rendered at `/blog` and `/blog/[slug]`.
 
-## Overview
+The blog is intentionally separate from the primary homepage journey: the homepage and main navigation do not promote it by default. Add a blog navigation item or section only when publishing it becomes part of the portfolio strategy.
 
-Your portfolio now has a dynamic blog system powered by **MDX (Markdown with JSX)**. This allows you to:
-- Write blog posts in simple Markdown files
-- Keep content in your git repository (version controlled)
-- Add new posts without touching any code
-- Get automatic features like reading time, syntax highlighting, and more
+## How content is organized
 
-## How It Works
+Each `.mdx` or `.md` file in `content/blog/` becomes one article. The filename is the URL slug:
 
-### 1. Content Location
-All blog posts are stored in the `content/blog/` directory as `.mdx` files:
-
-```
-content/
-└── blog/
-    ├── getting-started-with-nextjs.mdx
-    ├── typescript-best-practices.mdx
-    └── tailwind-css-tips.mdx
+```text
+content/blog/power-bi-migration.mdx → /blog/power-bi-migration
 ```
 
-### 2. Blog Post Format
+Posts are sorted from newest to oldest using the `date` value in their frontmatter.
 
-Each blog post file has two parts:
+## Required frontmatter
 
-#### Frontmatter (Metadata)
-At the top of each file, wrapped in `---`:
+Add YAML metadata between `---` delimiters at the start of each file:
 
 ```yaml
 ---
-title: "Your Blog Post Title"
-excerpt: "A short description that appears in the blog list"
-date: "2024-02-10"
-category: "Web Development"
+title: "Migrating from QlikView to Power BI"
+excerpt: "A practical framework for modernizing enterprise reporting."
+date: "2026-08-22"
+category: "BI & Data"
 image: "https://images.unsplash.com/photo-..."
-tags: ["Next.js", "React", "TypeScript"]
-author: "Your Name"
+tags: ["Power BI", "Migration", "Analytics"]
+author: "Foulla SAMANKASSOU"
 featured: true
 ---
 ```
 
-**Frontmatter Fields:**
-- `title` (required): The blog post title
-- `excerpt` (required): Short description for previews
-- `date` (required): Publication date (YYYY-MM-DD format)
-- `category` (required): Blog category (e.g., "Web Development", "CSS", "TypeScript")
-- `image` (required): Cover image URL
-- `tags` (required): Array of tags
-- `author` (required): Author name
-- `featured` (required): Boolean - whether to highlight this post (true/false)
+| Field      | Purpose                                                    |
+| ---------- | ---------------------------------------------------------- |
+| `title`    | Article title and metadata title.                          |
+| `excerpt`  | Summary used in the article list and metadata description. |
+| `date`     | Publication date in `YYYY-MM-DD` format.                   |
+| `category` | Category label used by the blog filter.                    |
+| `image`    | Cover image URL and Open Graph article image.              |
+| `tags`     | Searchable list of topic labels.                           |
+| `author`   | Author displayed in article metadata.                      |
+| `featured` | Boolean available for featured-post queries.               |
 
-#### Content (Markdown)
-Below the frontmatter, write your content in standard Markdown:
+Keep frontmatter values accurate. The parser provides fallbacks for missing fields, but complete metadata produces a better reading and sharing experience.
 
-```markdown
-# Main Heading
+## Create an article
 
-Regular paragraphs with **bold** and *italic* text.
+1. Create a URL-friendly file in `content/blog/`, for example `azure-openai-patterns.mdx`.
+2. Copy the frontmatter template above and update every value.
+3. Write the article below the closing `---` using Markdown or supported MDX components.
+4. Start the site and review both the blog index and article page.
+5. Run the project checks before publishing.
 
-## Subheading
-
-- Bullet points
-- Are supported
-
-```javascript
-// Code blocks with syntax highlighting
-function example() {
-  console.log("Hello, World!");
-}
+```bash
+npm run dev
+npm run type-check
+npm run lint
 ```
 
-[Links](https://example.com) work too!
-```
+## Supported writing features
 
-### 3. Creating a New Blog Post
+- Headings, paragraphs, emphasis, links, lists, blockquotes, and tables.
+- Inline code and fenced code blocks with syntax highlighting.
+- Automatic heading IDs and linked headings.
+- Automatic reading-time calculation.
+- Responsive cover images through Next.js.
+- Page metadata and article Open Graph fields.
+- Previous and next article navigation.
+- A custom `<Note>` callout component.
 
-To add a new blog post:
+Example:
 
-1. Create a new `.mdx` file in `content/blog/`
-2. Use a URL-friendly filename (e.g., `my-awesome-post.mdx`)
-3. Add the frontmatter at the top
-4. Write your content below
-5. Commit and push (or save locally for dev)
+````mdx
+## A clear section title
 
-**Example:**
+Explain the idea in short paragraphs.
 
-Create `content/blog/my-new-post.mdx`:
-
-```markdown
----
-title: "My Awesome Blog Post"
-excerpt: "Learn about something amazing!"
-date: "2024-12-03"
-category: "Tutorial"
-image: "https://images.unsplash.com/photo-1234567890"
-tags: ["tutorial", "beginner"]
-author: "John Doe"
-featured: false
----
-
-# My Awesome Blog Post
-
-Your content goes here...
-```
-
-That's it! The post will automatically appear on your blog.
-
-### 4. URL Structure
-
-Posts are accessible at: `/blog/[filename]`
-
-Examples:
-- `content/blog/getting-started-with-nextjs.mdx` → `/blog/getting-started-with-nextjs`
-- `content/blog/my-new-post.mdx` → `/blog/my-new-post`
-
-## Features
-
-### ✅ Automatic Features
-- **Reading Time**: Calculated automatically from content length
-- **Syntax Highlighting**: Code blocks are highlighted with GitHub Dark theme
-- **Responsive Images**: All images are optimized by Next.js
-- **SEO Metadata**: Title, description, and Open Graph tags generated
-- **Related Posts**: Shows 3 related posts from the same category
-- **Category Badges**: Visual category indicators
-- **Date Formatting**: Friendly date display
-- **Tags Display**: Show all tags for each post
-
-### ✅ Styling Features
-- Dark mode support
-- Responsive design
-- Hover effects
-- Smooth transitions
-- Code block styling
-- Link styling
-
-## Technical Details
-
-### Dependencies Added
-- `gray-matter`: Parses frontmatter from MDX files
-- `next-mdx-remote`: Renders MDX content
-- `reading-time`: Calculates reading time
-- `rehype-highlight`: Syntax highlighting for code blocks
-- `rehype-slug`: Adds IDs to headings
-- `rehype-autolink-headings`: Makes headings clickable
-- `highlight.js`: Syntax highlighting library
-
-### Files Created/Modified
-
-**New Files:**
-- `content/blog/` - Blog content directory
-- `content/blog/*.mdx` - Example blog posts (3 samples)
-- `lib/utils/mdx.ts` - MDX utility functions
-- `app/blog/[slug]/page.tsx` - Individual blog post page
-
-**Modified Files:**
-- `lib/types/index.ts` - Added `BlogFrontmatter` and `BlogPost` types
-- `app/components/sections/Blogs/index.tsx` - Updated to fetch from MDX
-- `app/components/sections/Blogs/BlogItem.tsx` - Updated for new data structure
-- `lib/components/Icon.tsx` - Added calendar, time, and person icons
-
-### Utility Functions
-
-Located in `lib/utils/mdx.ts`:
+<Note>Keep confidential client details anonymized.</Note>
 
 ```typescript
-// Get all blog posts (sorted by date)
-getAllBlogPosts(): BlogPost[]
-
-// Get a single blog post by slug
-getBlogPost(slug: string): BlogPost | null
-
-// Get featured posts only
-getFeaturedBlogPosts(): BlogPost[]
-
-// Get posts by category
-getBlogPostsByCategory(category: string): BlogPost[]
-
-// Get posts by tag
-getBlogPostsByTag(tag: string): BlogPost[]
-
-// Get all unique categories
-getAllCategories(): string[]
-
-// Get all unique tags
-getAllTags(): string[]
+const outcome = "A maintainable reporting foundation";
 ```
+````
 
-## Next Steps
+## Images
 
-### Adding More Posts
-Just create more `.mdx` files in `content/blog/`!
+External cover images must use a hostname allowed by `next.config.mjs`. Prefer stable, appropriately licensed images with descriptive context. If an image does not load:
 
-### Filtering by Category/Tag
-You can extend the blog section to add filtering using the utility functions:
+1. verify the URL in a browser;
+2. confirm its hostname is configured for Next.js images;
+3. restart the development server after changing the configuration.
+
+## Implementation reference
+
+| Location                       | Responsibility                                             |
+| ------------------------------ | ---------------------------------------------------------- |
+| `content/blog/`                | Article source files.                                      |
+| `lib/utils/mdx.ts`             | File parsing, sorting, filtering, and reading time.        |
+| `app/blog/page.tsx`            | Blog index metadata and data loading.                      |
+| `app/blog/BlogIndexClient.tsx` | Client-side index and category filtering.                  |
+| `app/blog/[slug]/page.tsx`     | Article rendering, metadata, and adjacent-post navigation. |
+| `lib/types/index.ts`           | `BlogFrontmatter` and `BlogPost` types.                    |
+
+The main helpers in `lib/utils/mdx.ts` are:
 
 ```typescript
-const webDevPosts = getBlogPostsByCategory("Web Development");
-const reactPosts = getBlogPostsByTag("React");
+getAllBlogPosts();
+getBlogPost(slug);
+getFeaturedBlogPosts();
+getBlogPostsByCategory(category);
+getBlogPostsByTag(tag);
+getAllCategories();
+getAllTags();
+getAdjacentPosts(slug);
 ```
 
-### Custom Styling
-Modify `app/blog/[slug]/page.tsx` to customize the blog post page styling.
+## Publishing checklist
 
-### Adding Features
-Some ideas for future enhancements:
-- Search functionality
-- Category/tag filter pages
-- Comments system (e.g., Giscus, Disqus)
-- Table of contents
-- Share buttons
-- RSS feed
-- Pagination
+- Use a descriptive, unique filename and title.
+- Validate the date, author, category, tags, and cover image.
+- Check light and dark modes on desktop and mobile.
+- Verify code blocks, heading links, and previous/next navigation.
+- Avoid confidential client names, screenshots, data, and unsupported performance claims.
+- Confirm the article's metadata preview before sharing it publicly.
 
-## Markdown Features
-
-Your blog posts support all standard Markdown:
-
-- **Headings**: `# H1`, `## H2`, `### H3`, etc.
-- **Bold**: `**bold text**`
-- **Italic**: `*italic text*`
-- **Links**: `[text](url)`
-- **Images**: `![alt](url)`
-- **Lists**: `-` or `1.`
-- **Code**: `` `inline` `` or ` ```language ` for blocks
-- **Blockquotes**: `> quote`
-- **Tables**: Markdown tables are supported
-
-## Example Blog Post Template
-
-Copy this template to create new posts:
-
-```markdown
----
-title: "Your Title Here"
-excerpt: "Brief description (2-3 sentences)"
-date: "2024-12-03"
-category: "Category Name"
-image: "https://images.unsplash.com/photo-..."
-tags: ["tag1", "tag2", "tag3"]
-author: "Your Name"
-featured: false
----
-
-# Main Title
-
-Introduction paragraph explaining what this post is about.
-
-## Section 1
-
-Content for section 1...
-
-### Subsection
-
-More detailed content...
-
-## Section 2
-
-Content for section 2...
-
-## Conclusion
-
-Wrap up your post...
-```
-
-## Resources
-
-- [Markdown Guide](https://www.markdownguide.org/)
-- [MDX Documentation](https://mdxjs.com/)
-- [Unsplash](https://unsplash.com/) - Free images for blog covers
-- [Highlight.js Themes](https://highlightjs.org/static/demo/) - Other syntax themes
-
-## Troubleshooting
-
-**Blog post not showing?**
-- Check that the `.mdx` file is in `content/blog/`
-- Verify frontmatter is valid (proper YAML syntax)
-- Make sure all required fields are present
-- Restart the dev server
-
-**Images not loading?**
-- Ensure image URLs are valid
-- Check `next.config.mjs` for allowed domains
-- Use absolute URLs for external images
-
-**Syntax highlighting not working?**
-- Specify language in code blocks: ` ```javascript `
-- Check that `highlight.js` is installed
-
----
-
-**Happy blogging!** 🎉
+Useful references: [MDX](https://mdxjs.com/), [Markdown Guide](https://www.markdownguide.org/), and [Next.js Image](https://nextjs.org/docs/app/api-reference/components/image).
