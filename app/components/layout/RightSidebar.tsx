@@ -57,7 +57,7 @@ export default function RightSideMenu() {
       >
         {/* Theme Toggle */}
         <div className="group relative mb-8 flex flex-col items-center">
-          <ThemeToggle className="flex h-10 w-10 items-center justify-center text-2xl text-primary transition-all hover:opacity-80" />
+          <ThemeToggle className="text-2xl text-primary transition-all hover:opacity-80" />
           <span className="pointer-events-none absolute bottom-full mb-3 whitespace-nowrap rounded-lg bg-secondary px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 dark:bg-gray-800">
             Toggle Theme
           </span>

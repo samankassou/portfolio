@@ -85,7 +85,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang={siteConfig.metadata.language} suppressHydrationWarning>
+    <html
+      lang={siteConfig.metadata.language}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{

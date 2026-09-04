@@ -24,7 +24,7 @@ export default function Navbar() {
       >
         <a
           href="#"
-          className="flex flex-shrink-0 items-center gap-3"
+          className="flex min-h-11 flex-shrink-0 items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Back to top"
         >
           <Image
@@ -52,14 +52,16 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <ul className="flex items-center justify-between gap-6">
+        <ul className="flex items-center justify-between gap-2 sm:gap-4">
           <li key="theme" className="text-2xl text-primary">
             <ThemeToggle />
           </li>
           <li key="menu" className="text-2xl dark:text-primary lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
+              className="flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-secondary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:hover:bg-white/5"
               aria-label="Open menu"
+              type="button"
             >
               <Icon name="menu" />
             </button>

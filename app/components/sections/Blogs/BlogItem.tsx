@@ -6,9 +6,10 @@ import Icon from "@/lib/components/Icon";
 
 interface BlogItemProps {
   post: BlogPost;
+  eager?: boolean;
 }
 
-export default function BlogItem({ post }: BlogItemProps) {
+export default function BlogItem({ post, eager = false }: BlogItemProps) {
   const { slug, frontmatter, readingTime } = post;
 
   return (
@@ -27,6 +28,7 @@ export default function BlogItem({ post }: BlogItemProps) {
           src={frontmatter.image}
           alt={frontmatter.title}
           fill
+          loading={eager ? "eager" : "lazy"}
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
