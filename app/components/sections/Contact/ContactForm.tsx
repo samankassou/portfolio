@@ -88,7 +88,7 @@ export default function ContactForm() {
         />
       </div>
       <h3 className="mb-6 text-left text-xl font-bold text-base-content dark:text-base-100">
-        Leave a message
+        Discuss a project
       </h3>
       <div className="grid grid-cols-2 gap-5">
         <div className="col-span-2 lg:col-span-1">
@@ -185,7 +185,7 @@ export default function ContactForm() {
             disabled={status === "loading"}
             className="rounded-lg bg-primary px-5 py-3 font-medium text-base-content transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-base-100 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-offset-[#1C1C1C]"
           >
-            {status === "loading" ? "Sending..." : "Send Message"}
+            {status === "loading" ? "Sending..." : "Send project enquiry"}
           </button>
 
           {/* Success Message */}

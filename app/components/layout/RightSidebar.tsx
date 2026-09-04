@@ -19,11 +19,13 @@ export default function RightSideMenu() {
     const handleScroll = () => {
       const sections = navItems
         .map((item) => {
-          // Skip "#" alone (home link) or non-hash hrefs
-          if (!item.href.startsWith("#") || item.href === "#") {
+          const hash = new URL(item.href, window.location.href).hash;
+
+          // Skip links without a section hash, such as the home link.
+          if (!hash) {
             return { id: item.id, element: null };
           }
-          const element = document.querySelector(item.href);
+          const element = document.querySelector(hash);
           return { id: item.id, element };
         })
         .filter((section) => section.element);

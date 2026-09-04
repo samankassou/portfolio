@@ -1,6 +1,6 @@
 # Foulla SAMANKASSOU — Portfolio
 
-Professional portfolio for a BI/AI Project Manager and Software Engineer specializing in Power BI, Azure OpenAI, cloud migration, automation, and application modernization.
+Professional portfolio for an Azure DevOps Engineer and Azure & .NET Software Engineer focused on building, deploying, and modernizing reliable applications on Microsoft Azure. PHP/Laravel development remains part of the engineering profile, with AI and BI presented as complementary expertise.
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev/)
@@ -34,11 +34,11 @@ Professional portfolio for a BI/AI Project Manager and Software Engineer special
 
 ## What the portfolio includes
 
-- A focused BI, AI, Azure, and software-engineering positioning.
+- Azure DevOps, Azure application modernization, and .NET engineering positioning.
 - Five anonymized case studies based on real professional experience.
-- Category filtering for BI & Data, AI & Automation, Cloud & DevOps, and Web Applications.
+- Category filtering led by Cloud & DevOps and Web Applications, followed by AI & Automation and BI & Data.
 - Dedicated case-study pages with a conceptual solution flow, role, stack, challenge, approach, outcome, and confidentiality notice.
-- Professional experience, services, certifications, testimonials, education, and contact sections.
+- Professional experience, engineering capabilities, Azure-led certifications, testimonials, education, and contact sections.
 - Responsive desktop, tablet, and mobile layouts.
 - Persistent light, dark, and system theme support.
 - Accessible navigation, semantic HTML, keyboard focus states, and reduced-motion support.
@@ -165,7 +165,7 @@ This makes most content changes possible without editing layout components.
 | `lib/data/profile.ts`        | Profile, skills, and contact information          |
 | `lib/data/projects.ts`       | Case studies, categories, roles, and technologies |
 | `lib/data/experience.ts`     | Professional experience                           |
-| `lib/data/services.ts`       | Service offering                                  |
+| `lib/data/services.ts`       | Engineering capabilities                          |
 | `lib/data/certifications.ts` | Certifications and verification links             |
 | `lib/data/testimonials.ts`   | Testimonials                                      |
 | `lib/data/education.ts`      | Education                                         |
@@ -193,10 +193,10 @@ Case studies live in `lib/data/projects.ts` and follow the `Project` interface f
 
 Supported categories are:
 
-- `BI & Data`
-- `AI & Automation`
 - `Cloud & DevOps`
 - `Web Applications`
+- `AI & Automation`
+- `BI & Data`
 
 Every case-study page automatically adapts its icon and conceptual solution flow to the selected category. Keep confidential details anonymized and avoid adding metrics that cannot be verified.
 
@@ -254,5 +254,5 @@ Before deploying, verify:
 ## Author
 
 **Foulla SAMANKASSOU**<br>
-BI/AI Project Manager · Software Engineer<br>
+Azure DevOps Engineer · Azure & .NET Software Engineer<br>
 [LinkedIn](https://linkedin.com/in/sam-foulla) · [GitHub](https://github.com/samankassou) · [Portfolio](https://www.samankassou.com/)

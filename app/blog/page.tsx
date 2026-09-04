@@ -5,7 +5,7 @@ import BlogIndexClient from "./BlogIndexClient";
 export const metadata: Metadata = {
   title: "Blog | Portfolio - Foulla SAMANKASSOU",
   description:
-    "Articles about software engineering, BI, AI, cloud solutions, and full-stack development.",
+    "Articles about Azure, DevOps, .NET, software engineering, cloud modernization, and complementary AI and BI work.",
 };
 
 export default function BlogPage() {

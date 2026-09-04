@@ -31,7 +31,7 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.05 }}
             className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary sm:text-sm"
           >
-            BI/AI Project Manager · Software Engineer
+            Azure DevOps Engineer · Azure &amp; .NET Software Engineer
           </motion.p>
           <motion.h1
             variants={fadeInUp}
@@ -40,8 +40,9 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.1 }}
             className={`mb-4 text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl md:text-5xl ${COMMON_CLASSES.TEXT}`}
           >
-            I build BI, AI and Azure solutions that turn data into{" "}
-            <span className="text-primary">better decisions.</span>
+            I build, deploy, and modernize{" "}
+            <span className="text-primary">reliable applications</span> on
+            Microsoft Azure.
           </motion.h1>
           <motion.p
             variants={fadeInUp}
@@ -50,9 +51,8 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.2 }}
             className="md:text-md mb-6 max-w-md text-sm leading-relaxed text-secondary/60 dark:text-white/60 sm:mb-8"
           >
-            I help teams modernize reporting, automate document-heavy processes,
-            and move business applications to the cloud with Power BI, Azure
-            OpenAI, and Microsoft Azure.
+            .NET engineering and Azure DevOps experience across application
+            analysis, design, development, cloud migration, and deployment.
           </motion.p>
           <motion.div
             variants={fadeInUp}
@@ -61,7 +61,7 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.3 }}
           >
             <div className="flex flex-wrap items-center gap-3">
-              <Btn href="#portfolio" label="View case studies" />
+              <Btn href="/portfolio/4" label="Explore Azure case study" />
               <a
                 href="#contact"
                 className="inline-flex min-h-11 items-center rounded-full border border-secondary/15 px-5 py-2 text-sm font-semibold text-base-content transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:border-base-700 dark:text-base-100"
@@ -69,6 +69,9 @@ export default function HeroSection() {
                 Contact me
               </a>
             </div>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-secondary/55 dark:text-white/50">
+              Microsoft certified · AZ-400 · AZ-204 · AZ-900
+            </p>
           </motion.div>
         </div>
         <motion.div

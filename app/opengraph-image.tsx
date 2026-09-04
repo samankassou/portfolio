@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Foulla SAMANKASSOU — BI/AI Project Manager and Software Engineer";
+  "Foulla SAMANKASSOU — Azure DevOps and Azure .NET Software Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
               textTransform: "uppercase",
             }}
           >
-            BI/AI Project Manager · Software Engineer
+            Azure DevOps Engineer · Azure &amp; .NET Software Engineer
           </div>
           <div
             style={{
@@ -67,8 +67,8 @@ export default function OpenGraphImage() {
                 maxWidth: 940,
               }}
             >
-              BI, AI and Azure solutions that turn operational data into better
-              decisions.
+              Building, deploying, and modernizing reliable .NET applications on
+              Microsoft Azure.
             </div>
           </div>
           <div style={{ color: "#f78f42", display: "flex", fontSize: 24 }}>

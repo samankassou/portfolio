@@ -31,7 +31,7 @@ const categoryVisuals: Record<
   },
   "Cloud & DevOps": {
     icon: "cloud",
-    flow: ["On-premises apps", "Azure foundation", "Modern delivery"],
+    flow: ["On-premises apps", "Azure environment", "Azure deployment"],
   },
   "Web Applications": {
     icon: "code-slash",

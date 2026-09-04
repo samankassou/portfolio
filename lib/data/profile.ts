@@ -14,7 +14,7 @@ import type {
  */
 export const profileData: ProfileData = {
   name: "Foulla SAMANKASSOU",
-  title: "Software Engineer",
+  title: "Azure DevOps & .NET Engineer",
   photo: "/img/profile/profile_pic_sm.webp",
   badge: false,
 };
@@ -36,66 +36,66 @@ export const contactInfo: ContactInfo[] = [
 export const skillCategories: SkillCategory[] = [
   {
     id: 1,
-    category: "Programming Languages",
+    category: "Azure & DevOps",
     skills: [
-      { id: 1, name: "C#" },
-      { id: 2, name: "JavaScript" },
-      { id: 3, name: "TypeScript" },
-      { id: 4, name: "PHP" },
-      { id: 5, name: "HTML/CSS" },
+      { id: 1, name: "Microsoft Azure" },
+      { id: 2, name: "Azure DevOps" },
+      { id: 3, name: "Docker" },
+      { id: 4, name: "Git" },
     ],
   },
   {
     id: 2,
-    category: "Frameworks & Libraries",
+    category: ".NET Engineering",
     skills: [
+      { id: 5, name: "C#" },
       { id: 6, name: ".NET Core" },
-      { id: 7, name: "React" },
-      { id: 8, name: "Vue.js" },
-      { id: 9, name: "Laravel" },
-      { id: 10, name: "TailwindCSS" },
-      { id: 11, name: "Bootstrap" },
+      { id: 7, name: "SQL Server" },
+      { id: 8, name: "Azure SQL" },
     ],
   },
   {
     id: 3,
-    category: "Cloud & DevOps",
+    category: "Web Engineering",
     skills: [
-      { id: 12, name: "Microsoft Azure" },
-      { id: 13, name: "Azure DevOps" },
-      { id: 14, name: "Azure OpenAI" },
-      { id: 15, name: "Docker" },
-      { id: 16, name: "Git" },
+      { id: 9, name: "PHP" },
+      { id: 10, name: "Laravel" },
+      { id: 11, name: "JavaScript" },
+      { id: 12, name: "TypeScript" },
+      { id: 13, name: "React" },
+      { id: 14, name: "Vue.js" },
+      { id: 15, name: "HTML/CSS" },
+      { id: 16, name: "TailwindCSS" },
+      { id: 17, name: "Bootstrap" },
     ],
   },
   {
     id: 4,
-    category: "Business Intelligence",
+    category: "Databases",
     skills: [
-      { id: 17, name: "Power BI" },
-      { id: 18, name: "QlikView" },
-      { id: 19, name: "Talend" },
-      { id: 20, name: "AI Builder" },
+      { id: 18, name: "MySQL" },
+      { id: 19, name: "PostgreSQL" },
+      { id: 20, name: "SQLite" },
     ],
   },
   {
     id: 5,
-    category: "Databases",
+    category: "Systems",
     skills: [
-      { id: 21, name: "SQL Server" },
-      { id: 22, name: "Azure SQL" },
-      { id: 23, name: "MySQL" },
-      { id: 24, name: "PostgreSQL" },
-      { id: 25, name: "SQLite" },
+      { id: 21, name: "Windows / Windows Server" },
+      { id: 22, name: "macOS" },
+      { id: 23, name: "Linux (Ubuntu, CentOS, Kali)" },
     ],
   },
   {
     id: 6,
-    category: "Systems",
+    category: "AI & Business Intelligence",
     skills: [
-      { id: 26, name: "Windows / Windows Server" },
-      { id: 27, name: "macOS" },
-      { id: 28, name: "Linux (Ubuntu, CentOS, Kali)" },
+      { id: 24, name: "Azure OpenAI" },
+      { id: 25, name: "AI Builder" },
+      { id: 26, name: "Power BI" },
+      { id: 27, name: "QlikView" },
+      { id: 28, name: "Talend" },
     ],
   },
 ];
@@ -104,11 +104,11 @@ export const skillCategories: SkillCategory[] = [
  * Major skills (backward compatibility - no percentages)
  */
 export const majorSkills: Skill[] = [
-  { id: 1, name: "C#" },
-  { id: 2, name: "JavaScript" },
-  { id: 3, name: "React" },
-  { id: 4, name: "Azure DevOps" },
-  { id: 5, name: "Power BI" },
+  { id: 1, name: "Microsoft Azure" },
+  { id: 2, name: "Azure DevOps" },
+  { id: 3, name: "C#" },
+  { id: 4, name: ".NET Core" },
+  { id: 5, name: "Laravel" },
 ];
 
 /**
@@ -117,8 +117,8 @@ export const majorSkills: Skill[] = [
 export const extraSkills: Skill[] = [
   { id: 1, name: "Docker" },
   { id: 2, name: "Git" },
-  { id: 3, name: "Laravel" },
-  { id: 4, name: ".NET Core" },
+  { id: 3, name: "PHP" },
+  { id: 4, name: "React" },
   { id: 5, name: "Vue.js" },
-  { id: 6, name: "Azure OpenAI" },
+  { id: 6, name: "Power BI" },
 ];
