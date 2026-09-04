@@ -29,7 +29,7 @@ export default function Home() {
             <section id="portfolio">
               <SectionHeader
                 title="Selected case studies"
-                subtitle="Anonymized examples of real BI, AI, cloud, and application work. Confidential business details have intentionally been omitted."
+                subtitle="Anonymized examples of Azure modernization, application engineering, AI, and BI work. Confidential business details have intentionally been omitted."
               />
               <Portfolio />
             </section>
@@ -38,16 +38,16 @@ export default function Home() {
             <section id="experience">
               <SectionHeader
                 title="Experience"
-                subtitle="A professional journey from web development and application support to leading business intelligence and AI initiatives."
+                subtitle="A journey through application development, .NET support, Azure modernization, delivery engineering, and technical project leadership."
               />
               <Experience />
             </section>
 
-            {/* Services */}
-            <section id="services">
+            {/* Engineering capabilities */}
+            <section id="capabilities">
               <SectionHeader
-                title="How I can help"
-                subtitle="Focused expertise for organizations modernizing their data, automation, cloud, and business applications."
+                title="Engineering capabilities"
+                subtitle="Hands-on capabilities for teams delivering and modernizing Azure, .NET, and web applications."
               />
               <Services />
             </section>
@@ -56,7 +56,7 @@ export default function Home() {
             <section id="certifications">
               <SectionHeader
                 title="Certifications"
-                subtitle="Professional certifications and credentials demonstrating expertise in cloud technologies, business intelligence, and agile methodologies."
+                subtitle="Microsoft Azure credentials lead a broader certification set spanning DevOps, development, cloud fundamentals, agile delivery, IT service management, and BI."
               />
               <Certifications />
             </section>
@@ -83,7 +83,7 @@ export default function Home() {
             <section id="contact">
               <SectionHeader
                 title="Get in touch"
-                subtitle="Let's discuss your project needs and explore how we can work together to create innovative solutions for your business."
+                subtitle="Discuss an Azure DevOps, Azure modernization, .NET, or web application need directly."
               />
               <Contact />
             </section>

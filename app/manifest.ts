@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Portfolio - Foulla SAMANKASSOU",
+    name: "Azure DevOps & .NET Engineer - Foulla SAMANKASSOU",
     short_name: "Foulla Portfolio",
     description:
-      "Software Engineer specializing in BI, AI, Cloud Solutions, and Full-Stack Development",
+      "Azure DevOps and .NET software engineer focused on Microsoft Azure application delivery and modernization",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

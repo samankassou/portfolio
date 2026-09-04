@@ -10,7 +10,7 @@ import Icon from "@/lib/components/Icon";
 const desktopLinks = [
   { label: "Case Studies", href: "#portfolio" },
   { label: "Experience", href: "#experience" },
-  { label: "Services", href: "#services" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "Contact", href: "#contact" },
 ];
 

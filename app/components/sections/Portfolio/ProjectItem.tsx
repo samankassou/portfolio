@@ -45,6 +45,17 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             {project.description}
           </p>
 
+          {project.role && (
+            <p
+              className={`mb-4 text-xs font-medium ${COMMON_CLASSES.TEXT_MUTED}`}
+            >
+              <span className="font-semibold text-base-content dark:text-base-100">
+                Role:
+              </span>{" "}
+              {project.role}
+            </p>
+          )}
+
           <div
             className="mt-auto flex flex-wrap gap-2"
             aria-label="Technologies"

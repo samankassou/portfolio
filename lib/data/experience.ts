@@ -14,7 +14,7 @@ export const experience: Experience[] = [
     role: "BI/AI Project Manager",
     period: "April 2025 - Present",
     description:
-      "Leading AI-powered legal monitoring solution development and managing unstructured data extraction from import manifests using AI. Conducting AI acculturation through organizational webinars, training, and support. Technologies: Azure OpenAI, AI Builder, Copilot, Copilot Studio, Power BI.",
+      "Leading the design and delivery of an AI-powered legal monitoring solution and managing AI-assisted extraction of unstructured import-manifest data. Supporting adoption through organizational webinars, training, and user support. Technologies: Azure OpenAI, AI Builder, Copilot, Copilot Studio, Power BI.",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const experience: Experience[] = [
     role: "Application Analyst",
     period: "April 2023 - March 2025",
     description:
-      "Designed and developed Transportation Management System (TMS) web application. Led migration of on-premises .NET applications to Azure cloud (environment setup, analysis, design, development, deployment). Project lead for QlikView to Power BI report migration. Team leader for corporate rebranding project updating business application documents. Team leader for AS400 MAPPING OPALE to ONYX migration. Technologies: QlikView, Power BI, Talend, PHP, Laravel, Azure, C#, JavaScript, React, .NET, ONYX.",
+      "Led the migration of on-premises .NET applications to Azure across environment setup, analysis, design, development, and deployment. Designed and developed a Transportation Management System web application. Led the QlikView-to-Power BI report migration, corporate rebranding updates to business application documents, and the AS400 MAPPING OPALE-to-ONYX migration. Technologies: Azure, Azure DevOps, C#, .NET, PHP, Laravel, JavaScript, React, QlikView, Power BI, Talend, ONYX.",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const experience: Experience[] = [
     role: "Application Analyst",
     period: "June 2022 - March 2023",
     description:
-      "Provided application support including .NET web application maintenance. Participated in AS400 MAPPING OPAL to ONYX migration project on Windows platform. Technologies: C#, PHP, JavaScript, jQuery, .NET, Laravel, ONYX.",
+      "Maintained and supported .NET web applications and participated in the AS400 MAPPING OPAL-to-ONYX migration on Windows. Technologies: C#, .NET, PHP, Laravel, JavaScript, jQuery, ONYX.",
   },
   {
     id: 4,

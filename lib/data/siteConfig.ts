@@ -6,9 +6,9 @@ import type { SiteConfig, SocialLink } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
   metadata: {
-    title: "Portfolio - Foulla SAMANKASSOU",
+    title: "Azure DevOps & .NET Engineer | Foulla SAMANKASSOU",
     description:
-      "BI/AI Project Manager and Software Engineer specializing in Power BI, Azure OpenAI, cloud migration, and application modernization.",
+      "Azure DevOps and .NET software engineer building, deploying, and modernizing reliable applications on Microsoft Azure.",
     language: "en",
     url: "https://samankassou.com",
   },

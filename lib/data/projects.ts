@@ -9,16 +9,52 @@ import type { ProjectCategory, Project } from "@/lib/types";
  */
 export const projectCategories: ProjectCategory[] = [
   "All categories",
-  "BI & Data",
-  "AI & Automation",
   "Cloud & DevOps",
   "Web Applications",
+  "AI & Automation",
+  "BI & Data",
 ];
 
 /**
  * Portfolio projects
  */
 export const projects: Project[] = [
+  {
+    id: 4,
+    title: ".NET Applications to Azure",
+    link: "Cloud migration and modernization",
+    category: "Cloud & DevOps",
+    description:
+      "Migration and modernization of on-premises .NET business applications on Microsoft Azure using Azure DevOps.",
+    technologies: ["Azure DevOps", "Microsoft Azure", ".NET", "C#"],
+    role: "Application Analyst / Technical Lead",
+    confidentialityNote:
+      "Anonymized case study — application architecture is confidential.",
+    challenge:
+      "On-premises .NET business applications needed to be migrated to Azure across environment setup, analysis, design, development, and deployment.",
+    solution:
+      "Led the migration work from environment setup and application analysis through solution design, development, and deployment on Microsoft Azure with Azure DevOps.",
+    results:
+      "Migrated the on-premises .NET applications to Azure and carried the work through deployment.",
+  },
+  {
+    id: 5,
+    title: "Transportation Management System",
+    link: "Operational web application",
+    category: "Web Applications",
+    description:
+      "A web-based Transportation Management System designed around logistics operations and internal workflows.",
+    technologies: ["Laravel", "PHP", "JavaScript", "SQL"],
+    role: "Application Analyst / Developer",
+    confidentialityNote:
+      "Anonymized case study — screens and operational rules are confidential.",
+    challenge:
+      "Operational teams needed a dedicated application aligned with transportation workflows rather than a generic off-the-shelf experience.",
+    solution:
+      "Designed and developed the application around the required business processes, with attention to maintainability and day-to-day usability.",
+    results:
+      "Delivered a dedicated web application foundation tailored to the transportation management workflow.",
+  },
   {
     id: 1,
     title: "AI-Powered Legal Monitoring",
@@ -72,41 +108,5 @@ export const projects: Project[] = [
       "Led the migration approach, covering report analysis, data preparation, dashboard reconstruction, stakeholder validation, and transition support.",
     results:
       "Helped transition the reporting environment toward Power BI while preserving the operational knowledge embedded in existing reports.",
-  },
-  {
-    id: 4,
-    title: ".NET Applications to Azure",
-    link: "Cloud migration and modernization",
-    category: "Cloud & DevOps",
-    description:
-      "Migration of on-premises .NET business applications to Microsoft Azure.",
-    technologies: ["Microsoft Azure", ".NET", "C#", "Azure DevOps"],
-    role: "Application Analyst / Technical Lead",
-    confidentialityNote:
-      "Anonymized case study — application architecture is confidential.",
-    challenge:
-      "Business applications had to move from on-premises environments to Azure while maintaining continuity across configuration, development, and deployment activities.",
-    solution:
-      "Contributed across environment setup, analysis, solution design, application changes, deployment, and transition to the cloud operating model.",
-    results:
-      "Supported the migration of the applications to Azure and established a clearer deployment foundation for their continued evolution.",
-  },
-  {
-    id: 5,
-    title: "Transportation Management System",
-    link: "Operational web application",
-    category: "Web Applications",
-    description:
-      "A web-based Transportation Management System designed around logistics operations and internal workflows.",
-    technologies: ["Laravel", "PHP", "JavaScript", "SQL"],
-    role: "Application Analyst / Developer",
-    confidentialityNote:
-      "Anonymized case study — screens and operational rules are confidential.",
-    challenge:
-      "Operational teams needed a dedicated application aligned with transportation workflows rather than a generic off-the-shelf experience.",
-    solution:
-      "Designed and developed the application around the required business processes, with attention to maintainability and day-to-day usability.",
-    results:
-      "Delivered a dedicated web application foundation tailored to the transportation management workflow.",
   },
 ];
