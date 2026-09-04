@@ -32,12 +32,15 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
               <div className="flex items-center gap-3">
                 <Link
                   href="/"
-                  className="flex items-center gap-2 text-secondary/60 transition-colors hover:text-secondary dark:text-base-400 dark:hover:text-base-100"
+                  className="flex h-11 w-11 items-center justify-center rounded-full text-secondary/60 transition-colors hover:bg-secondary/5 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-base-400 dark:hover:bg-white/5 dark:hover:text-base-100"
                   aria-label="Back to home"
                 >
                   <Icon name="arrow-back" className="text-xl" />
                 </Link>
-                <Link href="/" className="flex-shrink-0">
+                <Link
+                  href="/"
+                  className="flex min-h-11 min-w-11 flex-shrink-0 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
                   <Image
                     className="h-10 w-10 rounded-full object-cover"
                     src="/img/profile/profile_pic_sm.webp"
@@ -56,7 +59,9 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
                 <li className="text-2xl dark:text-primary">
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
+                    className="flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-secondary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:hover:bg-white/5"
                     aria-label="Open menu"
+                    type="button"
                   >
                     <Icon name="menu" />
                   </button>

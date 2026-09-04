@@ -32,7 +32,7 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
               <div className="flex items-center gap-3">
                 <Link
                   href="/#portfolio"
-                  className="flex min-h-10 items-center gap-2 rounded-full px-1 text-secondary/60 transition-colors hover:text-primary dark:text-base-400 dark:hover:text-primary"
+                  className="flex h-11 min-w-11 items-center justify-center gap-2 rounded-full px-1 text-secondary/60 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-base-400 dark:hover:text-primary"
                   aria-label="Back to portfolio"
                 >
                   <Icon name="arrow-back" className="text-xl" />
@@ -43,7 +43,7 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
                 <span className="hidden h-5 w-px bg-secondary/10 dark:bg-base-700 sm:block" />
                 <Link
                   href="/"
-                  className="flex flex-shrink-0 items-center gap-3"
+                  className="flex min-h-11 flex-shrink-0 items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
                   <Image
                     className="h-10 w-10 rounded-full object-cover"
@@ -74,7 +74,9 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
                 <li className="text-2xl dark:text-primary md:hidden">
                   <button
                     onClick={() => setIsMobileMenuOpen(true)}
+                    className="flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-secondary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:hover:bg-white/5"
                     aria-label="Open menu"
+                    type="button"
                   >
                     <Icon name="menu" />
                   </button>

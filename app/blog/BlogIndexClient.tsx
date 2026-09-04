@@ -80,13 +80,13 @@ export default function BlogIndexClient({
           transition={getTransition(reducedMotion, 0.3)}
           className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {filteredPosts.map((post) => (
+          {filteredPosts.map((post, index) => (
             <motion.div
               key={post.slug}
               variants={fadeInUp}
               transition={getTransition(reducedMotion, 0.4)}
             >
-              <BlogItem post={post} />
+              <BlogItem post={post} eager={index === 0} />
             </motion.div>
           ))}
         </motion.div>

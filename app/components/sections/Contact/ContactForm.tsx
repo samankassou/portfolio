@@ -75,7 +75,6 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       className={cn("rounded-xl p-6 shadow-sm", COMMON_CLASSES.CARD_BG)}
-      id="contact"
     >
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>

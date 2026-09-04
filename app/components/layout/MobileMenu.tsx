@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import Icon from "@/lib/components/Icon";
 import type { IconName } from "@/lib/components/Icon";
@@ -13,17 +13,49 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const navItems = mainNavigation;
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Handle ESC key press to close menu
+  // Keep keyboard focus inside the dialog and return it to the opener on close.
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
+    if (!isOpen) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
         onClose();
+        return;
+      }
+
+      if (e.key !== "Tab" || !panelRef.current) return;
+
+      const focusableElements = Array.from(
+        panelRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (!firstElement || !lastElement) return;
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
       }
     };
 
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      previouslyFocused?.focus();
+    };
   }, [isOpen, onClose]);
 
   // Prevent body scroll when menu is open
@@ -56,23 +88,29 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
       {/* Menu Panel */}
       <div
+        ref={panelRef}
         className={cn(
           "fixed right-0 top-0 z-50 h-full w-[280px] transform shadow-2xl transition-transform duration-300 ease-in-out xl:hidden",
           COMMON_CLASSES.CARD_BG,
         )}
         role="dialog"
         aria-modal="true"
-        aria-label="Mobile navigation menu"
+        aria-labelledby="mobile-menu-title"
       >
         {/* Header with close button */}
         <div className="flex items-center justify-between border-b border-secondary/10 px-6 py-5 dark:border-base-800">
-          <h2 className="text-lg font-semibold text-base-content dark:text-base-100">
+          <h2
+            id="mobile-menu-title"
+            className="text-lg font-semibold text-base-content dark:text-base-100"
+          >
             Menu
           </h2>
           <button
+            ref={closeButtonRef}
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-2xl text-secondary/60 transition-colors hover:bg-secondary/5 hover:text-primary dark:text-base-400 dark:hover:bg-white/5 dark:hover:text-primary"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-2xl text-secondary/60 transition-colors hover:bg-secondary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:text-base-400 dark:hover:bg-white/5 dark:hover:text-primary"
             aria-label="Close menu"
+            type="button"
           >
             <Icon name="close" />
           </button>
