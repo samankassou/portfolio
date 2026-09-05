@@ -41,6 +41,13 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   }, []);
 
   useEffect(() => {
+    if (theme === null) return;
+    document.documentElement.classList.toggle(
+      "dark",
+      theme === THEME_MODES.DARK ||
+        (theme === THEME_MODES.SYSTEM &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
     if (theme !== THEME_MODES.SYSTEM) return;
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");

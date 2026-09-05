@@ -27,9 +27,6 @@ export const metadata: Metadata = {
     "Laravel",
     "Power BI",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: siteConfig.metadata.title,
     description: siteConfig.metadata.description,

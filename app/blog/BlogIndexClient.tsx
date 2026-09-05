@@ -10,10 +10,10 @@ import {
   useReducedMotion,
   getTransition,
 } from "@/lib/utils/animations";
-import type { BlogPost } from "@/lib/types";
+import type { BlogPostSummary } from "@/lib/types";
 
 interface BlogIndexClientProps {
-  posts: BlogPost[];
+  posts: BlogPostSummary[];
   categories: string[];
 }
 

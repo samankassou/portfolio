@@ -60,14 +60,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   // Prevent body scroll when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
     };
   }, [isOpen]);
 
@@ -81,7 +79,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 xl:hidden"
+        className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -90,7 +88,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       <div
         ref={panelRef}
         className={cn(
-          "fixed right-0 top-0 z-50 h-full w-[280px] transform shadow-2xl transition-transform duration-300 ease-in-out xl:hidden",
+          "fixed right-0 top-0 z-[70] h-full w-[280px] max-w-full overflow-y-auto transform shadow-2xl transition-transform duration-300 ease-in-out",
           COMMON_CLASSES.CARD_BG,
         )}
         role="dialog"

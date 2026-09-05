@@ -13,6 +13,11 @@ import Contact from "./components/sections/Contact";
 import SectionHeader from "./components/ui/SectionHeader";
 import Snowfall from "./components/christmas/Snowfall";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

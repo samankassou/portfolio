@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { checkContactRateLimit } from "@/lib/utils/contactRateLimit";
 
 const FIELD_LIMITS = {
   name: 100,
@@ -7,10 +8,6 @@ const FIELD_LIMITS = {
   subject: 150,
   message: 5_000,
 } as const;
-
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1_000;
-const RATE_LIMIT_MAX_REQUESTS = 5;
-const requestLog = new Map<string, number[]>();
 
 interface ContactPayload {
   name: string;
@@ -47,23 +44,6 @@ function escapeHtml(value: string): string {
   );
 }
 
-function isRateLimited(request: Request): boolean {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  const clientId =
-    request.headers.get("x-real-ip") ??
-    forwardedFor?.split(",")[0]?.trim() ??
-    "unknown";
-  const now = Date.now();
-  const recentRequests = (requestLog.get(clientId) ?? []).filter(
-    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
-  );
-
-  if (recentRequests.length >= RATE_LIMIT_MAX_REQUESTS) return true;
-
-  requestLog.set(clientId, [...recentRequests, now]);
-  return false;
-}
-
 export async function POST(request: Request) {
   try {
     if (!request.headers.get("content-type")?.includes("application/json")) {
@@ -73,12 +53,23 @@ export async function POST(request: Request) {
       );
     }
 
-    if (isRateLimited(request)) {
+    let retryAfter: number;
+    try {
+      retryAfter = await checkContactRateLimit(request);
+    } catch {
+      console.error("Contact rate-limit store unavailable or not configured");
+      return NextResponse.json(
+        { error: "The contact form is temporarily unavailable." },
+        { status: 503, headers: { "Retry-After": "60" } },
+      );
+    }
+
+    if (retryAfter > 0) {
       return NextResponse.json(
         { error: "Too many requests. Please try again later." },
         {
           status: 429,
-          headers: { "Retry-After": String(RATE_LIMIT_WINDOW_MS / 1_000) },
+          headers: { "Retry-After": String(retryAfter) },
         },
       );
     }

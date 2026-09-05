@@ -9,7 +9,7 @@ The contact form sends enquiries through the server-side route at `app/api/conta
 - HTML email with the visitor's address set as `Reply-To`.
 - Escaping of user content before email rendering.
 - Honeypot field for basic bot filtering.
-- Best-effort in-memory rate limit: five requests per 15 minutes for one client identifier.
+- Shared Redis sliding-window rate limit: five requests per 15 minutes for one client identifier, enforced atomically across instances with automatic expiry.
 
 ## 1. Create a Resend API key
 
@@ -29,6 +29,8 @@ cp .env.example .env.local
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxx
 CONTACT_EMAIL=your-email@example.com
 RESEND_FROM_EMAIL="Portfolio Contact <portfolio@yourdomain.com>"
+UPSTASH_REDIS_REST_URL=https://your-database.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-server-token
 ```
 
 | Variable            | Purpose                                                  |
@@ -37,7 +39,9 @@ RESEND_FROM_EMAIL="Portfolio Contact <portfolio@yourdomain.com>"
 | `CONTACT_EMAIL`     | Inbox that receives portfolio enquiries.                 |
 | `RESEND_FROM_EMAIL` | Sender identity authorized by Resend.                    |
 
-Do not commit `.env.local` or expose `RESEND_API_KEY` in a variable prefixed with `NEXT_PUBLIC_`.
+Create an Upstash Redis database and copy its REST URL and standard write token into `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`. See the [Upstash REST API documentation](https://upstash.com/docs/redis/features/restapi). Every application instance must use the same database. The limiter uses one atomic Lua script and expires inactive client keys after 15 minutes. Missing configuration, timeouts, or store errors return HTTP 503 without sending email; there is no process-local fallback.
+
+Do not commit `.env.local` or expose `RESEND_API_KEY` or `UPSTASH_REDIS_REST_TOKEN` in a variable prefixed with `NEXT_PUBLIC_`.
 
 ## 3. Verify the sending domain
 
@@ -62,18 +66,18 @@ Restart the development server after changing `.env.local`.
 
 ## Production checklist
 
-- Add all three variables to the hosting platform.
+- Add all five variables to the hosting platform.
 - Verify the production sending domain and sender address.
 - Send a real message from the deployed site and test `Reply-To`.
 - Confirm that secrets are absent from browser bundles and repository history.
-- Replace the in-memory rate limiter with a shared store for multi-instance or higher-volume deployments.
+- Configure the trusted hosting proxy to overwrite `x-real-ip` (preferred) or `x-forwarded-for` with the actual client IP; never pass client-supplied values through. Without either header, requests share an `unknown` bucket.
 - Add monitoring if contact delivery is business-critical.
 
 ## Troubleshooting
 
 ### The form reports a configuration error
 
-Check that all three variables are defined in the environment used by the server, then restart or redeploy the application.
+Check that all five variables are defined in the environment used by the server, then restart or redeploy the application.
 
 ### Resend rejects the sender
 
@@ -85,4 +89,4 @@ Check the Resend logs, spam folder, `CONTACT_EMAIL`, and the recipient status in
 
 ### Requests are rate-limited unexpectedly
 
-The included limiter is intentionally small and stored in application memory. It resets when the process restarts and is not synchronized between server instances. Use a shared store before relying on it as a production abuse-control layer.
+The sixth request from the same client within 15 minutes returns HTTP 429 with the remaining wait in `Retry-After`. The limit persists across application restarts. Clients behind a shared IP share the limit. If unrelated clients are blocked together, check the trusted proxy IP headers. For HTTP 503, check both Redis credentials and store availability.
