@@ -21,6 +21,10 @@ export const projectCategories: ProjectCategory[] = [
 export const projects: Project[] = [
   {
     id: 4,
+    // Replace with an image path in public/ and a meaningful description.
+    coverImg: "",
+    coverAlt: "",
+    coverCaption: "",
     title: ".NET Applications to Azure",
     link: "Cloud migration and modernization",
     category: "Cloud & DevOps",
@@ -39,6 +43,10 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    // Replace with an image path in public/ and a meaningful description.
+    coverImg: "",
+    coverAlt: "",
+    coverCaption: "",
     title: "Transportation Management System",
     link: "Operational web application",
     category: "Web Applications",
@@ -57,6 +65,10 @@ export const projects: Project[] = [
   },
   {
     id: 1,
+    // Replace with an image path in public/ and a meaningful description.
+    coverImg: "",
+    coverAlt: "",
+    coverCaption: "",
     title: "AI-Powered Legal Monitoring",
     link: "Enterprise AI solution",
     category: "AI & Automation",
@@ -75,6 +87,10 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    // Replace with an image path in public/ and a meaningful description.
+    coverImg: "",
+    coverAlt: "",
+    coverCaption: "",
     title: "Intelligent Manifest Data Extraction",
     link: "Document processing automation",
     category: "AI & Automation",
@@ -93,6 +109,10 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    // Replace with an image path in public/ and a meaningful description.
+    coverImg: "",
+    coverAlt: "",
+    coverCaption: "",
     title: "QlikView to Power BI Migration",
     link: "Business intelligence modernization",
     category: "BI & Data",

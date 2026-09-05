@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`mb-16 flex items-center justify-between rounded-full py-2 pl-2 pr-6 xl:hidden ${COMMON_CLASSES.CARD_BG}`}
+        className={`mb-6 flex items-center justify-between rounded-full py-2 pl-2 pr-6 xl:hidden ${COMMON_CLASSES.CARD_BG}`}
       >
         <a
           href="#"

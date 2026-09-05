@@ -19,7 +19,7 @@ interface ProjectsListProps {
 export default function ProjectsList({
   selectedCategory = "All categories",
 }: ProjectsListProps) {
-  const { ref, isInView } = useScrollAnimation();
+  const { ref, isInView } = useScrollAnimation(0.01);
   const reducedMotion = useReducedMotion();
 
   // Filter projects based on selected category
@@ -49,14 +49,10 @@ export default function ProjectsList({
         animate={isInView ? "visible" : "hidden"}
         exit={{ opacity: 0 }}
         transition={getTransition(reducedMotion, 0.5)}
-        className="scrollbar-hidden flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible"
+        className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
       >
         {filteredProjects.map((project) => (
-          <motion.li
-            key={project.id}
-            variants={scaleIn}
-            className="w-[88%] shrink-0 snap-start md:w-auto"
-          >
+          <motion.li key={project.id} variants={scaleIn} className="min-w-0">
             <ProjectItem project={project} />
           </motion.li>
         ))}

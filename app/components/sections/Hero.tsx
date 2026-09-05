@@ -1,5 +1,6 @@
 "use client";
 
+import { profileData } from "@/lib/data/profile";
 import Btn from "../ui/Button";
 import Image from "next/image";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
@@ -20,10 +21,13 @@ export default function HeroSection() {
       initial="hidden"
       animate="visible"
       transition={getTransition(reducedMotion, 0.6)}
-      className={`hero-wave-bg mb-16 overflow-hidden rounded-2xl ${COMMON_CLASSES.CARD_BG}`}
+      className={`hero-wave-bg mb-10 overflow-hidden rounded-2xl md:mb-16 ${COMMON_CLASSES.CARD_BG}`}
     >
       <div className="relative z-10 grid items-center md:grid-cols-2">
         <div className="p-6 sm:p-8 md:p-12">
+          <p className="mb-2 text-base font-semibold text-base-content dark:text-base-100">
+            {profileData.name}
+          </p>
           <motion.p
             variants={fadeInUp}
             initial="hidden"
@@ -31,7 +35,7 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.05 }}
             className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary sm:text-sm"
           >
-            Azure DevOps Engineer · Azure &amp; .NET Software Engineer
+            Azure DevOps &amp; .NET Engineer
           </motion.p>
           <motion.h1
             variants={fadeInUp}
@@ -40,19 +44,20 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.1 }}
             className={`mb-4 text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl md:text-5xl ${COMMON_CLASSES.TEXT}`}
           >
-            I build, deploy, and modernize{" "}
-            <span className="text-primary">reliable applications</span> on
-            Microsoft Azure.
+            <span className="text-primary-800 dark:text-primary">
+              Reliable applications.
+            </span>{" "}
+            Built for Azure.
           </motion.h1>
           <motion.p
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.2 }}
-            className="md:text-md mb-6 max-w-md text-sm leading-relaxed text-secondary/60 dark:text-white/60 sm:mb-8"
+            className="md:text-md mb-6 max-w-md text-sm leading-relaxed text-base-800 dark:text-base-300 sm:mb-8"
           >
-            .NET engineering and Azure DevOps experience across application
-            analysis, design, development, cloud migration, and deployment.
+            I build .NET applications, modernize legacy systems, and deliver
+            them on Microsoft Azure.
           </motion.p>
           <motion.div
             variants={fadeInUp}
@@ -69,7 +74,7 @@ export default function HeroSection() {
                 Contact me
               </a>
             </div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-secondary/55 dark:text-white/50">
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-base-800 dark:text-base-400">
               Microsoft certified · AZ-400 · AZ-204 · AZ-900
             </p>
           </motion.div>
