@@ -176,54 +176,7 @@ export default async function PortfolioProjectPage({
               </div>
             </div>
 
-            {project.coverImg ? (
-              <ProjectVisual project={project} />
-            ) : (
-              <div
-                className={cn(
-                  "relative overflow-hidden rounded-[2rem] border border-secondary/10 p-6 shadow-xl dark:border-base-800 sm:p-8",
-                  COMMON_CLASSES.CARD_BG,
-                )}
-                aria-label={`${project.category} project flow`}
-              >
-                <div className="absolute -right-20 -top-20 size-64 rounded-full bg-primary/15 blur-3xl" />
-                <div className="relative">
-                  <div className="mb-10 flex items-start justify-between">
-                    <div className="flex size-14 items-center justify-center rounded-2xl bg-primary text-2xl text-base-content shadow-lg shadow-primary/20">
-                      <Icon name={visual.icon} />
-                    </div>
-                    <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                      Confidential
-                    </span>
-                  </div>
-
-                  <p
-                    className={`mb-5 text-xs font-semibold uppercase tracking-[0.18em] ${COMMON_CLASSES.TEXT_MUTED}`}
-                  >
-                    Conceptual solution flow
-                  </p>
-                  <div className="space-y-3">
-                    {visual.flow.map((step, index) => (
-                      <div key={step}>
-                        <div className="flex items-center gap-4 rounded-2xl border border-secondary/10 bg-base/70 p-4 dark:border-base-700 dark:bg-black/30">
-                          <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
-                            {index + 1}
-                          </span>
-                          <span
-                            className={`font-semibold ${COMMON_CLASSES.TEXT}`}
-                          >
-                            {step}
-                          </span>
-                        </div>
-                        {index < visual.flow.length - 1 && (
-                          <div className="ml-8 h-3 w-px bg-primary/40" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
+            <ProjectVisual project={project} />
           </div>
         </div>
       </section>

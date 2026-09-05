@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Footer from "@/app/components/layout/Footer";
 import MobileMenu from "@/app/components/layout/MobileMenu";
 import ScrollToTop from "@/app/components/ui/ScrollToTop";
@@ -41,13 +40,12 @@ export default function BlogLayout({ children }: BlogLayoutProps) {
                   href="/"
                   className="flex min-h-11 min-w-11 flex-shrink-0 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
-                  <Image
-                    className="h-10 w-10 rounded-full object-cover"
-                    src="/img/profile/profile_pic_sm.webp"
-                    width={40}
-                    height={40}
-                    alt="Profile"
-                  />
+                  <span
+                    aria-label="Foulla Samankassou"
+                    className="inline-flex size-11 items-center justify-center rounded-full bg-primary/15 text-sm font-bold text-primary-800 dark:text-primary"
+                  >
+                    FS
+                  </span>
                 </Link>
               </div>
 

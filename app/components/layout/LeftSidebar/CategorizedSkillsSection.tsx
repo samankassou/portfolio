@@ -1,3 +1,4 @@
+import BrandIcon from "@/app/components/ui/BrandIcon";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { SkillCategory } from "@/lib/types";
 
@@ -23,8 +24,9 @@ export default function CategorizedSkillsSection({
               {category.skills.map((skill) => (
                 <span
                   key={skill.id}
-                  className="rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/25"
+                  className="inline-flex items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/25"
                 >
+                  <BrandIcon name={skill.name} />
                   {skill.name}
                 </span>
               ))}

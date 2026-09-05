@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import ThemeToggle from "../ui/ThemeToggle";
 import MobileMenu from "./MobileMenu";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
@@ -27,15 +26,12 @@ export default function Navbar() {
           className="flex min-h-11 flex-shrink-0 items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Back to top"
         >
-          <Image
-            className="h-10 w-10 rounded-full object-cover sm:h-14 sm:w-14"
-            src="/img/profile/profile_pic_sm.webp"
-            width={64}
-            height={64}
-            sizes="(max-width: 640px) 56px, 64px"
-            priority
-            alt="Picture of the author"
-          />
+          <span
+            aria-label="Foulla Samankassou"
+            className="inline-flex size-11 items-center justify-center rounded-full bg-primary/15 text-sm font-bold text-primary-800 dark:text-primary"
+          >
+            FS
+          </span>
           <span className="hidden text-sm font-semibold text-base-content dark:text-base-100 sm:block">
             Foulla SAMANKASSOU
           </span>

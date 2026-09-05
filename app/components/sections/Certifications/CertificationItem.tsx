@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import type { Certification } from "@/lib/types";
 import Icon from "@/lib/components/Icon";
@@ -12,13 +13,23 @@ export default function CertificationItem({
   return (
     <div
       className={cn(
-        "rounded-xl border border-secondary/10 p-6 shadow-sm transition-all hover:shadow-md dark:border-base-800",
+        "h-full rounded-xl border border-secondary/10 p-6 shadow-sm transition-all hover:shadow-md dark:border-base-800",
         COMMON_CLASSES.CARD_BG,
       )}
     >
-      {/* Certification Icon/Badge */}
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20">
-        <Icon name="ribbon-outline" className="text-2xl text-primary" />
+      <div className="mb-5 flex h-36 items-center justify-center rounded-xl border border-secondary/5 bg-white p-3">
+        {certification.badge ? (
+          <Image
+            src={certification.badge}
+            alt={certification.badgeAlt || `${certification.title} badge`}
+            width={400}
+            height={400}
+            sizes="(max-width: 640px) 280px, 360px"
+            className="h-full w-auto max-w-full object-contain"
+          />
+        ) : (
+          <Icon name="ribbon-outline" className="text-4xl text-primary" />
+        )}
       </div>
 
       {/* Title */}
@@ -39,7 +50,9 @@ export default function CertificationItem({
 
       {/* Optional Credential ID */}
       {certification.credentialId && (
-        <div className={`mt-3 text-xs ${COMMON_CLASSES.TEXT_MUTED}`}>
+        <div
+          className={`mt-3 break-words text-xs ${COMMON_CLASSES.TEXT_MUTED}`}
+        >
           <span>Credential ID: {certification.credentialId}</span>
           {certification.credentialUrl && (
             <a

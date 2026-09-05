@@ -7,6 +7,8 @@ import type { Certification } from "@/lib/types";
 export const certifications: Certification[] = [
   {
     id: 1,
+    badge: "/img/certifications/microsoft-expert.svg",
+    badgeAlt: "Microsoft Certified Expert badge",
     title: "AZ-400 - DevOps Engineer",
     issuer: "Microsoft",
     date: "June 2024",
@@ -14,6 +16,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 2,
+    badge: "/img/certifications/microsoft-associate.svg",
+    badgeAlt: "Microsoft Certified Associate badge",
     title: "AZ-204 - Azure Developer Associate",
     issuer: "Microsoft",
     date: "July 2023",
@@ -21,6 +25,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 3,
+    badge: "/img/certifications/microsoft-fundamentals.svg",
+    badgeAlt: "Microsoft Certified Fundamentals badge",
     title: "AZ-900 - Microsoft Azure Fundamentals",
     issuer: "Microsoft",
     date: "December 2022",
@@ -28,6 +34,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 4,
+    badge: "/img/certifications/scrum-master.png",
+    badgeAlt: "Scrum Master Accredited Certification badge",
     title: "Scrum Master Accredited",
     issuer: "SCRUM INSTITUTE™",
     date: "September 2025",
@@ -36,6 +44,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 5,
+    badge: "/img/certifications/itil-4-foundation.png",
+    badgeAlt: "ITIL 4 Foundation badge",
     title: "ITIL® 4 Foundation",
     issuer: "AXELOS",
     date: "June 2024",
@@ -43,6 +53,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 6,
+    badge: "/img/certifications/microsoft-associate.svg",
+    badgeAlt: "Microsoft Certified Associate badge",
     title: "PL-300 - Power BI Data Analyst",
     issuer: "Microsoft",
     date: "December 2024",
