@@ -51,9 +51,6 @@ export default function ContactForm() {
         message: "",
         website: "",
       });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
       setStatus("error");
       setErrorMessage(
@@ -65,6 +62,7 @@ export default function ContactForm() {
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
+    if (status !== "loading") setStatus("idle");
     setFormData((current) => ({
       ...current,
       [e.target.name]: e.target.value,
@@ -141,7 +139,7 @@ export default function ContactForm() {
             htmlFor="subject"
             className="mb-2 block text-sm font-normal leading-5 text-base-content dark:text-base-100"
           >
-            Subject
+            Subject (optional)
           </label>
           <input
             id="subject"
@@ -149,7 +147,6 @@ export default function ContactForm() {
             maxLength={150}
             value={formData.subject}
             onChange={handleChange}
-            required
             className={cn(
               "block w-full rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-primary",
               COMMON_CLASSES.INPUT_BG,

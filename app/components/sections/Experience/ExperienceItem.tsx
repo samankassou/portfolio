@@ -1,56 +1,54 @@
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { Experience } from "@/lib/types";
 
-interface ExperienceItemProps {
-  experienceItem: Experience;
-}
-
 export default function ExperienceItem({
-  experienceItem,
-}: ExperienceItemProps) {
+  experienceItem: item,
+}: {
+  experienceItem: Experience;
+}) {
   return (
-    <div className="pt-8">
-      {/* Mobile: Vertical stacked layout with left border */}
-      <div className="lg:hidden">
-        <div className="border-l-4 border-primary pl-4">
-          <h2
-            className={`mb-2 text-left text-lg font-semibold ${COMMON_CLASSES.TEXT}`}
-          >
-            {experienceItem.company}
-          </h2>
-          <p className="mb-4 inline-block rounded-md bg-primary/15 px-3 py-1 text-xs font-medium text-primary dark:bg-primary/20">
-            {experienceItem.period}
-          </p>
-        </div>
-        <h3 className={`mb-3 mt-6 text-lg font-medium ${COMMON_CLASSES.TEXT}`}>
-          {experienceItem.role}
+    <article className="grid gap-5 py-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-8">
+      <div className="border-l-2 border-primary pl-4">
+        <h3 className={`mb-2 text-lg font-semibold ${COMMON_CLASSES.TEXT}`}>
+          {item.company}
         </h3>
-        <p className={`font-normal ${COMMON_CLASSES.TEXT_MUTED}`}>
-          {experienceItem.description}
+        <p className="text-sm text-base-800 dark:text-base-300">
+          {item.period}
         </p>
       </div>
-
-      {/* Desktop: Horizontal grid layout */}
-      <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6 xl:grid-cols-3 2xl:grid-cols-4">
-        <div className="col-span-1 mt-2">
-          <h2
-            className={`mb-2 text-left text-lg font-semibold ${COMMON_CLASSES.TEXT}`}
-          >
-            {experienceItem.company}
-          </h2>
-          <p className="inline rounded-md bg-primary/15 px-3 py-1 text-xs font-medium text-primary dark:bg-primary/20">
-            {experienceItem.period}
+      <div className="min-w-0">
+        <h4 className={`mb-2 text-lg font-semibold ${COMMON_CLASSES.TEXT}`}>
+          {item.role}
+        </h4>
+        <p className={`mb-4 leading-7 ${COMMON_CLASSES.TEXT_MUTED}`}>
+          {item.mission}
+        </p>
+        <ul
+          className={`mb-4 list-disc space-y-2 pl-5 text-sm leading-6 ${COMMON_CLASSES.TEXT}`}
+        >
+          {item.contributions.map((contribution) => (
+            <li key={contribution}>{contribution}</li>
+          ))}
+        </ul>
+        <ul className="flex flex-wrap gap-2" aria-label="Technologies">
+          {item.technologies.map((technology) => (
+            <li
+              key={technology}
+              className="rounded-md bg-secondary/5 px-2.5 py-1 text-xs text-base-800 dark:bg-white/5 dark:text-base-300"
+            >
+              {technology}
+            </li>
+          ))}
+        </ul>
+        <details className="mt-4">
+          <summary className="w-fit cursor-pointer rounded py-3 text-sm font-semibold text-primary-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-primary">
+            More about this role
+          </summary>
+          <p className={`mt-2 text-sm leading-7 ${COMMON_CLASSES.TEXT_MUTED}`}>
+            {item.description.split(" Technologies:")[0]}
           </p>
-        </div>
-        <div className="col-span-2 mb-3 xl:col-span-3">
-          <h3 className={`mb-3 text-lg font-medium ${COMMON_CLASSES.TEXT}`}>
-            {experienceItem.role}
-          </h3>
-          <p className={`font-normal ${COMMON_CLASSES.TEXT_MUTED}`}>
-            {experienceItem.description}
-          </p>
-        </div>
+        </details>
       </div>
-    </div>
+    </article>
   );
 }

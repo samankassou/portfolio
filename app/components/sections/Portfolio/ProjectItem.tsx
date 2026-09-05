@@ -1,5 +1,6 @@
 "use client";
 
+import ProjectVisual from "./ProjectVisual";
 import Link from "next/link";
 import type { Project } from "@/lib/types";
 import { motion } from "framer-motion";
@@ -25,7 +26,8 @@ export default function ProjectItem({ project }: ProjectItemProps) {
         )}
         aria-label={`Read case study: ${project.title}`}
       >
-        <div className="mb-8 flex items-start justify-between gap-4">
+        <ProjectVisual project={project} />
+        <div className="mb-5 flex items-start justify-between gap-4">
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary dark:bg-primary/20">
             {project.category}
           </span>
@@ -45,6 +47,16 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             {project.description}
           </p>
 
+          {project.results && (
+            <div className="mb-5 border-l-2 border-primary pl-3">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-base-800 dark:text-base-300">
+                Outcome
+              </p>
+              <p className={`text-sm leading-6 ${COMMON_CLASSES.TEXT}`}>
+                {project.results}
+              </p>
+            </div>
+          )}
           {project.role && (
             <p
               className={`mb-4 text-xs font-medium ${COMMON_CLASSES.TEXT_MUTED}`}

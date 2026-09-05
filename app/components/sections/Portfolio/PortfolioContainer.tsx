@@ -38,12 +38,6 @@ export default function PortfolioContainer() {
         </ul>
       </nav>
 
-      <p
-        className={`mb-3 text-center text-xs md:hidden ${COMMON_CLASSES.TEXT_MUTED}`}
-      >
-        Swipe to explore the case studies.
-      </p>
-
       {/* Projects List */}
       <ProjectsList selectedCategory={selectedCategory} />
     </div>

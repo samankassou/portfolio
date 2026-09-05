@@ -38,6 +38,9 @@ export interface Education {
 }
 
 export interface Experience {
+  mission: string;
+  contributions: string[];
+  technologies: string[];
   id: number;
   company: string;
   role: string;
@@ -58,6 +61,8 @@ export interface Project {
   title: string;
   link: string;
   coverImg?: string;
+  coverAlt?: string;
+  coverCaption?: string;
   category: Exclude<ProjectCategory, "All categories">;
   description: string;
   technologies: string[];
@@ -76,9 +81,10 @@ export interface Testimonial {
   id: number;
   authorName: string;
   authorProfilePic: string;
+  authorProfileUrl?: string;
   authorRole: string;
   text: string;
-  rating: number;
+  sourceUrl?: string;
 }
 
 // Blog

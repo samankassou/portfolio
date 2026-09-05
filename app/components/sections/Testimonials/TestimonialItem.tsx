@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import TestimonialRating from "./TestimonialRating";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import type { Testimonial } from "@/lib/types";
 
@@ -38,7 +37,7 @@ export default function TestimonialItem({ testimonial }: TestimonialItemProps) {
   return (
     <div
       className={cn(
-        "flex h-full flex-col gap-6 rounded-2xl p-8",
+        "flex h-full flex-col gap-6 rounded-2xl p-5 sm:p-8",
         COMMON_CLASSES.CARD_BG,
       )}
     >
@@ -49,15 +48,27 @@ export default function TestimonialItem({ testimonial }: TestimonialItemProps) {
         >
           {initials}
         </div>
-        <div className="flex flex-auto flex-col justify-center">
+        <div className="flex min-w-0 flex-auto flex-col justify-center">
           <div
-            className="line-clamp-1 text-base font-semibold text-base-content dark:text-base-100"
+            className="break-words text-base font-semibold text-base-content dark:text-base-100"
             title={testimonial.authorName}
           >
-            {testimonial.authorName}
+            {testimonial.authorProfileUrl ? (
+              <a
+                href={testimonial.authorProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${testimonial.authorName} on LinkedIn`}
+                className="rounded underline decoration-primary/50 underline-offset-4 hover:decoration-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                {testimonial.authorName}
+              </a>
+            ) : (
+              testimonial.authorName
+            )}
           </div>
           <div
-            className="line-clamp-2 text-sm text-secondary/60 dark:text-base-400"
+            className="text-sm text-secondary/60 dark:text-base-400"
             title={testimonial.authorRole}
           >
             {testimonial.authorRole}
@@ -85,8 +96,21 @@ export default function TestimonialItem({ testimonial }: TestimonialItemProps) {
           </button>
         )}
       </div>
-      <div className="mt-auto flex shrink-0 gap-0.5 text-lg text-primary">
-        <TestimonialRating rating={testimonial.rating} />
+      <div className="mt-auto border-t border-secondary/10 pt-4 text-sm dark:border-base-700">
+        {testimonial.sourceUrl ? (
+          <a
+            href={testimonial.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center font-semibold text-primary-800 underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-primary"
+          >
+            View received recommendations on LinkedIn
+          </a>
+        ) : (
+          <p className="text-base-800 dark:text-base-400">
+            LinkedIn source coming soon
+          </p>
+        )}
       </div>
     </div>
   );

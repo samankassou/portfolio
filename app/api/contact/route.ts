@@ -15,7 +15,7 @@ const requestLog = new Map<string, number[]>();
 interface ContactPayload {
   name: string;
   email: string;
-  subject: string;
+  subject?: string;
   message: string;
   website?: string;
 }
@@ -27,7 +27,7 @@ function isContactPayload(value: unknown): value is ContactPayload {
   return (
     typeof payload.name === "string" &&
     typeof payload.email === "string" &&
-    typeof payload.subject === "string" &&
+    (payload.subject === undefined || typeof payload.subject === "string") &&
     typeof payload.message === "string" &&
     (payload.website === undefined || typeof payload.website === "string")
   );
@@ -100,13 +100,13 @@ export async function POST(request: Request) {
     const payload = {
       name: body.name.trim(),
       email: body.email.trim(),
-      subject: body.subject.trim(),
+      subject: body.subject?.trim() || "Project enquiry",
       message: body.message.trim(),
     };
 
     if (Object.values(payload).some((value) => value.length === 0)) {
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: "Name, email and message are required" },
         { status: 400 },
       );
     }

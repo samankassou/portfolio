@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
   },
   icons: {
-    icon: "/img/profile/profile_pic_sm.webp",
-    apple: "/img/profile/profile_pic_sm.webp",
+    icon: [{ url: "/icons/monogram.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icons/icon-180.png", sizes: "180x180", type: "image/png" }],
   },
 };
 

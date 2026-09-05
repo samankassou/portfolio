@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Foulla Samankassou">
+  <rect width="64" height="64" rx="14" fill="#181A2A"/>
+  <g fill="#F78F42">
+    <path d="M11 17h19v7H18v6h10v7H18v10h-7z"/>
+    <path d="M36 17h17v7H39v6h9a5 5 0 0 1 5 5v7a5 5 0 0 1-5 5H32v-7h14v-4h-9a5 5 0 0 1-5-5v-9a5 5 0 0 1 4-5z"/>
+  </g>
+</svg>
