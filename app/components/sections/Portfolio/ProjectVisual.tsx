@@ -124,7 +124,7 @@ export default function ProjectVisual({ project }: { project: Project }) {
             className="relative flex items-stretch gap-3"
             aria-label="Illustrative project workflow"
           >
-            {scene.steps.map((step, i) => (
+            {scene.steps.map((step) => (
               <li
                 key={step.label}
                 className="relative flex min-w-0 flex-1 flex-col items-center text-center"
@@ -141,9 +141,6 @@ export default function ProjectVisual({ project }: { project: Project }) {
                 <span className="text-[11px] font-semibold leading-4 text-base-content dark:text-base-200">
                   {step.label}
                 </span>
-                <span className="mt-1 text-[10px] text-base-800 dark:text-base-400">
-                  0{i + 1}
-                </span>
               </li>
             ))}
           </ol>
@@ -152,7 +149,7 @@ export default function ProjectVisual({ project }: { project: Project }) {
       <figcaption className="border-t border-secondary/10 px-4 py-2 text-[11px] text-base-800 dark:border-base-700 dark:text-base-400">
         {project.coverImg
           ? project.coverCaption || "Project overview"
-          : "Concept illustration · anonymized project"}
+          : "Concept illustration of an anonymized project"}
       </figcaption>
     </figure>
   );
