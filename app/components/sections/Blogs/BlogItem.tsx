@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
-import type { BlogPost } from "@/lib/types";
+import type { BlogPostSummary } from "@/lib/types";
 import Icon from "@/lib/components/Icon";
 
 interface BlogItemProps {
-  post: BlogPost;
+  post: BlogPostSummary;
   eager?: boolean;
 }
 
@@ -52,6 +52,7 @@ export default function BlogItem({ post, eager = false }: BlogItemProps) {
             <span className="flex items-center gap-1">
               <Icon name="calendar-outline" />
               {new Date(frontmatter.date).toLocaleDateString("en-US", {
+                timeZone: "UTC",
                 month: "short",
                 day: "numeric",
                 year: "numeric",

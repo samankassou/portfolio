@@ -115,6 +115,8 @@ export interface BlogPost {
   readingTime: string;
 }
 
+export type BlogPostSummary = Omit<BlogPost, "content">;
+
 // Site Configuration
 export interface SocialLink {
   id: number;
