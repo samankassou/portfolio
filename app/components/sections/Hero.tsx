@@ -44,10 +44,7 @@ export default function HeroSection() {
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.1 }}
             className={`mb-4 text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl md:text-5xl ${COMMON_CLASSES.TEXT}`}
           >
-            <span className="text-primary-800 dark:text-primary">
-              Reliable applications.
-            </span>{" "}
-            Built for Azure.
+            Reliable applications. Built for Azure.
           </motion.h1>
           <motion.p
             variants={fadeInUp}
@@ -95,9 +92,17 @@ export default function HeroSection() {
                 )}
               </ul>
             </div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-base-800 dark:text-base-400">
-              Microsoft certified · AZ-400 · AZ-204 · AZ-900
-            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-base-800 dark:text-base-400">
+              <p>Microsoft certified</p>
+              <ul
+                className="flex flex-wrap gap-4"
+                aria-label="Microsoft certifications"
+              >
+                <li>AZ-400</li>
+                <li>AZ-204</li>
+                <li>AZ-900</li>
+              </ul>
+            </div>
           </motion.div>
         </div>
       </div>
