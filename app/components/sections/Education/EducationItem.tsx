@@ -1,8 +1,24 @@
+import Image from "next/image";
 import { COMMON_CLASSES, cn } from "@/lib/constants/colors";
 import type { Education } from "@/lib/types";
 
 interface EducationItemProps {
   educationItem: Education;
+}
+
+function SchoolLogo({ logo }: { logo?: string }) {
+  if (!logo) return null;
+  return (
+    <div className="mb-4 inline-flex size-24 items-center justify-center rounded-lg bg-white p-2">
+      <Image
+        src={logo}
+        alt=""
+        width={80}
+        height={80}
+        className="size-20 object-contain"
+      />
+    </div>
+  );
 }
 
 export default function EducationItem({ educationItem }: EducationItemProps) {
@@ -17,6 +33,7 @@ export default function EducationItem({ educationItem }: EducationItemProps) {
       {/* Mobile: Vertical stacked layout with left border */}
       <div className="lg:hidden">
         <div className="border-l-4 border-primary pl-4">
+          <SchoolLogo logo={educationItem.logo} />
           <h2
             className={`mb-2 text-left text-lg font-semibold ${COMMON_CLASSES.TEXT}`}
           >
@@ -36,6 +53,7 @@ export default function EducationItem({ educationItem }: EducationItemProps) {
 
       {/* Desktop: Horizontal grid layout */}
       <div className="hidden lg:col-span-1 lg:block">
+        <SchoolLogo logo={educationItem.logo} />
         <h2
           className={`mb-2 text-left text-base font-medium ${COMMON_CLASSES.TEXT}`}
         >

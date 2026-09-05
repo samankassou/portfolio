@@ -2,7 +2,7 @@
 export interface ProfileData {
   name: string;
   title: string;
-  photo: string;
+  photo?: string;
   badge: boolean;
 }
 
@@ -29,6 +29,7 @@ export interface Service {
 
 // Education & Experience
 export interface Education {
+  logo?: string;
   id: number;
   school: string;
   role: string;
@@ -155,6 +156,8 @@ export interface AnimationConfig {
 
 // Certifications
 export interface Certification {
+  badge?: string;
+  badgeAlt?: string;
   id: number;
   title: string;
   issuer: string;

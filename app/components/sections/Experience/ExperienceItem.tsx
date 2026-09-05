@@ -1,3 +1,5 @@
+import Image from "next/image";
+import BrandIcon from "@/app/components/ui/BrandIcon";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import type { Experience } from "@/lib/types";
 
@@ -9,6 +11,32 @@ export default function ExperienceItem({
   return (
     <article className="grid gap-5 py-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-8">
       <div className="border-l-2 border-primary pl-4">
+        {item.company === "Africa Global Logistics" && (
+          <div className="mb-3 inline-flex rounded-lg bg-white px-3 py-2">
+            <Image src="/img/brands/agl.svg" alt="" width={80} height={44} />
+          </div>
+        )}
+        {item.company === "Bolloré Transports & Logistics" && (
+          <div className="mb-3 inline-flex rounded-lg bg-white px-3 py-2">
+            <Image
+              src="/img/brands/bollore-transport-logistics.png"
+              alt=""
+              width={120}
+              height={64}
+              className="h-auto w-[120px]"
+            />
+          </div>
+        )}
+        {item.company === "Evat Solar" && (
+          <div className="mb-3 inline-flex rounded-lg bg-white px-3 py-2">
+            <Image
+              src="/img/brands/evat-solar.jpg"
+              alt=""
+              width={80}
+              height={80}
+            />
+          </div>
+        )}
         <h3 className={`mb-2 text-lg font-semibold ${COMMON_CLASSES.TEXT}`}>
           {item.company}
         </h3>
@@ -34,8 +62,9 @@ export default function ExperienceItem({
           {item.technologies.map((technology) => (
             <li
               key={technology}
-              className="rounded-md bg-secondary/5 px-2.5 py-1 text-xs text-base-800 dark:bg-white/5 dark:text-base-300"
+              className="inline-flex items-center gap-1.5 rounded-md bg-secondary/5 px-2.5 py-1 text-xs text-base-800 dark:bg-white/5 dark:text-base-300"
             >
+              <BrandIcon name={technology} />
               {technology}
             </li>
           ))}

@@ -1,8 +1,8 @@
 "use client";
 
 import { profileData } from "@/lib/data/profile";
+import BrandIcon from "@/app/components/ui/BrandIcon";
 import Btn from "../ui/Button";
-import Image from "next/image";
 import { COMMON_CLASSES } from "@/lib/constants/colors";
 import { motion } from "framer-motion";
 import {
@@ -23,8 +23,8 @@ export default function HeroSection() {
       transition={getTransition(reducedMotion, 0.6)}
       className={`hero-wave-bg mb-10 overflow-hidden rounded-2xl md:mb-16 ${COMMON_CLASSES.CARD_BG}`}
     >
-      <div className="relative z-10 grid items-center md:grid-cols-2">
-        <div className="p-6 sm:p-8 md:p-12">
+      <div className="relative z-10">
+        <div className="mx-auto max-w-5xl p-6 sm:p-8 md:px-12 md:py-16">
           <p className="mb-2 text-base font-semibold text-base-content dark:text-base-100">
             {profileData.name}
           </p>
@@ -54,7 +54,7 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             transition={{ ...getTransition(reducedMotion, 0.6), delay: 0.2 }}
-            className="md:text-md mb-6 max-w-md text-sm leading-relaxed text-base-800 dark:text-base-300 sm:mb-8"
+            className="md:text-md mb-6 max-w-2xl text-sm leading-relaxed text-base-800 dark:text-base-300 sm:mb-8"
           >
             I build .NET applications, modernize legacy systems, and deliver
             them on Microsoft Azure.
@@ -74,29 +74,32 @@ export default function HeroSection() {
                 Contact me
               </a>
             </div>
+            <div className="mt-7 border-t border-secondary/10 pt-5 dark:border-white/10">
+              <p className="mb-3 text-xs font-medium text-base-800 dark:text-base-400">
+                My core toolkit
+              </p>
+              <ul
+                className="flex flex-wrap gap-x-5 gap-y-3"
+                aria-label="Core technologies"
+              >
+                {["Microsoft Azure", "Azure DevOps", ".NET", "Docker"].map(
+                  (name) => (
+                    <li
+                      key={name}
+                      className="flex items-center gap-2 text-xs font-medium text-base-content dark:text-base-100"
+                    >
+                      <BrandIcon name={name} size={24} />
+                      {name}
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-base-800 dark:text-base-400">
               Microsoft certified · AZ-400 · AZ-204 · AZ-900
             </p>
           </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            ...getTransition(reducedMotion, 0.8),
-            delay: 0.2,
-          }}
-          className="relative hidden h-[500px] md:block"
-        >
-          <Image
-            src="/img/hero/foulla-picture.png"
-            alt="Professional portrait"
-            fill
-            priority
-            className="object-cover object-top"
-            sizes="(min-width: 1024px) 500px, 100vw"
-          />
-        </motion.div>
       </div>
     </motion.div>
   );

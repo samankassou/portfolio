@@ -10,6 +10,7 @@ import type { Education } from "@/lib/types";
 export const education: Education[] = [
   {
     id: 1,
+    logo: "/img/education/enspd.png",
     school: "ENSP Douala",
     role: "Graduate studies",
     certificate: "Professional Master's in Software Engineering",
@@ -19,6 +20,7 @@ export const education: Education[] = [
   },
   {
     id: 2,
+    logo: "/img/education/iut-douala.jpg",
     school: "IUT Douala",
     role: "Student",
     certificate: "Technology Bachelor's in Software Engineering",
@@ -28,6 +30,7 @@ export const education: Education[] = [
   },
   {
     id: 3,
+    logo: "/img/education/iut-ngaoundere.png",
     school: "IUT Ngaoundéré",
     role: "Student",
     certificate: "DUT in Computer Engineering",

@@ -53,7 +53,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [{ url: "/icons/monogram.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/icons/icon-180.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/icons/icon-180.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
@@ -67,7 +69,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     "@type": "Person",
     name: siteConfig.author.name,
     url: siteConfig.metadata.url,
-    image: `${siteConfig.metadata.url}/img/profile/profile_pic_sm.webp`,
     jobTitle: "Azure DevOps Engineer and Azure & .NET Software Engineer",
     address: {
       "@type": "PostalAddress",

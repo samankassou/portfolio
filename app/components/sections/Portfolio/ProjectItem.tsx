@@ -1,5 +1,6 @@
 "use client";
 
+import BrandIcon from "@/app/components/ui/BrandIcon";
 import ProjectVisual from "./ProjectVisual";
 import Link from "next/link";
 import type { Project } from "@/lib/types";
@@ -75,8 +76,9 @@ export default function ProjectItem({ project }: ProjectItemProps) {
             {project.technologies.slice(0, 3).map((technology) => (
               <span
                 key={technology}
-                className="rounded-md bg-secondary/5 px-2.5 py-1 text-xs font-medium text-secondary/70 dark:bg-white/5 dark:text-base-300"
+                className="inline-flex items-center gap-1.5 rounded-md bg-secondary/5 px-2.5 py-1 text-xs font-medium text-secondary/70 dark:bg-white/5 dark:text-base-300"
               >
+                <BrandIcon name={technology} />
                 {technology}
               </span>
             ))}
