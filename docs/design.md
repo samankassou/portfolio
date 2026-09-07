@@ -38,3 +38,15 @@ The knot projects 3D geometry onto Canvas 2D without an additional graphics depe
 - Clear labels distinguishing conceptual workflows from actual project images.
 
 Keep data and visible copy aligned using the [content guide](content.md). When making visual changes, review desktop and mobile layouts, both themes, keyboard navigation, disclosures, and reduced motion across the homepage, a case study, and a blog article.
+
+## Screenshots
+
+The [README preview](../README.md#preview) uses real browser captures from the local application, taken on 8 September 2026 at a 1280 × 720 viewport:
+
+| Image                                                    | View                                                                               |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [homepage-light.jpg](screenshots/homepage-light.jpg)     | Homepage hero in light mode.                                                       |
+| [homepage-dark.jpg](screenshots/homepage-dark.jpg)       | Homepage hero in dark mode.                                                        |
+| [azure-case-study.jpg](screenshots/azure-case-study.jpg) | Conceptual workflow on `/portfolio/4`, scrolled below the case-study introduction. |
+
+After a visual redesign, refresh these files from the running application and update the capture date here and in the README. Wait for fonts and images to load, use the theme toggle to capture each mode, and hide development overlays through the developer menu before capturing. Keep the conceptual-workflow caption visible in the case-study image and inspect every saved image for clipping or capture artifacts.

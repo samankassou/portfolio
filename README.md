@@ -4,6 +4,25 @@ Personal portfolio for an Azure DevOps and .NET engineer based in Douala, Camero
 
 [Visit the portfolio](https://www.samankassou.com/)
 
+## Preview
+
+![Portfolio homepage in light mode, with the “Complexity, made clear” introduction and animated systems sculpture](docs/screenshots/homepage-light.jpg)
+
+<details>
+<summary>Dark theme and Azure case study</summary>
+
+**Homepage · dark mode**
+
+![Portfolio homepage in dark mode](docs/screenshots/homepage-dark.jpg)
+
+**Azure case study · conceptual workflow**
+
+![Azure case-study page showing the conceptual flow from on-premises .NET applications through Azure DevOps CI/CD to cloud deployment](docs/screenshots/azure-case-study.jpg)
+
+</details>
+
+Captured from the local application on 8 September 2026. See the [screenshot notes](docs/design.md#screenshots) when refreshing these images.
+
 ## Run locally
 
 Use Node.js 20.9 or later and npm. From the repository root:
