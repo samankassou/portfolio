@@ -36,27 +36,27 @@ export default function BlogIndexClient({
   const allCategories = ["All", ...categories];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="studio-section studio-wrap">
       {/* Header */}
-      <div className="mb-10 text-center">
+      <div className="writing-heading">
+        <p className="eyebrow section-index">Writing / From the workbench</p>
         <h1
           className={`mb-3 text-3xl font-bold md:text-4xl ${COMMON_CLASSES.TEXT}`}
         >
-          Blog
+          Field notes.
         </h1>
-        <p
-          className={`mx-auto max-w-xl text-sm leading-6 md:text-base ${COMMON_CLASSES.TEXT_MUTED}`}
-        >
+        <p className="section-note">
           Thoughts on software engineering, technology, and building great
           products.
         </p>
       </div>
 
       {/* Category Filters */}
-      <div className="mb-8 flex flex-wrap justify-center gap-2">
+      <div className="work-filter" role="group" aria-label="Filter articles">
         {allCategories.map((category) => (
           <button
             key={category}
+            aria-pressed={activeCategory === category}
             onClick={() => setActiveCategory(category)}
             className={cn(
               "rounded-full px-4 py-2 text-sm font-medium transition-all",

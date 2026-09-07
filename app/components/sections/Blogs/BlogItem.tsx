@@ -16,11 +16,12 @@ export default function BlogItem({ post, eager = false }: BlogItemProps) {
     <Link
       href={`/blog/${slug}`}
       className={cn(
+        "studio-blog-card",
         "group flex h-full flex-col overflow-hidden rounded-xl transition-all duration-300",
         "border border-secondary/10 dark:border-base-800",
-        "hover:scale-[1.02] hover:shadow-xl hover:border-primary/30 dark:hover:border-primary/50",
+        "hover:scale-[1.02] hover:border-primary/30 hover:shadow-xl dark:hover:border-primary/50",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-secondary",
-        COMMON_CLASSES.CARD_BG
+        COMMON_CLASSES.CARD_BG,
       )}
     >
       <div className="relative h-52 w-full flex-shrink-0 overflow-hidden">
@@ -36,14 +37,14 @@ export default function BlogItem({ post, eager = false }: BlogItemProps) {
       <div className="flex flex-1 flex-col gap-4 p-8">
         <div className="flex-1 space-y-3">
           {/* Category Badge */}
-          <span className="inline-block rounded-full bg-primary-100 dark:bg-primary-900/40 px-3 py-1 text-xs font-semibold text-primary-700 dark:text-primary-300 shadow-sm">
+          <span className="inline-block rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 shadow-sm dark:bg-primary-900/40 dark:text-primary-300">
             {frontmatter.category}
           </span>
 
-          <h3 className="text-xl font-bold leading-snug text-base-content dark:text-base-100 line-clamp-2">
+          <h3 className="line-clamp-2 text-xl font-bold leading-snug text-base-content dark:text-base-100">
             {frontmatter.title}
           </h3>
-          <p className="leading-relaxed text-secondary/70 dark:text-base-400 line-clamp-2">
+          <p className="line-clamp-2 leading-relaxed text-secondary/70 dark:text-base-400">
             {frontmatter.excerpt}
           </p>
 
@@ -67,7 +68,10 @@ export default function BlogItem({ post, eager = false }: BlogItemProps) {
 
         <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors group-hover:text-primary-700 dark:group-hover:text-primary-400">
           <span>Read more</span>
-          <Icon name="arrow-forward" className="transition-transform group-hover:translate-x-1" />
+          <Icon
+            name="arrow-forward"
+            className="transition-transform group-hover:translate-x-1"
+          />
         </div>
       </div>
     </Link>

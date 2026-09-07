@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./studio.css";
 import { ThemeProvider } from "@/app/components/providers/ThemeProvider";
 import { ChristmasProvider } from "@/app/components/providers/ChristmasProvider";
 import { siteConfig } from "@/lib/data/siteConfig";
