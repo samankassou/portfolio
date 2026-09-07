@@ -28,7 +28,7 @@ export default function Home() {
         >
           <div className="hero-intro">
             <p className="eyebrow hero-eyebrow">
-              <span className="status-dot" /> Azure DevOps &amp; .NET Engineer
+              Azure DevOps &amp; .NET Engineer
             </p>
             <h1 id="hero-heading">
               Complexity,
