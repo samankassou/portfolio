@@ -1,6 +1,6 @@
 # Foulla SAMANKASSOU — Portfolio
 
-Personal portfolio for an Azure DevOps and .NET engineer based in Douala, Cameroon. The site presents cloud modernization, application development, AI, and BI work through anonymized case studies, alongside experience, qualifications, recommendations, and an MDX blog.
+Personal portfolio for an Azure DevOps and .NET engineer based in Douala, Cameroon. The site presents cloud modernization, application development, AI, and BI work through open-source projects and anonymized professional case studies, alongside experience, qualifications, recommendations, and an MDX blog.
 
 [Visit the portfolio](https://www.samankassou.com/)
 

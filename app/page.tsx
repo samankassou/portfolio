@@ -98,8 +98,8 @@ export default function Home() {
                 </h2>
               </div>
               <p className="section-note">
-                A selection of cloud, application, and AI projects. Business
-                details are anonymized; the engineering is real.
+                A selection of cloud, application, and AI projects, including
+                open-source work and anonymized professional case studies.
               </p>
             </div>
           </Reveal>

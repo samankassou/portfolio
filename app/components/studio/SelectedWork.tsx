@@ -84,9 +84,9 @@ export default function SelectedWork() {
         ))}
       </div>
       <p className="work-disclosure">
-        <span aria-hidden="true">↳</span> All case studies are anonymized.
-        Illustrations show conceptual workflows, not confidential architecture
-        or product screens.
+        <span aria-hidden="true">↳</span> Professional case studies are
+        anonymized. Conceptual workflows and open-source product screenshots are
+        labeled; Wida screenshots use fictional demo data.
       </p>
     </div>
   );

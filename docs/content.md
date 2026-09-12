@@ -35,6 +35,8 @@ Include the following for a complete case study:
 - `challenge`, `solution`, and `results` for the story sections.
 - `confidentialityNote` to explain any anonymization.
 - Optional `liveUrl` and `githubUrl` for public destinations you can share.
+- Optional `sourceLinks` with `label` and `url` for projects with multiple repositories.
+- Optional `screenshots` with `src`, `alt`, `caption`, `width`, and `height` for additional images on the detail page.
 
 `results` appears on the case-study page and on the featured card in “All work”. Empty story fields are omitted on the detail page. The optional `images` array is not rendered by the current case-study page.
 
@@ -48,7 +50,7 @@ coverAlt: "Describe the actual image for screen-reader users.",
 coverCaption: "Add an accurate caption and anonymization context.",
 ```
 
-The same image appears in the work listing and case-study hero, with `object-contain` to preserve its full contents. Its frame is controlled by [app/studio.css](../app/studio.css).
+The same image appears in the work listing and case-study hero, with `object-contain` to preserve its full contents. Set `coverWidth` and `coverHeight` to its actual pixel dimensions. Its frame is controlled by [app/studio.css](../app/studio.css). Wida (`/portfolio/6`) uses real interface screenshots with fictional demo data; source and license details are in `public/img/projects/SOURCES.md`. Add a demo URL only after confirming the public deployment address.
 
 Without `coverImg`, [ProjectDiagram.tsx](../app/components/studio/ProjectDiagram.tsx) displays a labeled conceptual workflow. Existing diagrams are keyed by project ID; a new ID receives a generic context/build/outcome diagram. Edit that mapping if a new project needs a specific illustration.
 

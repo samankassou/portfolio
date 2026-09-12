@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data/projects";
 import ProjectDiagram from "@/app/components/studio/ProjectDiagram";
@@ -128,7 +129,21 @@ export default async function PortfolioProjectPage({ params }: Props) {
                 </article>
               </Reveal>
             ))}
-          {(project.liveUrl || project.githubUrl) && (
+          {project.screenshots?.map((screenshot) => (
+            <figure className="case-screenshot" key={screenshot.src}>
+              <Image
+                src={screenshot.src}
+                alt={screenshot.alt}
+                width={screenshot.width}
+                height={screenshot.height}
+                sizes="(max-width: 900px) 100vw, 65vw"
+              />
+              <figcaption>{screenshot.caption}</figcaption>
+            </figure>
+          ))}
+          {(project.liveUrl ||
+            project.githubUrl ||
+            project.sourceLinks?.length) && (
             <div className="hero-actions">
               {project.liveUrl && (
                 <a
@@ -150,6 +165,17 @@ export default async function PortfolioProjectPage({ params }: Props) {
                   View source code ↗
                 </a>
               )}
+              {project.sourceLinks?.map((source) => (
+                <a
+                  className="text-link"
+                  href={source.url}
+                  key={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {source.label} ↗
+                </a>
+              ))}
             </div>
           )}
         </div>

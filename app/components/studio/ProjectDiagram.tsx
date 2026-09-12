@@ -68,9 +68,10 @@ export default function ProjectDiagram({ project }: { project: Project }) {
         <Image
           src={project.coverImg}
           alt={project.coverAlt || project.title}
-          fill
+          width={project.coverWidth || 1200}
+          height={project.coverHeight || 800}
           sizes="(max-width: 700px) 100vw, 55vw"
-          className="object-contain"
+          className="project-screenshot"
         />
         <figcaption>{project.coverCaption || "Project overview"}</figcaption>
       </figure>

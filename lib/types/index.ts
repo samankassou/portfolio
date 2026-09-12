@@ -64,6 +64,8 @@ export interface Project {
   coverImg?: string;
   coverAlt?: string;
   coverCaption?: string;
+  coverWidth?: number;
+  coverHeight?: number;
   category: Exclude<ProjectCategory, "All categories">;
   description: string;
   technologies: string[];
@@ -74,6 +76,14 @@ export interface Project {
   results?: string;
   liveUrl?: string;
   githubUrl?: string;
+  sourceLinks?: { label: string; url: string }[];
+  screenshots?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+  }[];
   images?: string[];
 }
 
