@@ -50,7 +50,7 @@ coverAlt: "Describe the actual image for screen-reader users.",
 coverCaption: "Add an accurate caption and anonymization context.",
 ```
 
-The same image appears in the work listing and case-study hero, with `object-contain` to preserve its full contents. Set `coverWidth` and `coverHeight` to its actual pixel dimensions. Its frame is controlled by [app/studio.css](../app/studio.css). Wida (`/portfolio/6`) uses real interface screenshots with fictional demo data; source and license details are in `public/img/projects/SOURCES.md`. Add a demo URL only after confirming the public deployment address.
+The same image appears in the work listing and case-study hero, with `object-contain` to preserve its full contents. Set `coverWidth` and `coverHeight` to its actual pixel dimensions. Its frame is controlled by [app/studio.css](../app/studio.css). Wida (`/portfolio/6`) links to the public application at https://wida.samankassou.com/ and both GitHub repositories. Its screenshots show the English demo interface with fictional data; source and license details are in `public/img/projects/SOURCES.md`.
 
 Without `coverImg`, [ProjectDiagram.tsx](../app/components/studio/ProjectDiagram.tsx) displays a labeled conceptual workflow. Existing diagrams are keyed by project ID; a new ID receives a generic context/build/outcome diagram. Edit that mapping if a new project needs a specific illustration.
 

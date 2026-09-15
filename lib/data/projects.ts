@@ -47,7 +47,7 @@ export const projects: Project[] = [
     link: "From invoice documents to reviewed data",
     category: "AI & Automation",
     description:
-      "An open-source workspace that turns invoice documents into structured, reviewable data, combining Azure Document Intelligence extraction with human review.",
+      "A live, open-source workspace that turns invoice documents into structured, reviewable data, combining Azure Document Intelligence extraction with human review.",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -56,13 +56,14 @@ export const projects: Project[] = [
       "Azure Document Intelligence",
       "RabbitMQ",
     ],
-    role: "Full-stack development",
+    role: "Full-stack development & deployment",
+    liveUrl: "https://wida.samankassou.com/",
     coverImg: "/img/projects/wida-review.png",
     coverAlt:
       "Wida shows an original invoice beside editable extracted fields, with an uncertain invoice number flagged for review.",
-    coverCaption: "Invoice review · French interface · Fictional demo data",
-    coverWidth: 1016,
-    coverHeight: 923,
+    coverCaption: "Invoice review · English interface · Fictional demo data",
+    coverWidth: 3574,
+    coverHeight: 2014,
     confidentialityNote:
       "Open-source project. Screenshots show the demo interface with fictional documents and extraction results.",
     challenge:
@@ -70,7 +71,7 @@ export const projects: Project[] = [
     solution:
       "Built a Next.js and TypeScript workspace backed by an ASP.NET Core API and PostgreSQL. Azure Document Intelligence extracts invoice headers and line items, while RabbitMQ and a .NET background worker handle analysis asynchronously. The review screen pairs the original with editable fields and confidence indicators. Draft recovery preserves edits during reanalysis, and Google sign-in with API ownership checks isolates each user's documents.",
     results:
-      "Implemented the workflow from document upload through extraction, human review, and invoice saving, with CSV export of saved invoice headers. An account-free demo uses fictional examples to make the review experience explorable. Automated tests cover workflow and extraction regressions; demo screenshots illustrate the interface rather than proving live service integration.",
+      "Deployed Wida as a publicly accessible application, with a workflow from document upload through extraction, human review, and invoice saving, plus CSV export of saved invoice headers. An account-free demo lets visitors explore the review experience with fictional examples. Frontend and backend source code are available on GitHub, with automated tests covering workflow and extraction regressions.",
     sourceLinks: [
       {
         label: "Frontend source",
@@ -86,9 +87,9 @@ export const projects: Project[] = [
         src: "/img/projects/wida-inbox.png",
         alt: "Wida document inbox showing eight fictional invoices, their suppliers, amounts, and processing statuses.",
         caption:
-          "Document inbox · Track what needs review and what is saved. Fictional demo data, captured 12 September 2026.",
-        width: 1016,
-        height: 923,
+          "Document inbox · Track what needs review and what is saved. English interface with fictional demo data.",
+        width: 3568,
+        height: 1998,
       },
     ],
   },
