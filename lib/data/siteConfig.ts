@@ -8,15 +8,14 @@ export const siteConfig: SiteConfig = {
   metadata: {
     title: "Azure DevOps & .NET Engineer | Foulla SAMANKASSOU",
     description:
-      "Azure DevOps and .NET software engineer building, deploying, and modernizing reliable applications on Microsoft Azure.",
+      "Azure DevOps and .NET engineer who builds and modernizes applications on Microsoft Azure and leads AI and BI delivery.",
     language: "en",
     url: "https://samankassou.com",
   },
   author: {
     name: "Foulla SAMANKASSOU",
     email: "samankassoufoulla@gmail.com",
-    skype: "@foullasamankassou",
-    telegram: "@foullasamankassou",
+    phone: "+237691565877",
   },
 };
 

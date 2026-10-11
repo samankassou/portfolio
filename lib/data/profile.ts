@@ -2,32 +2,7 @@
  * Profile and personal information data
  */
 
-import type {
-  ProfileData,
-  ContactInfo,
-  Skill,
-  SkillCategory,
-} from "@/lib/types";
-
-/**
- * Main profile data
- */
-export const profileData: ProfileData = {
-  name: "Foulla SAMANKASSOU",
-  title: "Azure DevOps & .NET Engineer",
-  badge: false,
-};
-
-/**
- * Contact information items
- */
-export const contactInfo: ContactInfo[] = [
-  { id: 1, label: "Email", value: "samankassoufoulla@gmail.com" },
-  { id: 2, label: "Phone", value: "+237 691 56 58 77" },
-  { id: 3, label: "Location", value: "Douala, Cameroon" },
-  { id: 4, label: "LinkedIn", value: "sam-foulla", highlight: false },
-  { id: 5, label: "GitHub", value: "samankassou", highlight: false },
-];
+import type { SkillCategory } from "@/lib/types";
 
 /**
  * Categorized skills organized by domain
@@ -97,27 +72,4 @@ export const skillCategories: SkillCategory[] = [
       { id: 28, name: "Talend" },
     ],
   },
-];
-
-/**
- * Major skills (backward compatibility - no percentages)
- */
-export const majorSkills: Skill[] = [
-  { id: 1, name: "Microsoft Azure" },
-  { id: 2, name: "Azure DevOps" },
-  { id: 3, name: "C#" },
-  { id: 4, name: ".NET Core" },
-  { id: 5, name: "Laravel" },
-];
-
-/**
- * Extra skills (backward compatibility)
- */
-export const extraSkills: Skill[] = [
-  { id: 1, name: "Docker" },
-  { id: 2, name: "Git" },
-  { id: 3, name: "PHP" },
-  { id: 4, name: "React" },
-  { id: 5, name: "Vue.js" },
-  { id: 6, name: "Power BI" },
 ];

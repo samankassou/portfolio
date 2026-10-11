@@ -50,14 +50,14 @@ export const experience: Experience[] = [
       "Maintaining business applications and supporting system migrations.",
     contributions: [
       "Maintained and supported .NET web applications.",
-      "Participated in the AS400 MAPPING OPAL-to-ONYX migration.",
+      "Participated in the AS400 MAPPING OPALE-to-ONYX migration.",
     ],
     technologies: ["C#", ".NET", "Laravel", "JavaScript", "ONYX"],
     company: "Bolloré Transports & Logistics",
     role: "Application Analyst",
     period: "June 2022 - March 2023",
     description:
-      "Maintained and supported .NET web applications and participated in the AS400 MAPPING OPAL-to-ONYX migration on Windows. Technologies: C#, .NET, PHP, Laravel, JavaScript, jQuery, ONYX.",
+      "Maintained and supported .NET web applications and participated in the AS400 MAPPING OPALE-to-ONYX migration on Windows. Technologies: C#, .NET, PHP, Laravel, JavaScript, jQuery, ONYX.",
   },
   {
     id: 4,

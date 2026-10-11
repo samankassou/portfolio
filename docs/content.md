@@ -8,15 +8,15 @@ Content is stored in TypeScript data files and Markdown/MDX articles. The curren
 
 | Content                                                | Source                                                                                                               | Rendering notes                                                                                      |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Identity, email, social links                          | [siteConfig.ts](../lib/data/siteConfig.ts)                                                                           | Shared metadata and homepage contact links.                                                          |
+| Identity, email, phone, social links                   | [siteConfig.ts](../lib/data/siteConfig.ts)                                                                           | Shared metadata and homepage contact links.                                                          |
 | Introduction, location, languages, current role, phone | [app/page.tsx](../app/page.tsx)                                                                                      | These visible homepage values are written directly in the page.                                      |
 | Skills                                                 | [profile.ts](../lib/data/profile.ts)                                                                                 | The homepage uses `skillCategories` for the expanded toolkit; the hero toolkit is in `app/page.tsx`. |
 | Case studies                                           | [projects.ts](../lib/data/projects.ts)                                                                               | Work filters and `/portfolio/[id]` pages.                                                            |
 | Experience                                             | [experience.ts](../lib/data/experience.ts)                                                                           | Role disclosures; the first entry is expanded and marked current.                                    |
-| Capabilities                                           | [services.ts](../lib/data/services.ts)                                                                               | Titles and item lists; introductory paragraphs are selected by array position in `app/page.tsx`.     |
+| Capabilities                                           | [services.ts](../lib/data/services.ts)                                                                               | Titles, introductory `summary` paragraphs, and item lists.                                           |
 | Certifications                                         | [certifications.ts](../lib/data/certifications.ts)                                                                   | Badge, title, issuer, date, and credential details.                                                  |
 | Education                                              | [education.ts](../lib/data/education.ts)                                                                             | Certificate, school, period, and description.                                                        |
-| Recommendations                                        | [testimonials.ts](../lib/data/testimonials.ts)                                                                       | Author details and full text; featured excerpts are selected by array position in `app/page.tsx`.    |
+| Recommendations                                        | [testimonials.ts](../lib/data/testimonials.ts)                                                                       | Author details, the featured `pullQuote`, and full text.                                             |
 | Navigation                                             | [SiteHeader.tsx](../app/components/studio/SiteHeader.tsx), [SiteFooter.tsx](../app/components/studio/SiteFooter.tsx) | Current navigation links are defined in these components.                                            |
 | Articles                                               | [content/blog/](../content/blog/)                                                                                    | Follow the [blog guide](blog.md).                                                                    |
 
@@ -60,7 +60,7 @@ For experience, keep `mission` concise, list key work in `contributions`, put to
 
 For recommendations, preserve the original meaning of `text`, `authorName`, and `authorRole`. `authorProfileUrl` links the name; `sourceUrl` adds “View on LinkedIn” inside the full recommendation. An empty source URL hides that link. Current source URLs point to the owner's received-recommendations page. Use public links rather than account-only editing URLs.
 
-When adding or reordering recommendations or capabilities, also update the position-based excerpts or introductions in `app/page.tsx` so the copy stays associated with the correct entry.
+Each recommendation carries its own `pullQuote` and each capability its own `summary`, so entries can be added or reordered without touching `app/page.tsx`.
 
 ## Identity and metadata
 

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Azure DevOps & .NET Engineer - Foulla SAMANKASSOU",
     short_name: "Foulla Portfolio",
     description:
-      "Azure DevOps and .NET software engineer focused on Microsoft Azure application delivery and modernization",
+      "Azure DevOps and .NET engineer who builds and modernizes applications on Microsoft Azure and leads AI and BI delivery",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

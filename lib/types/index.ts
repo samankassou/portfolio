@@ -1,18 +1,4 @@
-// Profile & Contact
-export interface ProfileData {
-  name: string;
-  title: string;
-  photo?: string;
-  badge: boolean;
-}
-
-export interface ContactInfo {
-  id: number;
-  label: string;
-  value: string;
-  highlight?: boolean;
-}
-
+// Skills
 export interface Skill {
   id: number;
   name: string;
@@ -24,6 +10,7 @@ export interface Service {
   id: number;
   icon: string;
   title: string;
+  summary: string;
   items: string[];
 }
 
@@ -94,16 +81,9 @@ export interface Testimonial {
   authorProfilePic: string;
   authorProfileUrl?: string;
   authorRole: string;
+  pullQuote: string;
   text: string;
   sourceUrl?: string;
-}
-
-// Blog
-export interface Blog {
-  id: number;
-  title: string;
-  shortDescription: string;
-  thumbnail: string;
 }
 
 // MDX Blog
@@ -145,25 +125,8 @@ export interface SiteConfig {
   author: {
     name: string;
     email: string;
-    skype: string;
-    telegram: string;
+    phone: string;
   };
-}
-
-// Navigation
-export interface NavItem {
-  id: string;
-  icon: string;
-  label: string;
-  href: string;
-}
-
-// Animation types
-export interface AnimationConfig {
-  initial: object;
-  animate: object;
-  exit?: object;
-  transition?: object;
 }
 
 // Certifications
@@ -176,18 +139,6 @@ export interface Certification {
   date: string;
   credentialId?: string;
   credentialUrl?: string;
-}
-
-// Languages
-export interface Language {
-  id: number;
-  name: string;
-  proficiency:
-    | "Native"
-    | "Fluent"
-    | "Professional"
-    | "Conversational"
-    | "Basic";
 }
 
 // Skill Categories

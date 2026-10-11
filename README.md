@@ -1,6 +1,6 @@
 # Foulla SAMANKASSOU — Portfolio
 
-Personal portfolio for an Azure DevOps and .NET engineer based in Douala, Cameroon. The site presents cloud modernization, application development, AI, and BI work through open-source projects and anonymized professional case studies, alongside experience, qualifications, recommendations, and an MDX blog.
+Personal portfolio for an Azure DevOps and .NET engineer and AI project lead based in Douala, Cameroon. The site presents cloud modernization, application development, AI, and BI work through open-source projects and anonymized professional case studies, alongside experience, qualifications, recommendations, and an MDX blog.
 
 [Visit the portfolio](https://www.samankassou.com/)
 
@@ -62,8 +62,6 @@ The app uses Next.js App Router, React, TypeScript, and Tailwind CSS. Dependency
 | [lib/data/](lib/data/) and [lib/types/](lib/types/)            | Portfolio data and content types.                                |
 | [content/blog/](content/blog/)                                 | Published Markdown and MDX articles.                             |
 | [public/](public/)                                             | Static images, icons, and asset source records.                  |
-
-Some earlier layout and section components remain in `app/components/`. Follow imports from the current route before choosing which component or data file to edit.
 
 ## Documentation
 

@@ -28,7 +28,7 @@ export default function Home() {
         >
           <div className="hero-intro">
             <p className="eyebrow hero-eyebrow">
-              Azure DevOps &amp; .NET Engineer
+              Azure DevOps &amp; .NET Engineer · AI Project Lead
             </p>
             <h1 id="hero-heading">
               Complexity,
@@ -36,8 +36,8 @@ export default function Home() {
               made <em>clear.</em>
             </h1>
             <p className="hero-description">
-              I’m Foulla. I build reliable applications, modernize legacy
-              systems, and connect the dots from code to cloud.
+              I’m Foulla. I build and modernize applications on Azure and .NET,
+              and now lead AI and BI projects from first idea to adoption.
             </p>
             <div className="hero-actions">
               <a className="studio-button" href="#portfolio">
@@ -144,15 +144,17 @@ export default function Home() {
               </p>
               <p>
                 I’m Foulla Samankassou, an Azure DevOps and .NET engineer based
-                in Douala, Cameroon. My work spans building applications,
-                modernizing legacy systems, and helping teams put new technology
-                to use.
+                in Douala, Cameroon. I started out building and maintaining
+                business applications, then moved them forward: modernizing
+                legacy systems and delivering them on Microsoft Azure.
               </p>
               <p>
-                At Africa Global Logistics, that journey has grown from
-                application engineering into AI and business intelligence
-                delivery. I care as much about making an idea clear as making
-                the code work.
+                At Africa Global Logistics, that engineering work led to my
+                current role as BI/AI Project Manager, where I lead AI and
+                business intelligence delivery. I still build: I developed and
+                deployed Wida, my open-source invoice processing app, end to
+                end. I care as much about making an idea clear as making the
+                code work.
               </p>
               <div className="about-facts">
                 <div>
@@ -216,16 +218,7 @@ export default function Home() {
                     </span>
                   </summary>
                   <div className="capability-content">
-                    <p>
-                      {
-                        [
-                          "From environment setup to deployment, I help teams deliver .NET applications on Azure through structured CI/CD pipelines.",
-                          "Understand what exists. Design what comes next. Move on-premises applications onto Microsoft Azure with a considered migration approach.",
-                          "Maintainable applications built around real workflows, with .NET and C#, Laravel and PHP, and React or Vue.js frontends.",
-                          "Turn unstructured information into something useful, with human review and adoption at the center of the process.",
-                        ][i]
-                      }
-                    </p>
+                    <p>{service.summary}</p>
                     <ul>
                       {service.items.map((item) => (
                         <li key={item}>{item}</li>
@@ -391,17 +384,13 @@ export default function Home() {
               What collaborators say
             </h2>
             <div className="quotes-grid">
-              {testimonials.map((person, i) => (
+              {testimonials.map((person) => (
                 <Reveal key={person.id}>
                   <figure className="studio-quote">
                     <span className="quote-mark" aria-hidden="true">
                       “
                     </span>
-                    <blockquote>
-                      {i === 0
-                        ? "His ability to understand a technology, explain it clearly, and analyze problems is exceptional."
-                        : "He is a real asset to a team and adapts very well to different projects."}
-                    </blockquote>
+                    <blockquote>{person.pullQuote}</blockquote>
                     <figcaption>
                       <a
                         href={person.authorProfileUrl}
@@ -469,7 +458,10 @@ export default function Home() {
                     {link.label} ↗
                   </a>
                 ))}
-                <a className="text-link" href="tel:+237691565877">
+                <a
+                  className="text-link"
+                  href={`tel:${siteConfig.author.phone}`}
+                >
                   Phone ↗
                 </a>
               </div>

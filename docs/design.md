@@ -2,14 +2,14 @@
 
 [Back to README](../README.md)
 
-The portfolio's direction is “Systems in motion”, expressed through the message **“Complexity, made clear.”** Azure DevOps and .NET lead the professional story, with Laravel, AI, and BI adding breadth.
+The portfolio's direction is “Systems in motion”, expressed through the message **“Complexity, made clear.”** Azure DevOps and .NET engineering leads the professional story, and the current AI and BI project leadership is presented as its continuation.
 
 ## Visual system
 
 - Graphite and pale green surfaces with an electric lime accent, defined by `--studio-*` variables in [app/studio.css](../app/studio.css).
 - Inter for the main typography, Georgia for italic accents, and system monospace for technical labels.
 - Open layouts, thin rules, square edges, generous spacing, and numbered homepage sections.
-- A featured Azure case study, conceptual project diagrams, and a real portrait.
+- A featured Wida case study, conceptual project diagrams, and a real portrait.
 - Native disclosures for capabilities, experience, qualifications, and full recommendations.
 
 ## Implementation map
