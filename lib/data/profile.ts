@@ -13,7 +13,7 @@ import type {
  * Main profile data
  */
 export const profileData: ProfileData = {
-  name: "Foulla SAMANKASSOU",
+  name: "Foulla Samankassou",
   title: "Azure DevOps & .NET Engineer",
   badge: false,
 };

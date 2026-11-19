@@ -12,7 +12,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.metadata.url),
-  title: siteConfig.metadata.title,
+  title: {
+    default: siteConfig.metadata.title,
+    template: `%s | ${siteConfig.author.name}`,
+  },
   description: siteConfig.metadata.description,
   authors: [{ name: siteConfig.author.name, url: siteConfig.metadata.url }],
   creator: siteConfig.author.name,
@@ -39,7 +42,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Foulla SAMANKASSOU — Azure DevOps and Azure .NET Software Engineer",
+        alt: "Foulla Samankassou — Azure DevOps and Azure .NET Software Engineer",
       },
     ],
   },

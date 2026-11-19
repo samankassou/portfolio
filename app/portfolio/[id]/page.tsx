@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((item) => String(item.id) === id);
   if (!project) return { title: "Project Not Found" };
   return {
-    title: `${project.title} | Foulla Samankassou`,
+    title: project.title,
     description: project.description,
     alternates: { canonical: `/portfolio/${project.id}` },
     openGraph: {

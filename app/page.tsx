@@ -216,16 +216,7 @@ export default function Home() {
                     </span>
                   </summary>
                   <div className="capability-content">
-                    <p>
-                      {
-                        [
-                          "From environment setup to deployment, I help teams deliver .NET applications on Azure through structured CI/CD pipelines.",
-                          "Understand what exists. Design what comes next. Move on-premises applications onto Microsoft Azure with a considered migration approach.",
-                          "Maintainable applications built around real workflows, with .NET and C#, Laravel and PHP, and React or Vue.js frontends.",
-                          "Turn unstructured information into something useful, with human review and adoption at the center of the process.",
-                        ][i]
-                      }
-                    </p>
+                    <p>{service.summary}</p>
                     <ul>
                       {service.items.map((item) => (
                         <li key={item}>{item}</li>
@@ -391,17 +382,13 @@ export default function Home() {
               What collaborators say
             </h2>
             <div className="quotes-grid">
-              {testimonials.map((person, i) => (
+              {testimonials.map((person) => (
                 <Reveal key={person.id}>
                   <figure className="studio-quote">
                     <span className="quote-mark" aria-hidden="true">
                       “
                     </span>
-                    <blockquote>
-                      {i === 0
-                        ? "His ability to understand a technology, explain it clearly, and analyze problems is exceptional."
-                        : "He is a real asset to a team and adapts very well to different projects."}
-                    </blockquote>
+                    <blockquote>{person.pullQuote}</blockquote>
                     <figcaption>
                       <a
                         href={person.authorProfileUrl}
@@ -469,7 +456,10 @@ export default function Home() {
                     {link.label} ↗
                   </a>
                 ))}
-                <a className="text-link" href="tel:+237691565877">
+                <a
+                  className="text-link"
+                  href={`tel:${siteConfig.author.phone}`}
+                >
                   Phone ↗
                 </a>
               </div>

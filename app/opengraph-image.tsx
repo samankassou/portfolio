@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Foulla SAMANKASSOU — Azure DevOps and Azure .NET Software Engineer";
+  "Foulla Samankassou — Azure DevOps and Azure .NET Software Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -56,7 +56,7 @@ export default function OpenGraphImage() {
             }}
           >
             <div style={{ display: "flex", fontSize: 68, fontWeight: 800 }}>
-              Foulla SAMANKASSOU
+              Foulla Samankassou
             </div>
             <div
               style={{

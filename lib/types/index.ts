@@ -24,6 +24,7 @@ export interface Service {
   id: number;
   icon: string;
   title: string;
+  summary: string;
   items: string[];
 }
 
@@ -94,6 +95,8 @@ export interface Testimonial {
   authorProfilePic: string;
   authorProfileUrl?: string;
   authorRole: string;
+  /** Short excerpt from `text` shown on the homepage card. */
+  pullQuote: string;
   text: string;
   sourceUrl?: string;
 }
@@ -145,7 +148,8 @@ export interface SiteConfig {
   author: {
     name: string;
     email: string;
-    skype: string;
+    /** E.164 format, used for the tel: link. */
+    phone: string;
     telegram: string;
   };
 }

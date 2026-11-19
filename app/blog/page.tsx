@@ -4,7 +4,7 @@ import BlogIndexClient from "./BlogIndexClient";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
-  title: "Blog | Portfolio - Foulla SAMANKASSOU",
+  title: "Writing",
   description:
     "Articles about Azure, DevOps, .NET, software engineering, cloud modernization, and complementary AI and BI work.",
 };

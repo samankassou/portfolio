@@ -20,28 +20,6 @@ export const projectCategories: ProjectCategory[] = [
  */
 export const projects: Project[] = [
   {
-    id: 4,
-    // Replace with an image path in public/ and a meaningful description.
-    coverImg: "",
-    coverAlt: "",
-    coverCaption: "",
-    title: ".NET Applications to Azure",
-    link: "Cloud migration and modernization",
-    category: "Cloud & DevOps",
-    description:
-      "Migration and modernization of on-premises .NET business applications on Microsoft Azure using Azure DevOps.",
-    technologies: ["Azure DevOps", "Microsoft Azure", ".NET", "C#"],
-    role: "Application Analyst / Technical Lead",
-    confidentialityNote:
-      "Anonymized case study — application architecture is confidential.",
-    challenge:
-      "On-premises .NET business applications needed to be migrated to Azure across environment setup, analysis, design, development, and deployment.",
-    solution:
-      "Led the migration work from environment setup and application analysis through solution design, development, and deployment on Microsoft Azure with Azure DevOps.",
-    results:
-      "Migrated the on-premises .NET applications to Azure and carried the work through deployment.",
-  },
-  {
     id: 6,
     title: "Wida — AI-assisted invoice processing",
     link: "From invoice documents to reviewed data",
@@ -92,6 +70,28 @@ export const projects: Project[] = [
         height: 1998,
       },
     ],
+  },
+  {
+    id: 4,
+    // Replace with an image path in public/ and a meaningful description.
+    coverImg: "",
+    coverAlt: "",
+    coverCaption: "",
+    title: ".NET Applications to Azure",
+    link: "Cloud migration and modernization",
+    category: "Cloud & DevOps",
+    description:
+      "Migration and modernization of on-premises .NET business applications on Microsoft Azure using Azure DevOps.",
+    technologies: ["Azure DevOps", "Microsoft Azure", ".NET", "C#"],
+    role: "Application Analyst / Technical Lead",
+    confidentialityNote:
+      "Anonymized case study — application architecture is confidential.",
+    challenge:
+      "On-premises .NET business applications needed to be migrated to Azure across environment setup, analysis, design, development, and deployment.",
+    solution:
+      "Led the migration work from environment setup and application analysis through solution design, development, and deployment on Microsoft Azure with Azure DevOps.",
+    results:
+      "Migrated the on-premises .NET applications to Azure and carried the work through deployment.",
   },
   {
     id: 5,
